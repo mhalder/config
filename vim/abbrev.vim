@@ -1,0 +1,1 @@
+:iabbrev mh Martin Halder
