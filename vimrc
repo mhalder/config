@@ -11,11 +11,7 @@ filetype indent on
 syntax on
 
 " source abbreviations
-if has("win32")
-  :so ~/vimfiles/abbrev.vim
-else
-  :so ~/.vim/abbrev.vim
-endif
+:so ~/config/abbrev.vim
 
 " set leader to , instead of \
 let mapleader = ","
@@ -193,7 +189,7 @@ map <leader>jl :wq<CR>
 map <F1> <ESC>:exec "help ".expand("<cWORD>")<CR>
 
 " enable Chapter higlight for command file
-match ErrorMsg /^Chapter/
+match ErrorMsg /^* Chapter.*/
 
 " maps to make handling windows a bit easier
 noremap <silent> <leader>h :wincmd h<CR>
@@ -225,15 +221,8 @@ nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nmap <silent> <leader>eg :e $MYGVIMRC<CR>
 nmap <silent> <leader>sg :so $MYGVIMRC<CR>
-
-" edit the vimrc file
-if has("win32")
-  nmap <silent> <leader>ec :e ~/vimfiles/myhelp.txt<CR>
-  nmap <silent> <leader>ea :e ~/vimfiles/abbrev.vim<CR>
-else
-  nmap <silent> <leader>ec :e ~/.vim/myhelp.txt<CR>
-  nmap <silent> <leader>ea :e ~/.vim/abbrev.vim<CR>
-endif
+nmap <silent> <leader>eh :e ~/config/vim.org<CR>
+nmap <silent> <leader>ea :e ~/config/abbrev.vim<CR>
 
 " use reselect visual when indenting in visual mode
 vmap > >gv
