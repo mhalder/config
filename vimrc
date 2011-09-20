@@ -4,7 +4,7 @@ set nocompatible
 source ~/config/vim/bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect('~/config/vim/bundle')
 
-" Set filetype stuff to on
+" set filetype and syntax stuff to on
 filetype on
 filetype plugin on
 filetype indent on
@@ -30,16 +30,24 @@ set autoindent
 set ruler
 set number
 
-" Tabstops are 4 spaces and expanded
+" set the search scan so that it ignores case when the search is all lower
+" case but recognizes uppercase if it's specified
+set ignorecase
+set smartcase
+
+" tabstops are 4 spaces and expanded
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
 
-" Enable modeline in files
+" enable modeline in files
 set modeline
 
-" Show special characters, invert with leader-le, spaces with leader-sp and leader-su
+" make command line two lines high
+set ch=2
+
+" show special characters, invert with leader-le, spaces with leader-sp and leader-su
 " set listchars=tab:\>\.,eol:$
 set listchars=tab:▸\ ,eol:¬
 set nolist
@@ -53,32 +61,24 @@ set nobackup
 " set the search scan to wrap lines
 set wrapscan
 
-" set the search scan so that it ignores case when the search is all lower
-" case but recognizes uppercase if it's specified
-set ignorecase
-set smartcase
-
 " set the forward slash to be the slash of note. Backslashes suck
 set shellslash
-
-" Make command line two lines high
-set ch=2
 
 " set visual bell -- i hate that damned beeping
 set vb
 
-" Allow backspacing over indent, eol, and the start of an insert
+" allow backspacing over indent, eol, and the start of an insert
 set backspace=2
 
-" Make sure that unsaved buffers that are to be put in the background are
+" make sure that unsaved buffers that are to be put in the background are
 " allowed to go in there (ie. the "must save first" error doesn't come up)
 set hidden
 
-" Make the 'cw' and like commands put a $ at the end instead of just deleting
+" make the 'cw' and like commands put a $ at the end instead of just deleting
 " the text and replacing it
 " set cpoptions=ces$
 
-" Set the status line the way i like it
+" set the status line the way i like it
 " set stl=%f\ %m\ %r\ Line:%l/%L[%p%%]\ Col:%c\ Buf:%n\ [%b][0x%B]
 set stl=
 set stl+=%f:
@@ -97,25 +97,22 @@ set stl+=%*
 " switch off with laststatus=0
 set laststatus=2
 
-" Don't update the display while executing macros
+" don't update the display while executing macros
 set lazyredraw
 
-" Show the current command in the lower right corner
+" show the current command in the lower right corner
 set showcmd
 
-" Show the current mode
+" show the current mode
 set showmode
 
-" Show matching parentheses
+" show matching parentheses
 set showmatch
 
-" Switch on syntax highlighting.
-syntax on
-
-" Hide the mouse pointer while typing
+" hide the mouse pointer while typing
 set mousehide
 
-" Set up the gui cursor to look nice
+" set up the gui cursor to look nice
 set guicursor=n-v-c:block-Cursor-blinkon0
 set guicursor+=ve:ver35-Cursor
 set guicursor+=o:hor50-Cursor
@@ -136,40 +133,40 @@ set guioptions=ac
 "      if there is one (which there isn't) or the command aborts.
 set timeoutlen=500
 
-" Keep some stuff in the history
+" keep some stuff in the history
 set history=100
 
-" These commands open folds
+" these commands open folds
 set foldopen=block,insert,jump,mark,percent,quickfix,search,tag,undo
 
-" When the page starts to scroll, keep the cursor 8 lines from the top and 8
+" when the page starts to scroll, keep the cursor 8 lines from the top and 8
 " lines from the bottom
 set scrolloff=8
 
-" Allow the cursor to go in to "invalid" places
+" allow the cursor to go in to "invalid" places
 " set virtualedit=all
 
-" These things start comment lines
+" these things start comment lines
 set comments=sl:/*,mb:\ *,ex:\ */,O://,b:#,:%,:XCOMM,n:>,fb:-
 
-" Disable encryption (:X)
+" disable encryption (:X)
 set key=
 
-" Make the command-line completion better
+" make the command-line completion better
 set wildmenu
 set wildignore+=*.o,*.obj,*.pyc,*.DS_STORE,*.db,*.swc
 set wildmode=longest:full
 
-" Always open the quickfix window when running make, grep, grepadd and vimgrep
+" always open the quickfix window when running make, grep, grepadd and vimgrep
 autocmd QuickfixCmdPost make,grep,grepadd,vimgrep :botright cwindow
 
-" Same as default except that I remove the 'u' option
+" same as default except that I remove the 'u' option
 set complete=.,w,b,t
 
-" When completing by tag, show the whole tag, not just the function name
+" when completing by tag, show the whole tag, not just the function name
 set showfulltag
 
-" Set the textwidth to be 120 chars
+" set the textwidth to be 120 chars
 set textwidth=120
 
 " get rid of the silly characters in window separators
@@ -178,32 +175,32 @@ set fillchars=""
 " Add ignorance of whitespace to diff
 set diffopt+=iwhite
 
-" Enable search highlighting and incremental search, toggle with leader-th
+" enable search highlighting and incremental search, toggle with leader-th
 set hlsearch
 set incsearch
 nmap <silent> <leader>th :silent :set hlsearch!<CR>
 
-" Setting spell suggestion to only 5 alternatives
+" setting spell suggestion to only 5 alternatives
 set spellsuggest=5
 
-" Map ESC to jj, quit to <leader>-jj, save to <leader>-jk, save quit to <leader>-jl
+" map ESC to jj, quit to <leader>-jj, save to <leader>-jk, save quit to <leader>-jl
 imap jj <Esc>
 map <leader>jj :q<CR>
 map <leader>jk :w<CR>
 map <leader>jl :wq<CR>
 
-" Enable context search
+" enable context search
 map <F1> <ESC>:exec "help ".expand("<cWORD>")<CR>
 
-" Enable Chapter higlight for command file
+" enable Chapter higlight for command file
 match ErrorMsg /^Chapter/
 
-" Maps to make handling windows a bit easier
-noremap <silent> ,h :wincmd h<CR>
-noremap <silent> ,j :wincmd j<CR>
-noremap <silent> ,k :wincmd k<CR>
-noremap <silent> ,l :wincmd l<CR>
-noremap <silent> ,sb :wincmd p<CR>
+" maps to make handling windows a bit easier
+noremap <silent> <leader>h :wincmd h<CR>
+noremap <silent> <leader>j :wincmd j<CR>
+noremap <silent> <leader>k :wincmd k<CR>
+noremap <silent> <leader>l :wincmd l<CR>
+noremap <silent> <leader>sb :wincmd p<CR>
 noremap <silent> <C-F9>  :vertical resize -10<CR>
 noremap <silent> <C-F10> :resize +10<CR>
 noremap <silent> <C-F11> :resize -10<CR>
@@ -224,29 +221,23 @@ noremap <silent> <C-8> <C-W>+
 noremap <silent> <C-9> <C-W>+
 noremap <silent> <C-0> <C-W>>
 
-" Edit the vimrc file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+nmap <silent> <leader>eg :e $MYGVIMRC<CR>
+nmap <silent> <leader>sg :so $MYGVIMRC<CR>
+
+" edit the vimrc file
 if has("win32")
-  nmap <silent> ,ev :e ~/vimfiles/vimrc<CR>
-  nmap <silent> ,sv :so ~/vimfiles/vimrc<CR>
-  nmap <silent> ,eg :e ~/vimfiles/gvimrc<CR>
-  nmap <silent> ,sg :so ~/vimfiles/gvimrc<CR>
-  nmap <silent> ,ec :e ~/vimfiles/myhelp.txt<CR>
-  nmap <silent> ,ea :e ~/vimfiles/abbrev.vim<CR>
+  nmap <silent> <leader>ec :e ~/vimfiles/myhelp.txt<CR>
+  nmap <silent> <leader>ea :e ~/vimfiles/abbrev.vim<CR>
 else
-  nmap <silent> ,ev :e ~/.vimrc<CR>
-  nmap <silent> ,sv :so ~/.vimrc<CR>
-  nmap <silent> ,eg :e ~/.gvimrc<CR>
-  nmap <silent> ,sg :so ~/.gvimrc<CR>
-  nmap <silent> ,ec :e ~/.vim/myhelp.txt<CR>
-  nmap <silent> ,ea :e ~/.vim/abbrev.vim<CR>
+  nmap <silent> <leader>ec :e ~/.vim/myhelp.txt<CR>
+  nmap <silent> <leader>ea :e ~/.vim/abbrev.vim<CR>
 endif
 
-" Use reselect visual when indenting in visual mode
+" use reselect visual when indenting in visual mode
 vmap > >gv
 vmap < <gv
-
-" set search path for gf command, not verified
-" set path=.,/usr/include,/usr/local/include,**;$HOME
 
 " start scrolling before last line
 set scrolloff=3
@@ -255,13 +246,13 @@ set scrolloff=3
 nnoremap <silent> <leader>sw :call Preserve("%s/\\s\\+$//e")<CR>
 nnoremap <silent> <leader>ff :call Preserve("normal gg=G")<CR>
 function! Preserve(command)
-    " Preparation: save last search, and cursor position.
+    " preparation: save last search, and cursor position.
     let _s=@/
     let l = line(".")
     let c = col(".")
     " Do the business:
     execute a:command
-    " Clean up: restore previous search history, and cursor position
+    " clean up: restore previous search history, and cursor position
     let @/=_s
     call cursor(l, c)
 endfunction
