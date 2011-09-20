@@ -1,10 +1,8 @@
-" we want the real vim
 set nocompatible
 
-" call pathogen scripts
-filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+" load and call pathogen
+source ~/config/vim/bundle/pathogen/autoload/pathogen.vim
+call pathogen#infect('~/config/vim/bundle')
 
 " Set filetype stuff to on
 filetype on
