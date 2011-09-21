@@ -18,12 +18,15 @@
   b                             bottom scrollbar is present
   F                             gvim (Motif) will display a footer
 * Chapter Basic Search
-/ and ?                         search forward and backward
-// and ??                       repeat last search command
-g* and g#, * and #              search word under cursor, repeat (backwards, without boundaries)
-d/fred/                         delete until fred
-y/fred/                         yank until fred
-c/fred/e                        change until fred end
+/ and ?                  search forward and backward
+// and ??                repeat last search command
+g* and g#, * and #       search word under cursor, repeat (backwards, without boundaries)
+d/fred/                  delete until fred
+y/fred/                  yank until fred
+c/fred/e                 change until fred end
+/^#\d\d                  search for hash followed by two digits at beginning of line
+* Chapter Vimgrep Search
+:vimgrep text **     search for text in project (current dir)
 * Chapter Power Search and Replace
 :g/re/p                         display lines matching re, this is where grep got its name
 :g/re/#                         display lines with line numbers matching re
@@ -41,8 +44,8 @@ c/fred/e                        change until fred end
     :cc3                        display third result
     :ccl                        close quickfix window
 * Chapter Regular Expressions
-Howto                           First use search, then copy to cmdline with CTRL-r /
-                                (CTRL-r is paste from register named.. last search stored in / register)
+Howto                           First use search, then copy to cmdline with ctrl-r /
+                                (ctrl-r is paste from register named.. last search stored in / register)
     very    magic               magic level
     \s      \s                  Whitespace
     ()      \(\)                Grouping
@@ -58,7 +61,7 @@ Howto                           First use search, then copy to cmdline with CTRL
 :g/\s*DEBUG/exe "norm! I/* \<Esc>A */\<Esc>"    comment all lines with DEBUG (and trailing whitespaces)
 * Chapter Basic Movement
 h,j,k,l                         no comment
-gj,gk                           move even to long wrapped lines
+gj,gk,g0,g^,g$                  move to visible not numbered lines
 w,b                             next or previous word
 W,B                             next or previous complete word
 ge,gE                           end of prev word, end of complete prev word
@@ -66,33 +69,36 @@ f,t                             forward search, forward search until
 F,T                             backward search, backward search until
 ;                               repeat last f,t,F,T command
 0,$                             start and end of line
-CTRL-f and CTRL-b               forward or backward a page
-CTRL-u and CTRL-d               forward or backward a halfpage
+ctrl-f and ctrl-b               forward or backward a page
+ctrl-u and ctrl-d               forward or backward a halfpage
 H,M,L:                          head, middle, last
 gg and G                        top, bottom of file, 500G: Go to line 500
 * Chapter Advanced Movement
-%                               match brackets
-{ and }                         go forward or backward one paragraph
-( and )                         go forward or backward one sentence
-]] and [[                       move forward or backward to next function beginning
-][ and []                       move forward or backward to next function end
-]} and [{                       move forward or backward in block
-]/ and [/                       move forward or backward in comment block
-g, and g;                       go back to last or forward (with history) edit location in normal mode
-gd                              go to declaration of variable (if in the same file)
-gD                              go to global definition of variable (ignore local declaration)
-gf                              open referenced file under cursor
-ci(                             change all inside braces, works for all kind of delimiters
+%                  match brackets
+{ and }            go forward or backward one paragraph
+( and )            go forward or backward one sentence
+]] and [[          move forward or backward to next function beginning
+][ and []          move forward or backward to next function end
+]} and [{          move forward or backward in block
+]/ and [/          move forward or backward in comment block
+g, and g;          go back to last or forward (with history) edit location in normal mode
+gd                 go to declaration of variable (if in the same file)
+gD                 go to global definition of variable (ignore local declaration)
+gf                 open referenced file under cursor
+ci(                change all inside braces, works for all kind of delimiters
+Vip                select current paragraph in line mode
+s<li>              surround selected text with <li> tag (in visual mode)
+vit                select inner text inside a tag (eg a link)
 * Chapter Basic Editing
 i,I                             start editing, start of line
 a,A                             start editing, end of line
 o,O                             inserting line after current, before
 x,X                             delete char under cursor, before cursor
-d[object,motion],dd             delete object, delete line
-. repeat
+d[object,motion],dd             delete object, delete line . repeat
 c[object,motion],cc             change object, change line
-C change to end of line
+C                               change to end of line
 R,r                             replace mode,replace character
+r_                              replace selection with underscore
 yy                              yank line
 yw                              yank word
 p                               paste after cursor
@@ -103,19 +109,20 @@ gJ                              join lines without space
 V                               visual Line mode, great to join multiple lines with higlighting
 v                               visual mode
 o                               switch between start and end marker
-CTRL-v                          for visual block mode
+ctrl-v                          for visual block mode
 gv                              reselect last visual
 viw                             select inner word, use vit for html tag
 vaw                             select all word
+:s/\%V_/ /g                     replace _ with space only in selected block
 * Chapter Help
 :help, :h or F1
-CTRL- (! key)                 follow symlink in help, CTRL-t to go back in stack
+ctrl- (! key)                 follow symlink in help, ctrl-t to go back in stack
 :help windo                     help on the windo command
 :helpgrep text                  grep search for word in help
 :cn                             jump to next match
 :cwin, clist                    open window, list with search results
 :close                          close results window
-:h i_CTRL-A                     help on CTRL-A in insert mode
+:h i_ctrl-A                     help on ctrl-A in insert mode
 * Chapter Marker
 ma                              set mark a (a-z possible)
 'a                              goto mark a (only local file)
@@ -124,16 +131,18 @@ ma                              set mark a (a-z possible)
 :delmarks a b-c                 delete marks
 :delmarks!                      delete all marks in current buffer
 * Chapter Makros
-qa                              recording makro in register a (a-z possible)
-q                               end recording
-5@a                             playback makro 5 times
-@@                              repeat last makro
+qa         recording makro in register a (a-z possible)
+q          end recording
+5@a        playback makro 5 times
+@@         repeat last makro
 * Chapter Files
 vim a.txt b.txt c.txt           open vim with three files, args = a.txt b.txt c.txt
 :args                           print all files in arglist
 :wn, :wp, :n                    write and go to next, previous, go to next without writing
 :rewind                         go back to first file
 :e file.txt                     open file
+:e!                             reload file from disk
+:r                              merge file at current position
 :enew                           open new buffer
 :0r test.txt                    insert from file: 0 before first line, . after cursor, $ after last
 * Chapter Clipboard
@@ -141,39 +150,52 @@ vim a.txt b.txt c.txt           open vim with three files, args = a.txt b.txt c.
 :$put +                         clipboard at end of file
 * Chapter Buffers
 :ls and :ls!                            list all buffers (see help :ls for meaning), list all
+                                        active %a, alternate #, switch with ctrl-^, changed +, h
+                                        hidden not saved and not loaded in current buffer
 :b 1, :b [TAB], b#                      go to buffer 1, by name with completion, last buffer
 :bd, :bd 2 9, 2,4bd, %bd                delete buffer, by number, multiple, by name, by range, all
-:bfirst, :bnext, :bprevious :blast      navigate in buffers
+:bfirst, :bnext, :bprevious :blast      navigate in buffers, :bf :bn :bp :bl
 * Chapter Windows
-:sp, :vsp, CTRL-w s, CTRL-w v           split and vertical split, with CTRL key
-CTRL-w o                                make current the only window, not reversible
-CTRL-w CTRL-W                           cycle around windows
-CTRL-w c                                close window
-CTRL-w h,j,k,l                          move to window
-CTRL-w H,J,K,L                          move window to left, down, up, right
-CTRL-w x                                exchange windows
-CTRL-W + and -                          increase and decrease window height
-CTRL-W > and <                          increase and decrease window width
+:sp, :vsp                    vertical and horizontal split
+ctrl-w s, ctrl-w v           vertical and horizontal split
+ctrl-w o                     make current the only window, not reversible
+ctrl-w w                     cycle around windows
+ctrl-w c                     close window
+ctrl-w h,j,k,l               move to window
+ctrl-w H,J,K,L               move window to left, down, up, right
+ctrl-w x                     exchange windows
+ctrl-w + and -               increase and decrease window height
+ctrl-w > and <               increase and decrease window width
+ctrl-w = and | and _         equalize and maximize
+ctrl-w rR                    exchange keep focus
+ctrl-w xX                    exchange without focus
+:windo                       execute command for all windows
 * Chapter Tabs
-vim -p file1 file2                      open two files in tabs
-:tabs                                   list all open tabs
-:tabnew file                            open file in new tab
-:tabfirst or :tablast                   first or last tab
-:tabn or :tabp                          next or previous tab
-gt                                      switch tab in normal mode
-:tabm 1                                 move current tab to position 1
-:tabc                                   close tab
+vim -p file1 file2        open two files in tabs
+:tabs                     list all open tabs
+:tabnew file              open file in new tab, same as :tabedit
+:tabfirst or :tablast     first or last tab
+:tabn or :tabp            next or previous tab
+:tabonly                  close all other tabs
+:tabm 1                   move current tab to position 1
+:tabc                     close tab with all current windows
+ctrl-w T                  move current window to own tab
+:tabmove                  move tab to end, :tabmove 2 move tab to second position
+gt                        go to next tab, 3gt go to third tab
+
+Tabs keep their own working directory and can therefore be used as
+container for windows
 * Chapter Insert Mode
 :h ins-special-keys                     list over all special keys in insert mode
-CTRL-t and CTRL-d                       change indenting (use >> and << in normal mode)
-CTRL-w                                  delete word before cursor
+ctrl-t and ctrl-d                       change indenting (use >> and << in normal mode)
+ctrl-w                                  delete word before cursor
 * Chapter Completion
 :h ins-completion                       help on completion
 :h complete                             options for sources of completion, show with :set complete
-CTRL-n                                  find next match of previous word
-CTRL-p                                  find prev match of previous word
-CTRL-x CTRL-l                           match whole line
-CTRL-x CTRL-f                           File name completion (includes), navigate with CTRL-n, CTRL-p
+ctrl-n                                  find next match of previous word
+ctrl-p                                  find prev match of previous word
+ctrl-x ctrl-l                           match whole line
+ctrl-x ctrl-f                           File name completion (includes), navigate with ctrl-n, ctrl-p
 * Chapter Folding
 Howto
                                 up
@@ -196,7 +218,7 @@ zE                                      deletes all folds
     manual                              select ranges to fold
 :set foldcolumn=3                       show folding in separate column
 * Chapter Vimdiff
-CTRL+w CTRL+w                           switch windows
+ctrl+w ctrl+w                           switch windows
 do                                      diff obtain
 dp                                      diff put
 [c                                      previous difference
@@ -205,16 +227,16 @@ dp                                      diff put
 zo                                      open folded text
 zc                                      close folded text
 * Chapter Useful stuff
-CTRL-v                                  take next thing literally
-CTRL-a, CTRL-x                          add or substract a count to a number under cursor or after
-:g/item/norm 20                         add 20 to numbers in lines matching item (CTRL-v CTRL-a)
+ctrl-v                                  take next thing literally
+ctrl-a, ctrl-x                          add or substract a count to a number under cursor or after
+:g/item/norm 20                         add 20 to numbers in lines matching item (ctrl-v ctrl-a)
 :%s/\s\+$//                             remove all blanks at end of lines (\s\+ = Space)
 /\t                                     show all tabs
 /\s\+$                                  show all trailing whitespaces
 :set list                               show line endings
 :set list!                              revert setting
 :set listchars=tab:\>\.,eol:$           show tabs as >... and eol as $
-* Chapter Tags                            additionally use taglist plugin
+* Chapter Tags and Taglist plugin
 find /src -name "*.c" | xargs etags     create tagfile, also with "*.h" files with option -or
 :set tags=tagfile                       use tagfile, navigation like in help
 :tags                                   show tagstack
@@ -222,33 +244,56 @@ find /src -name "*.c" | xargs etags     create tagfile, also with "*.h" files wi
 :tselect and :ptselect                  show list ov available tags (with preview)
 :tnext and :tprev                       move up and down in taglist
 :TlistOpen                              open tagbrowser from taglist plugin
+* Chapter Changelist and Jumplist
+g;               go to last edit location, step by step, forward with g,
+:changes         look at the changelist
+ctrl-o and i     forward and backward in jumplist
+:jumps           look at the jumplist
+ctrl-]           jump back a hyperlink in help
 * Chapter Cscope
 find . -name "*.c" > cscope.files       create file listing
 cscope -b                               build database, navigation like in help
 :help cscope
 * Chapter Autocompletion
-CTRL-n                                  autocomplete current word, search forward
-CTRL-p                                  autocomplete current word, search backwards
+ctrl-n                                  autocomplete current word, search forward
+ctrl-p                                  autocomplete current word, search backwards
 :set dictionary+=/path/to/file          add own dictionary
-CTRL-x and
-  CTRL-k                                lookup for keyword in dictionary
-  CTRL-l                                complete whole lines of the text
-  CTRL-n                                complete words from the current buffer
-  CTRL-k                                complete words from the dictionaries
-  CTRL-t                                complete words from the thesaurus
-  CTRL-i                                words from the current and included fles
+ctrl-x and
+  ctrl-k                                lookup for keyword in dictionary
+  ctrl-l                                complete whole lines of the text
+  ctrl-n                                complete words from the current buffer
+  ctrl-k                                complete words from the dictionaries
+  ctrl-t                                complete words from the thesaurus
+  ctrl-i                                words from the current and included fles
   S                                     spelling the suggestions
 * Chapter Registers
-"a                                      use register a
-"ayy and "ap                            yank and paste over a
-"0                                      contains always last yanked
-:registers                              see all contents
-"+ or "*                                system clipboard
-* Chapter Spell checking
-:set spell                              enable spell checking
-:set spelllang=de,en                    switch to German and English
-z=                                      ask suggestion in normal mode
-:set spellsuggest=5                     suggest only 5 alternatives
+"a                  use register a
+"ayy and "ap        yank and paste over a
+"0                  contains always last yanked
+"zde                delete word (de) and save in register z
+:registers          see all contents
+"+ or "*            system clipboard
+* Chapter Spell Checking
+:set spell                   enable spell checking
+:set spelllang=de,en         switch to German and English
+z=                           ask suggestion in normal mode
+1z=                          take first suggestion without list
+:set spellsuggest=5          suggest only 5 alternatives
+]s [s                        go to next or previous word
+:set spelllang=en_gb         set language to british english
+zG                           add to internal wordlist (valid for one session)
+zg                           add to spellfile (default in .vim/spell)
+zw                           mark good word as bad
+zug, zuw                     undo zg, zw
+* Chapter File Explorer
+enter               go to directory
+-                   go up one directory
+:e. or :sp.         (all split commands) open explorer in current directory
+:E, :Vex, :Sex      (Explore) open explorer from path of last opened file
+%                   create new file
+d                   new directory
+R                   rename
+D                   delete
 * Chapter Directory Editor
 :e Directory                            open directory in dired
   i                                     change view: thin,long,wide,tree
@@ -279,9 +324,36 @@ z=                                      ask suggestion in normal mode
 let b:match_words = '\<if\>:\<else\>'   switch between if and else
 %                                       forwards
 g%                                      backwards
-* Chapter Vimcast Invisibles
-hi NonText guifg=#4a4a59                invisible colors for list (colorscheme)
-hi SpecialKey guifg=#4a4a59             invisible colors for list (colorscheme)
-ctrl-v uxxxx                            insert unicode (not sign 00ac, triangle 25b8)
-* Chapter Vimcast Tidying Whitespace
-retab!                                  switch from tabs to spaces and vice versa
+* Chapter Invisibles, Tabulator and Whitespaces
+:set [no]exandtab                switch indent mode
+retab!                           switch from tabs to spaces and vice versa
+
+hi NonText guifg=#4a4a59         invisible colors for list (colorscheme)
+hi SpecialKey guifg=#4a4a59      invisible colors for list (colorscheme)
+ctrl-v uxxxx                     insert unicode (not sign 00ac, triangle 25b8)
+* Chapter Formatting
+gq                             format with external formatter, movement or visual
+gqip                           format paragraph with external formatter
+:set formatprg=par\ -w40req    use par as formatting tool width 40
+     r pad empty lines
+     e remove unnecessary lines
+     q handle nested quotes
+* Chapter Filename and Path
+echo expand('%')    echo current filename
+:p:h                for absolute path without filename
+:cd %:p:h           change to path of current file
+%%                  expand filename in commandline
+* Chapter Colorschemes
+$MYVIMRUNTIME/colors              colorscheme directory
+:highlight                        change color of items
+guibg=NONE                        override default
+highlight link new existing       use the same formatting
+hexHighlight.vim                  script for helping with colors
+gihtub sickill coloration         convert textmate schemes to vim
+vim-tocterm                       convert gui themes to colored term schemes
+* Chapter Indentation
+==                     autoindent current line
+5==                    autoindent 5 lines
+:set equalprg=extern   set external formatter program
+vi}                    visual select region with delimiter } with i meaning inside the braces
+=i}                    format this block (indent commands can go with motion)

@@ -14,10 +14,10 @@ syntax on
 :so ~/config/abbrev.vim
 
 " set leader to , instead of \
-let mapleader = ","
+let mapleader=","
 
 " startup window configuration
-set lines=50 columns=120
+set lines=50 columns=100
 
 " indentation and deskopt config
 set cindent
@@ -25,6 +25,8 @@ set smartindent
 set autoindent
 set ruler
 set number
+" use this if you do not use line numbering
+" set showbreak=…
 
 " set the search scan so that it ignores case when the search is all lower
 " case but recognizes uppercase if it's specified
@@ -56,6 +58,9 @@ set nobackup
 
 " set the search scan to wrap lines
 set wrapscan
+
+" use par as external formatter
+set formatprg=par\ -w72req
 
 " set the forward slash to be the slash of note. Backslashes suck
 set shellslash
@@ -162,8 +167,16 @@ set complete=.,w,b,t
 " when completing by tag, show the whole tag, not just the function name
 set showfulltag
 
-" set the textwidth to be 120 chars
-set textwidth=120
+" set the textwidth to be 72 chars and wrap during text entry
+set textwidth=72
+" set formatoptions+=at
+" set wrapmargin=5 no effect when textwidth != 0
+
+" enable wrapping
+set wrap
+
+" do not break words, does not work with list
+set linebreak
 
 " get rid of the silly characters in window separators
 set fillchars=""
@@ -176,8 +189,12 @@ set hlsearch
 set incsearch
 nmap <silent> <leader>th :silent :set hlsearch!<CR>
 
+" Toggle spell checking on and off with <leader>s
+nmap <silent> <leader>s :set spell!<CR>
+
 " setting spell suggestion to only 5 alternatives
 set spellsuggest=5
+set spelllang=en
 
 " map ESC to jj, quit to <leader>-jj, save to <leader>-jk, save quit to <leader>-jl
 imap jj <Esc>
@@ -217,12 +234,12 @@ noremap <silent> <C-8> <C-W>+
 noremap <silent> <C-9> <C-W>+
 noremap <silent> <C-0> <C-W>>
 
-nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>ev :tabedit $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
-nmap <silent> <leader>eg :e $MYGVIMRC<CR>
+nmap <silent> <leader>eg :tabedit $MYGVIMRC<CR>
 nmap <silent> <leader>sg :so $MYGVIMRC<CR>
-nmap <silent> <leader>eh :e ~/config/vim.org<CR>
-nmap <silent> <leader>ea :e ~/config/abbrev.vim<CR>
+nmap <silent> <leader>eh :tabedit ~/config/vim.org<CR>
+nmap <silent> <leader>ea :tabedit ~/config/abbrev.vim<CR>
 
 " use reselect visual when indenting in visual mode
 vmap > >gv
@@ -245,3 +262,19 @@ function! Preserve(command)
     let @/=_s
     call cursor(l, c)
 endfunction
+
+" enable fast opening of files relative to current
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+map <leader>ew :e %%
+map <leader>es :sp %%
+map <leader>evs :vsp %%
+map <leader>et :tabe %%
+
+" Show syntax highlighting groups for word under cursor
+nmap <C-S-P> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+    if !exists("*synstack")
+        return
+    endif
+    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
