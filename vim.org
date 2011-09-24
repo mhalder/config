@@ -404,8 +404,11 @@ ctrl-f                                       ▸ swith from command line to wind
     dp                                       ▸ diff patch
     O                                        ▸ tab edit
     o                                        ▸ split edit
-    p                                        ▸ add --patch, reset --patch (staged)
+    p                                        ▸ add --patch, reset --patch (staged) no highlighting
     q                                        ▸ close status
 :Gedit :file                                 ▸ open index version of file
 :Gedit :0                                    ▸ open index version of current file
-:Gdiff                                       ▸ open file in diff mode
+:Gdiff                                       ▸ open file in diff mode, index left
+    :Gwrite                                  ▸ write working to index (right window)
+    :Gread                                   ▸ write index to working (right window)
+    :diffget and diffput                     ▸ state single hunks
