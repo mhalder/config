@@ -122,7 +122,7 @@ vaw                                          ▸ select all word
 :s/\%V_/ /g                                  ▸ replace _ with space only in selected block
 * Chapter Help
 :help, :h or F                               ▸ get help
-ctrl- (! key)                              ▸ follow symlink in help, ctrl-t to go back in stack
+ctrl-!                                       ▸ follow symlink in help, ctrl-t to go back in stack
 :help windo                                  ▸ help on the windo command
 :helpgrep text                               ▸ grep search for word in help
 :cn                                          ▸ jump to next match
@@ -386,24 +386,26 @@ ctrl-f                                       ▸ swith from command line to wind
 :Git checkout %                              ▸ checkout current file
 :Gread                                       ▸ git checkout
 :Gwrite                                      ▸ git add
-:Gremove                                     ▸ git rm 
+:Gremove                                     ▸ git rm
 :Gmove path                                  ▸ git mv / means repo root
 :Gcommit                                     ▸ open split window to commit
 :Gblame                                      ▸ open split window for blame
 :Gstatus                                     ▸ open git status window
-    R     reload tatus
-    -     git add, reset (staged)
-    dp    add (untracked files)
-    <CR>  edit
-    C     commit
-    cA    commit --amend --reuse-message=HEAD
-    ca    commit --amend
-    D     diff, same as dv
-    ds    diff horizontally
-    dp    diff patch
-    O     tab edit
-    o     split edit
-
-    p     add --patch
-    p     Git| reset --patch (staged files)
-    q     close status
+    ctrl-n and p                             ▸ go to next, prev file
+    R                                        ▸ reload tatus
+    -                                        ▸ git add, reset (staged), also visual mode
+    dp                                       ▸ add (untracked files)
+    <CR>                                     ▸ edit
+    C                                        ▸ commit
+    cA                                       ▸ commit --amend --reuse-message=HEAD
+    ca                                       ▸ commit --amend
+    D                                        ▸ diff, same as dv
+    ds                                       ▸ diff horizontally
+    dp                                       ▸ diff patch
+    O                                        ▸ tab edit
+    o                                        ▸ split edit
+    p                                        ▸ add --patch, reset --patch (staged)
+    q                                        ▸ close status
+:Gedit :file                                 ▸ open index version of file
+:Gedit :0                                    ▸ open index version of current file
+:Gdiff                                       ▸ open file in diff mode
