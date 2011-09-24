@@ -161,7 +161,7 @@ vim a.txt b.txt c.txt                        ▸ open vim with three files, args
     #                                        ▸ alternate
     +                                        ▸ changed
     h                                        ▸ hidden and not in current buffer
-ctrl-^                                       ▸ switch
+ctrl-6                                       ▸ switch to alternate buffer
 :b 1, :b [TAB], b#                           ▸ go to buffer 1, by name with completion, last buffer
 :bd, :bd 2 9, 2,4bd, %bd                     ▸ delete buffer, by number, multiple, by name, by range, all
 :bfirst, :bnext, :bprevious :blast           ▸ navigate in buffers, :bf :bn :bp :bl
@@ -391,20 +391,19 @@ ctrl-f                                       ▸ swith from command line to wind
 :Gcommit                                     ▸ open split window to commit
 :Gblame                                      ▸ open split window for blame
 :Gstatus                                     ▸ open git status window
-    <CR>  Gedit
-    -     git add, Git reset (staged)
-    -     git reset (staged files)
+    R     reload tatus
+    -     git add, reset (staged)
+    dp    add (untracked files)
+    <CR>  edit
     C     commit
     cA    commit --amend --reuse-message=HEAD
     ca    commit --amend
-    D     diff
-    ds    split diff
-    dv    vert split diff
+    D     diff, same as dv
+    ds    diff horizontally
+
     dp    diff patch, use :Gw to apply
-    dp    add (untracked files)
     O     Gtabedit
     o     Gsplit|
     p     Git| add --patch
     p     Git| reset --patch (staged files)
     q     close status
-    R     reload status
