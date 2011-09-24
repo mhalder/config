@@ -17,7 +17,7 @@ syntax on
 let mapleader=","
 
 " startup window configuration
-set lines=50 columns=100
+set lines=50 columns=120
 
 " indentation and deskopt config
 set cindent
@@ -310,4 +310,17 @@ function! QuickfixFilenames()
     let buffer_numbers[quickfix_item['bufnr']] = bufname(quickfix_item['bufnr'])
   endfor
   return join(values(buffer_numbers))
+endfunction
+
+" org-table like behaviour
+inoremap <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+function! <SID>align()
+  let p = '^\s*|\s.*\s|\s*$'
+  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+    Tabularize/|/l1
+    normal! 0
+    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
 endfunction
