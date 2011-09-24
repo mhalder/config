@@ -400,10 +400,10 @@ ctrl-f                                       ▸ swith from command line to wind
     ca    commit --amend
     D     diff, same as dv
     ds    diff horizontally
+    dp    diff patch
+    O     tab edit
+    o     split edit
 
-    dp    diff patch, use :Gw to apply
-    O     Gtabedit
-    o     Gsplit|
-    p     Git| add --patch
+    p     add --patch
     p     Git| reset --patch (staged files)
     q     close status
