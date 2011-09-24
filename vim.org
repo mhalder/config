@@ -27,6 +27,13 @@ c/fred/e                 change until fred end
 /^#\d\d                  search for hash followed by two digits at beginning of line
 * Chapter Vimgrep Search
 :vimgrep text **     search for text in project (current dir)
+
+from http://t.co/ZTGrY8e
+/stringiwanttoreplace
+:vimgrep /<c-r>// **
+:Qargs
+:argdo %s//newstring/g
+:argdo update
 * Chapter Power Search and Replace
 :g/re/p                         display lines matching re, this is where grep got its name
 :g/re/#                         display lines with line numbers matching re
@@ -59,6 +66,8 @@ Howto                           First use search, then copy to cmdline with ctrl
 * Chapter Great Replace Examples
 :%s/^.*>\(.*\)<.*/\1/                           remove everything outside < and >, e. g. abcde>a test<abcde
 :g/\s*DEBUG/exe "norm! I/* \<Esc>A */\<Esc>"    comment all lines with DEBUG (and trailing whitespaces)
+\v'(('\w|[^'])*)'                               search in very magic ' not followed or not ' and put to register 
+%s//"\1"/g                                      replace last search with register
 * Chapter Basic Movement
 h,j,k,l                         no comment
 gj,gk,g0,g^,g$                  move to visible not numbered lines
@@ -148,6 +157,7 @@ vim a.txt b.txt c.txt           open vim with three files, args = a.txt b.txt c.
 * Chapter Clipboard
 :put                            for buffer (:put + for clipboard, \" for default register)
 :$put +                         clipboard at end of file
+"*p                             clipboard also in * register
 * Chapter Buffers
 :ls and :ls!                            list all buffers (see help :ls for meaning), list all
                                         active %a, alternate #, switch with ctrl-^, changed +, h
@@ -357,3 +367,11 @@ vim-tocterm                       convert gui themes to colored term schemes
 :set equalprg=extern   set external formatter program
 vi}                    visual select region with delimiter } with i meaning inside the braces
 =i}                    format this block (indent commands can go with motion)
+
+* Chapter Command Window
+/ ctrl-p       bring up last search result
+ctrl-p and n   go back and forth
+q/             bring up command line window for search
+1:             bring up command line window for commands
+:s//replace    use the last search command for replace
+ctrl-f         swith from command line to window

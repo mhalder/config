@@ -24,7 +24,8 @@ set cindent
 set smartindent
 set autoindent
 set ruler
-set number
+" set number relativenumber is cooler
+set relativenumber
 " use this if you do not use line numbering
 " set showbreak=…
 
@@ -60,7 +61,7 @@ set nobackup
 set wrapscan
 
 " use par as external formatter
-set formatprg=par\ -w72req
+set formatprg=par\ -w80req
 
 " set the forward slash to be the slash of note. Backslashes suck
 set shellslash
@@ -157,6 +158,7 @@ set key=
 set wildmenu
 set wildignore+=*.o,*.obj,*.pyc,*.DS_STORE,*.db,*.swc
 set wildmode=longest:full
+set wildignorecase
 
 " always open the quickfix window when running make, grep, grepadd and vimgrep
 autocmd QuickfixCmdPost make,grep,grepadd,vimgrep :botright cwindow
@@ -167,8 +169,8 @@ set complete=.,w,b,t
 " when completing by tag, show the whole tag, not just the function name
 set showfulltag
 
-" set the textwidth to be 72 chars and wrap during text entry
-set textwidth=72
+" set the textwidth to be 80 chars and wrap during text entry
+set textwidth=80
 " set formatoptions+=at
 " set wrapmargin=5 no effect when textwidth != 0
 
@@ -189,14 +191,14 @@ set hlsearch
 set incsearch
 nmap <silent> <leader>th :silent :set hlsearch!<CR>
 
-" Toggle spell checking on and off with <leader>s
+" Toggle spell checking on and off with leader-s
 nmap <silent> <leader>s :set spell!<CR>
 
 " setting spell suggestion to only 5 alternatives
 set spellsuggest=5
 set spelllang=en
 
-" map ESC to jj, quit to <leader>-jj, save to <leader>-jk, save quit to <leader>-jl
+" map ESC to jj, quit to leader-jj, save to leader-jk, save quit to leader-jl
 imap jj <Esc>
 map <leader>jj :q<CR>
 map <leader>jk :w<CR>
@@ -248,6 +250,26 @@ vmap < <gv
 " start scrolling before last line
 set scrolloff=3
 
+" search the current file for the word under the cursor and display matches
+nmap <silent> <leader>gw :vimgrep /<C-r><C-w>/ %<CR>:ccl<CR>:cwin<CR><C-W>J:nohls<CR>
+
+" toggle the nerd tree on an off with leader-tn
+nmap <leader>nt :NERDTreeToggle<CR>
+
+" toggle gundo
+nmap <leader>gu :GundoToggle<CR>
+
+" bubble single lines
+nmap <leader>bu [e
+nmap <leader>bd ]e
+
+" bubble multiple lines
+vmap <leader>bmu [egv
+vmap <leader>bmd ]egv
+
+" visually select the text that was last edited/pasted
+nmap gV `[v`]
+
 " strip trailing whitespaces with leader-sw and format file with leader-ff
 nnoremap <silent> <leader>sw :call Preserve("%s/\\s\\+$//e")<CR>
 nnoremap <silent> <leader>ff :call Preserve("normal gg=G")<CR>
@@ -278,3 +300,14 @@ function! <SID>SynStack()
     endif
     echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
+
+" neat function to replace a string in all occurences in all files
+command! -nargs=0 -bar Qargs execute 'args ' . QuickfixFilenames()
+function! QuickfixFilenames()
+  " Building a hash ensures we get each buffer only once
+  let buffer_numbers = {}
+  for quickfix_item in getqflist()
+    let buffer_numbers[quickfix_item['bufnr']] = bufname(quickfix_item['bufnr'])
+  endfor
+  return join(values(buffer_numbers))
+endfunction
