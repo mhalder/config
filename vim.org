@@ -166,6 +166,7 @@ ctrl-6                                       ▸ switch to alternate buffer
 :bd, :bd 2 9, 2,4bd, %bd                     ▸ delete buffer, by number, multiple, by name, by range, all
 :bfirst, :bnext, :bprevious :blast           ▸ navigate in buffers, :bf :bn :bp :bl
 * Chapter Windows
+:only                                        ▸ make current the only window
 :sp, :vsp                                    ▸ vertical and horizontal split
 ctrl-w s, ctrl-w v                           ▸ vertical and horizontal split
 ctrl-w o                                     ▸ make current the only window, not reversible
@@ -375,6 +376,7 @@ q/                                           ▸ bring up command line window fo
 1:                                           ▸ bring up command line window for commands
 :s//replace                                  ▸ use the last search command for replace
 ctrl-f                                       ▸ swith from command line to window
+comm1 | comm2                                ▸ run two commands sequentally
 * Chapter Tabularize
 :Tab /=                                      ▸ align lines on =, search up and down for matching lines or visual
 :Tab /:\zs                                   ▸ matches char after :
