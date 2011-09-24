@@ -267,6 +267,13 @@ nmap <leader>bd ]e
 vmap <leader>bmu [egv
 vmap <leader>bmd ]egv
 
+" make tab moving easier
+nmap <leader>tn :tabnew<CR>
+nmap <leader>te :tabedit 
+nmap <leader>tf :tabnext<CR>
+nmap <leader>tb :tabp<CR>
+nmap <leader>tc :tabc<CR>
+
 " visually select the text that was last edited/pasted
 nmap gV `[v`]
 

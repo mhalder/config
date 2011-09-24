@@ -379,3 +379,32 @@ ctrl-f                                       ▸ swith from command line to wind
 :Tab /=                                      ▸ align lines on =, search up and down for matching lines or visual
 :Tab /:\zs                                   ▸ matches char after :
 :Tab /|                                      ▸ matches multiple | (like org table)
+* Chapter Fugitive
+:Git add %                                   ▸ add current file
+:Git rm %                                    ▸ delete current file
+:Git mv % path                               ▸ move current file
+:Git checkout %                              ▸ checkout current file
+:Gread                                       ▸ git checkout
+:Gwrite                                      ▸ git add
+:Gremove                                     ▸ git rm 
+:Gmove path                                  ▸ git mv / means repo root
+:Gcommit                                     ▸ open split window to commit
+:Gblame                                      ▸ open split window for blame
+:Gstatus                                     ▸ open git status window
+    <CR>  Gedit
+    -     git add, Git reset (staged)
+    -     git reset (staged files)
+    C     commit
+    cA    commit --amend --reuse-message=HEAD
+    ca    commit --amend
+    D     diff
+    ds    split diff
+    dv    vert split diff
+    dp    diff patch, use :Gw to apply
+    dp    add (untracked files)
+    O     Gtabedit
+    o     Gsplit|
+    p     Git| add --patch
+    p     Git| reset --patch (staged files)
+    q     close status
+    R     reload status
