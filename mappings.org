@@ -25,6 +25,7 @@ gV `[v`]
 ,rn :set relativenumber<CR>
 ,sw :call Preserve("%s/\\s\\+$//e")<CR>
 ,ff :call Preserve("normal gg=G")<CR>
+,be :BufExplorer<CR>
 * windows
 ,h :wincmd h<CR>
 ,j :wincmd j<CR>

@@ -50,3 +50,23 @@
 	path = vim/bundle/speeddating
 	url = https://github.com/tpope/vim-speeddating.git
     ignore = dirty
+[submodule "vim/bundle/matchit"]
+	path = vim/bundle/matchit
+	url = https://github.com/mirell/vim-matchit.git
+    ignore = dirty
+[submodule "vim/bundle/ack"]
+	path = vim/bundle/ack
+	url = https://github.com/mileszs/ack.vim.git
+    ignore = dirty
+[submodule "vim/bundle/bufexplorer"]
+	path = vim/bundle/bufexplorer
+	url = https://github.com/vim-scripts/bufexplorer.zip.git
+    ignore = dirty
+[submodule "vim/bundle/tcomment"]
+	path = vim/bundle/tcomment
+	url = https://github.com/vim-scripts/tComment.git
+    ignore = dirty
+[submodule "vim/bundle/taglist"]
+	path = vim/bundle/taglist
+	url = https://github.com/vim-scripts/taglist.vim.git
+    ignore = dirty
