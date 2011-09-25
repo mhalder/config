@@ -220,26 +220,26 @@ noremap <silent> <C-F9>  :vertical resize -10<CR>
 noremap <silent> <C-F10> :resize +10<CR>
 noremap <silent> <C-F11> :resize -10<CR>
 noremap <silent> <C-F12> :vertical resize +10<CR>
-noremap <silent> ,s8 :vertical resize 83<CR>
-noremap <silent> ,cj :wincmd j<CR>:close<CR>
-noremap <silent> ,ck :wincmd k<CR>:close<CR>
-noremap <silent> ,ch :wincmd h<CR>:close<CR>
-noremap <silent> ,cl :wincmd l<CR>:close<CR>
-noremap <silent> ,cc :close<CR>
-noremap <silent> ,cw :cclose<CR>
-noremap <silent> ,ml <C-W>L
-noremap <silent> ,mk <C-W>K
-noremap <silent> ,mh <C-W>H
-noremap <silent> ,mj <C-W>J
+noremap <silent> <leader>s8 :vertical resize 83<CR>
+noremap <silent> <leader>cj :wincmd j<CR>:close<CR>
+noremap <silent> <leader>ck :wincmd k<CR>:close<CR>
+noremap <silent> <leader>ch :wincmd h<CR>:close<CR>
+noremap <silent> <leader>cl :wincmd l<CR>:close<CR>
+noremap <silent> <leader>cc :close<CR>
+noremap <silent> <leader>cw :cclose<CR>
+noremap <silent> <leader>ml <C-W>L
+noremap <silent> <leader>mk <C-W>K
+noremap <silent> <leader>mh <C-W>H
+noremap <silent> <leader>mj <C-W>J
 noremap <silent> <C-7> <C-W>>
 noremap <silent> <C-8> <C-W>+
 noremap <silent> <C-9> <C-W>+
 noremap <silent> <C-0> <C-W>>
 
 nmap <silent> <leader>ev :tabedit $HOME/config/vimrc<CR>
-nmap <silent> <leader>sv :so $MYVIMRC<CR>
-nmap <silent> <leader>eg :tabedit $MYGVIMRC<CR>
-nmap <silent> <leader>sg :so $MYGVIMRC<CR>
+nmap <silent> <leader>sv :so $HOME/config/vimrc<CR>
+nmap <silent> <leader>eg :tabedit $HOME/config/gvimrc<CR>
+nmap <silent> <leader>sg :so $HOME/config/gvimrc<CR>
 nmap <silent> <leader>eh :tabedit ~/config/vim.org<CR>
 nmap <silent> <leader>ea :tabedit ~/config/abbrev.vim<CR>
 
