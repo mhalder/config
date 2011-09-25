@@ -1,0 +1,4 @@
+host emenda
+  hostname server.emenda.ch
+  user halderm
+  port 22
