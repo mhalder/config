@@ -236,7 +236,7 @@ noremap <silent> <C-8> <C-W>+
 noremap <silent> <C-9> <C-W>+
 noremap <silent> <C-0> <C-W>>
 
-nmap <silent> <leader>ev :tabedit $MYVIMRC<CR>
+nmap <silent> <leader>ev :tabedit $HOME/config/vimrc<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nmap <silent> <leader>eg :tabedit $MYGVIMRC<CR>
 nmap <silent> <leader>sg :so $MYGVIMRC<CR>
@@ -273,6 +273,7 @@ nmap <leader>te :tabedit
 nmap <leader>tf :tabnext<CR>
 nmap <leader>tb :tabp<CR>
 nmap <leader>tc :tabc<CR>
+nmap <leader>on :only<CR>
 
 " visually select the text that was last edited/pasted
 nmap gV `[v`]
@@ -298,6 +299,9 @@ map <leader>ew :e %%
 map <leader>es :sp %%
 map <leader>evs :vsp %%
 map <leader>et :tabe %%
+
+" map leader-ls to :ls
+map <leader>ls :ls<CR>
 
 " Show syntax highlighting groups for word under cursor
 nmap <C-S-P> :call <SID>SynStack()<CR>
@@ -331,3 +335,12 @@ function! <SID>align()
     call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
   endif
 endfunction
+
+" browse back with .. in git blobs or trees, jump to commit with C
+autocmd User fugitive
+  \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
+  \   nnoremap <buffer> .. :edit %:h<CR> |
+  \ endif
+
+" auto delete fugitive buffers on close
+autocmd BufReadPost fugitive://* set bufhidden=delete

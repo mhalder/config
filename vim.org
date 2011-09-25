@@ -177,7 +177,7 @@ ctrl-w H,J,K,L                               ▸ move window to left, down, up, 
 ctrl-w x                                     ▸ exchange windows
 ctrl-w + and -                               ▸ increase and decrease window height
 ctrl-w > and <                               ▸ increase and decrease window width
-ctrl-w = and                                 ▸ and _                                                                     | equalize and maximize
+ctrl-w = and | and _                         ▸ equalize and maximize
 ctrl-w rR                                    ▸ exchange keep focus
 ctrl-w xX                                    ▸ exchange without focus
 :windo                                       ▸ execute command for all windows
@@ -414,3 +414,39 @@ comm1 | comm2                                ▸ run two commands sequentally
     :Gwrite                                  ▸ write working to index (right window)
     :Gread                                   ▸ write index to working (right window)
     :diffget and diffput                     ▸ state single hunks
+:Gdiff                                       ▸ also for merge conflicts
+    //2                                      ▸ target branch
+    //3                                      ▸ merge branch
+    :diffget and diffput                     ▸ state single hunks
+    dp                                       ▸ works in three-way diff, put to working copy
+    :Gwrite                                  ▸ use to save and close diff windows   
+    :Gwrite from either branch               ▸ take target or merge completely and save
+:Gedit branch:file                           ▸ open file from branch in readonly buffer
+    :Gsplit                                  ▸ split
+    :Gvsplit                                 ▸ vertical split
+    :Gtabedit                                ▸ tab
+:Gedit                                       ▸ open working tree version
+:Gedit sha                                   ▸ open git object whit sha
+    browse and enter                         ▸ change to object
+    inspecting tree, press a                 ▸ switch to sha mode
+    enter                                    ▸ inspect file
+    C                                        ▸ jump to commit object
+    place file on diff, enter                ▸ show diff in vimdiff
+    :Gedit                                   ▸ take you back to working tree version
+    :Gbrowse                                 ▸ open object on Github, works with visual mode
+:Gedit head^                                 ▸ open commit object of last commit
+:Glog                                        ▸ open all history in buffers
+:Glog -10                                    ▸ open last 10 history in buffers
+:Glog -10 --reverse                          ▸ open first 10 history in buffers
+:Glog -1 --until=yesterday                   ▸ open yesterday version
+:Glog --                                     ▸ open commit buffers
+:Glog -- %                                   ▸ open commit buffers for current file
+    :cnext, cprevious                        ▸ go to next, previous state, unimpaired has mappings
+    :cfirst, clast                           ▸ go to first, last, unimpaired has mappings
+    :copen                                   ▸ reopen file list (error buffer)
+    :Gedit                                   ▸ go back to working copy
+:Ggrep word                                  ▸ grep for word in working tree
+:Ggrep 'word' exp                            ▸ grep for word in branch exp
+:Ggrep 'word' tagname or sha                 ▸ grep for word in specific commit
+:Glog --grep=word --                         ▸ grep for word commit messages
+:Glog -Sword --                              ▸ search for commits which added or removed word
