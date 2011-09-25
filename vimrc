@@ -162,7 +162,9 @@ set key=
 set wildmenu
 set wildignore+=*.o,*.obj,*.pyc,*.DS_STORE,*.db,*.swc
 set wildmode=longest:full
-set wildignorecase
+if has("mac")
+    set wildignorecase
+endif
 
 " always open the quickfix window when running make, grep, grepadd and vimgrep
 autocmd QuickfixCmdPost make,grep,grepadd,vimgrep :botright cwindow
