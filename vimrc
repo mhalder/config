@@ -29,6 +29,10 @@ set relativenumber
 " use this if you do not use line numbering
 " set showbreak=…
 
+" numbering
+map <leader>an :set number<CR>
+map <leader>rn :set relativenumber<CR>
+
 " set the search scan so that it ignores case when the search is all lower
 " case but recognizes uppercase if it's specified
 set ignorecase
@@ -205,7 +209,7 @@ map <leader>jk :w<CR>
 map <leader>jl :wq<CR>
 
 " enable context search
-map <F1> <ESC>:exec "help ".expand("<cWORD>")<CR>
+map <leader>hh <ESC>:exec "help ".expand("<cWORD>")<CR>
 
 " enable Chapter higlight for command file
 match ErrorMsg /^* Chapter.*/
