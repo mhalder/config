@@ -10,7 +10,7 @@
 ,hh <ESC>:exec "help ".expand("<cWORD>")<CR>
 ,gw :vimgrep /<C-r><C-w>/ %<CR>:ccl<CR>:cwin<CR><C-W>J:nohls<CR>
 ,nt :NERDTreeToggle<CR>
-,gu :GundoToggle<CR>
+,un :GundoToggle<CR>
 ,bu [e
 ,bd ]e
 ,tn :tabnew<CR>

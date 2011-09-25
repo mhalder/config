@@ -261,7 +261,7 @@ nmap <silent> <leader>gw :vimgrep /<C-r><C-w>/ %<CR>:ccl<CR>:cwin<CR><C-W>J:nohl
 nmap <leader>nt :NERDTreeToggle<CR>
 
 " toggle gundo
-nmap <leader>gu :GundoToggle<CR>
+nmap <leader>un :GundoToggle<CR>
 
 " bubble single lines
 nmap <leader>bu [e
