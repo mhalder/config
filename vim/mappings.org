@@ -1,0 +1,77 @@
+* various
+,le :set list!<CR>
+,sp :call Preserve("%s/ /./g")<CR>
+,su :call Preserve("undo")<CR>
+,th :silent :set hlsearch!<CR>
+,s :set spell!<CR>
+,jj :q<CR>
+,jk :w<CR>
+,jl :wq<CR>
+,hh <ESC>:exec "help ".expand("<cWORD>")<CR>
+,gw :vimgrep /<C-r><C-w>/ %<CR>:ccl<CR>:cwin<CR><C-W>J:nohls<CR>
+,nt :NERDTreeToggle<CR>
+,un :GundoToggle<CR>
+,bu [e
+,bd ]e
+,tn :tabnew<CR>
+,te :tabedit 
+,tf :tabnext<CR>
+,tb :tabp<CR>
+,tc :tabc<CR>
+,on :only<CR>
+,ls :ls<CR>
+gV `[v`]
+,an :set number<CR>
+,rn :set relativenumber<CR>
+,sw :call Preserve("%s/\\s\\+$//e")<CR>
+,ff :call Preserve("normal gg=G")<CR>
+,be :BufExplorer<CR>
+,gs :Gstatus<CR>
+,gd :Gdiff<CR>
+,dp :diffput<CR>
+,dg :diffget<CR>
+,du :diffupdate<CR>
+* windows
+,h :wincmd h<CR>
+,j :wincmd j<CR>
+,k :wincmd k<CR>
+,l :wincmd l<CR>
+,sb :wincmd p<CR>
+,s8 :vertical resize 83<CR>
+,cj :wincmd j<CR>:close<CR>
+,ck :wincmd k<CR>:close<CR>
+,ch :wincmd h<CR>:close<CR>
+,cl :wincmd l<CR>:close<CR>
+,cc :close<CR>
+,cw :cclose<CR>
+,ml <C-W>L
+,mk <C-W>K
+,mh <C-W>H
+,mj <C-W>J
+<C-F9>  :vertical resize -10<CR>
+<C-F10> :resize +10<CR>
+<C-F11> :resize -10<CR>
+<C-F12> :vertical resize +10<CR>
+<C-7> <C-W>>
+<C-8> <C-W>+
+<C-9> <C-W>+
+<C-0> <C-W>>
+* config files
+,ev :tabedit $HOME/config/vimrc<CR>
+,sv :so $HOME/config/vimrc<CR>
+,eg :tabedit $HOME/config/gvimrc<CR>
+,sg :so $HOME/config/gvimrc<CR>
+,eh :tabedit ~/config/vim.org<CR>
+,ea :tabedit ~/config/abbrev.vim<CR>
+* path expansion
+%% <C-R>=expand('%:h').'/'<cr>
+,ew :e %%
+,es :sp %%
+,evs :vsp %%
+,et :tabe %%
+* visual mode
+jj <Esc>
+> >gv
+< <gv
+,bmu [egv
+,bmd ]egv

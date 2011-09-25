@@ -22,7 +22,7 @@ Create symlinks
 
     ln -s ~/config/bin ~/bin
 
-    ln -s ~/config/ctags ~/.ctags
+    ln -s ~/config/bash/ctags ~/.ctags
 
 To install the fugitive plugin, follow these steps:
 
