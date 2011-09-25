@@ -217,6 +217,7 @@ stable master branch. We want our tree to look like this:
 - git checkout --track origin/serverfix :: setup tracking branch for serverfix
 - git branch --track br origin/br :: create local branch br tracking
      origin/br
+- git branch --set-upstream foo upstream/foo :: change existing to tracking branch
 *** example remote workflow
 **** initial clone
 ***** git.ourcompany.com
@@ -275,6 +276,8 @@ stable master branch. We want our tree to look like this:
 - git diff --check :: check for whitespace issues
 *** ignore https certificate
 - GIT_SSL_NO_VERIFY=true :: environment variable to ignore https certificates
+*** purge file from history
+git filter-branch --index-filter 'git rm --cached --ignore-unmatch password' HEAD
 ** send patches per email
 *** install cpan modules
 - sudo cpan Net::SMTP::SSL :: ssl support
