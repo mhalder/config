@@ -212,6 +212,7 @@ stable master branch. We want our tree to look like this:
      serverfix starting from origin/serverfix
 - git push origin :serverfix :: [remotename][local:remote], delete
      remote branch by pushing nothing to it
+- git push -u origin master :: set tracking branch (set-upstream)
 *** tracking branches
 - git clone :: creates automatially tracking branch to origin/master
 - git checkout --track origin/serverfix :: setup tracking branch for serverfix
