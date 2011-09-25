@@ -244,8 +244,9 @@ nmap <silent> <leader>ev :tabedit $HOME/config/vimrc<CR>
 nmap <silent> <leader>sv :so $HOME/config/vimrc<CR>
 nmap <silent> <leader>eg :tabedit $HOME/config/gvimrc<CR>
 nmap <silent> <leader>sg :so $HOME/config/gvimrc<CR>
-nmap <silent> <leader>eh :tabedit ~/config/vim/vim.org<CR>
-nmap <silent> <leader>ea :tabedit ~/config/abbrev.vim<CR>
+nmap <silent> <leader>eh :tabedit ~/config/vim/vimhelp.org<CR>
+nmap <silent> <leader>eg :tabedit ~/config/git/githelp.org<CR>
+nmap <silent> <leader>ea :tabedit ~/config/vim/abbrev.vim<CR>
 
 " use reselect visual when indenting in visual mode
 vmap > >gv

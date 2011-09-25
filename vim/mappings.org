@@ -61,8 +61,9 @@ gV `[v`]
 ,sv :so $HOME/config/vimrc<CR>
 ,eg :tabedit $HOME/config/gvimrc<CR>
 ,sg :so $HOME/config/gvimrc<CR>
-,eh :tabedit ~/config/vim.org<CR>
-,ea :tabedit ~/config/abbrev.vim<CR>
+,eh :tabedit ~/config/vim/vimhelp.org<CR>
+,eh :tabedit ~/config/git/githelp.org<CR>
+,ea :tabedit ~/config/vim/abbrev.vim<CR>
 * path expansion
 %% <C-R>=expand('%:h').'/'<cr>
 ,ew :e %%
