@@ -11,7 +11,7 @@ filetype indent on
 syntax on
 
 " source abbreviations
-:so ~/config/abbrev.vim
+:so ~/config/vim/abbrev.vim
 
 " set leader to , instead of \
 let mapleader=","
