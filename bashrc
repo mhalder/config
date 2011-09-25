@@ -20,15 +20,6 @@ alias tree='tree -C'
 alias trls='tree -C | less -R'	# -C outputs colour, -R makes less understand color
 alias mode='(set -o | grep emacs.*on >/dev/null 2>&1 && echo "emacs mode" || echo "vi mode")'
 
-# Rails aliases
-alias sc='./script/console'
-alias sg='./script/generate'
-alias ss='./script/server'
-alias sp='./script/server -e production'
-alias t='rake spec'
-alias ta='autotest -rails'
-alias m='rake db:migrate'
-
 # SVN aliases
 alias svnadd="svn st | grep '^\?' | awk '{print $2}' | xargs svn add"
 alias svnrmd="svn st | grep '^\!' | awk '{print $2}' | xargs svn rm"
