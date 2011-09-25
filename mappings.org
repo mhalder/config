@@ -26,6 +26,11 @@ gV `[v`]
 ,sw :call Preserve("%s/\\s\\+$//e")<CR>
 ,ff :call Preserve("normal gg=G")<CR>
 ,be :BufExplorer<CR>
+,gs :Gstatus<CR>
+,gd :Gdiff<CR>
+,dp :diffput<CR>
+,dg :diffget<CR>
+,du :diffupdate<CR>
 * windows
 ,h :wincmd h<CR>
 ,j :wincmd j<CR>

@@ -310,6 +310,13 @@ map <leader>ls :ls<CR>
 " Bufexplorer
 map <leader>be :BufExplorer<CR>
 
+" mappings for fugitive
+map <leader>gs :Gstatus<CR>
+map <leader>gd :Gdiff<CR>
+map <leader>dp :diffput<CR>
+map <leader>dg :diffget<CR>
+map <leader>du :diffupdate<CR>
+
 " Show syntax highlighting groups for word under cursor
 nmap <C-S-P> :call <SID>SynStack()<CR>
 function! <SID>SynStack()
