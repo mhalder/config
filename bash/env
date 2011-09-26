@@ -5,3 +5,5 @@ if [[ "$OS" == 'Darwin' ]]; then
 else
   export EDITOR="gvim -f"
 fi
+
+export PATH=$PATH:~/bin

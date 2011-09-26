@@ -1,5 +1,4 @@
-* git
-** cool branching model
+* cool branching model
 - [[http://nvie.com/posts/a-successful-git-branching-model][branching model]] :: description of great branching model
 - master :: branch wit production ready code, all commits labeled,
             merged from release branch
@@ -7,16 +6,16 @@
 - develop :: development branch, trunk
 - release :: release branch, merged from develop
 - feature :: feature branches, merged back to develop
-** configuration
-*** config files
+* configuration
+** config files
 - /etc/gitconfig :: global config file
 - ~/gitconfig :: user specific config file
 - .git/config :: project specific config file
 - $HOME/.gitconfig :: for Windows, also looks in msys root relative /etc/gitconfig
-*** ignoring files
+** ignoring files
 - .gitignore :: project specific, will be commited
 - .git/info/exclude :: project specific, only locally
-*** useful options
+** useful options
 - git config --global user.name "John Doe" :: set global username
 - git config --global user.email "j@doe.ch" :: set global username
 - git config --global core.editor 'mvim -f' :: set global editor
@@ -24,7 +23,7 @@
 - git config --global color.ui "auto" :: enable color mode
 - git config --list :: show config
 - git config user.name :: show username
-*** example config
+** example config
 user.name=Martin Halder
 user.email=martin.halder@gmail.com
 merge.tool=opendiff
@@ -48,21 +47,21 @@ remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
 remote.origin.url=git@github.com:mhalder/dotfiles.git
 branch.master.remote=origin
 branch.master.merge=refs/heads/master
-** useful commands
-*** git show
+* useful commands
+** git show
 - git show [commit]:file :: show file in commit
-*** git diff
+** git diff
 - git diff :: shows the difference between sandbox and staging area git
 - git diff --cached :: shows difference between staging area and repo
 - git diff head :: show all changes since last commit
 - git diff -M :: also handle file renames
-*** git add
+** git add
 - git add -p :: add in patch mode
-*** git rm
+** git rm
 - git rm --cached file.txt :: remove only from staging area
 - git rm \*.log :: escaped * needed
 - git rm -f file.txt :: force delete if staged changes
-*** git log
+** git log
 - git log -p -2 :: show last two commits with patch
 - git log --stat :: show with abbreviated stats
 - git log --pretty=oneline :: show log one line per commit (short,
@@ -97,9 +96,9 @@ branch.master.merge=refs/heads/master
   - relative-date :: display date in relative format
   - author :: only show matching author commits
   - committer :: only show matching committer commits
-*** git blame
+** git blame
 - git blame -L 35, file :: shows blame, L defines start and end of range to show
-** undoing or changing things
+* undoing or changing things
 - git commit --amend :: add to last commit
 - git reset head file.txt :: set file.txt in staging area to last
      commit
@@ -108,7 +107,7 @@ branch.master.merge=refs/heads/master
 - git rebase -i HEAD~3 :: rewrite last three commits
 - git filter-branch --tree-filter 'rm -f passwords.txt' HEAD :: remove
      passwords.txt from entire history
-** tagging
+* tagging
 - There are lightweight and annotated tags
 - git tag :: show tags
 - git tag -l 'v1.4.2.*' :: list tags starting with v1.4.2.
@@ -122,7 +121,7 @@ branch.master.merge=refs/heads/master
 - git tag -a v1.2 9fceb02 :: tagging a specifif commit
 - git push origin v1.4 :: push tag
 - git push origin --tags :: pushing tags (lightweight and annotated)
-** branching
+* branching
 - git branch testing :: create a new branch testing
 - git checkout testing :: switch branch
 - git checkout -b testing :: do branch and checkout
@@ -133,7 +132,7 @@ branch.master.merge=refs/heads/master
 - git branch --merged :: show merged branchs (also --no-merged)
 - git branch master head -f :: reset master branch to head (force)
 - git show-branch 'bug/*' :: show info on branches, wildcards possible
-** merging
+* merging
 - fast forward :: if the merge commit can be reached just move pointer forward
 - git merge hotfix :: merge hotfix in current branch
 - git mergetool :: resolve merge conflict
@@ -142,9 +141,9 @@ branch.master.merge=refs/heads/master
 - git cherry-pick commit :: only merge one commit from different branch
 - git cherry-pick -n commit :: merge but do not commit
 - git merge-base comm1 comm2 :: show common ancestor of comm1 and comm2
-** rebasing
+* rebasing
 - merge and rebase :: same result, just different history
-*** example rebase compared to diff
+** example rebase compared to diff
 
               A---B---C topic
              /
@@ -156,7 +155,7 @@ branch.master.merge=refs/heads/master
                      /
         D---E---F---G master
 
-*** example rebase compared to diff with --onto
+** example rebase compared to diff with --onto
 Here is how you would transplant a topic branch based on one branch to
 another, to pretend that you forked the topic branch from the latter
 branch, using rebase --onto.
@@ -190,13 +189,13 @@ stable master branch. We want our tree to look like this:
 
 - git checkout master :: switch to master branch
 - git merge topic :: fast forward merge from master to topic
-** stashing
+* stashing
 - git stash :: save sandbox and index and go to head
 - git stash save message :: save with message
 - git stash list :: show all stashes
 - git stash drop stash@{0} :: drop stash 0
 - git stash branch testchanges :: create branch from stash
-** working with remotes
+* working with remotes
 - git remote -v :: show remotes with url
 - git remote add pb git://github.com/paulboone/ticgit.git :: add
      remote
@@ -213,41 +212,41 @@ stable master branch. We want our tree to look like this:
 - git push origin :serverfix :: [remotename][local:remote], delete
      remote branch by pushing nothing to it
 - git push -u origin master :: set tracking branch (set-upstream)
-*** tracking branches
+** tracking branches
 - git clone :: creates automatially tracking branch to origin/master
 - git checkout --track origin/serverfix :: setup tracking branch for serverfix
 - git branch --track br origin/br :: create local branch br tracking
      origin/br
 - git branch --set-upstream foo upstream/foo :: change existing to tracking branch
-*** example remote workflow
-**** initial clone
-***** git.ourcompany.com
+** example remote workflow
+*** initial clone
+**** git.ourcompany.com
 
-        A---B---C---D master
+       A---B---C---D master
 
-***** my computer
+**** my computer
 - git clone schacon@git.ourcompany.com:project.git :: cloning project
 
         A---B---C---D master origin/master
 
-**** work in progress
-***** git.ourcompany.com
+*** work in progress
+**** git.ourcompany.com
 
-        A---B---C---D---E---F master
+       A---B---C---D---E---F master
 
-***** my computer
+**** my computer
 
-                      G---H master
-                     /
-        A---B---C---D origin/master
+                     G---H master
+                    /
+       A---B---C---D origin/master
 
-***** my computer
+**** my computer
 - git fetch origin :: fetch from origin
 
                       G---H master
                      /
      A---B---C---D---E---F origin/master
-** commit ranges
+* commit ranges
 - git log master..experiment :: all commits reachable by experiment
      not reachable by master
 - git log experiment..master :: everything in master not reachable
@@ -259,57 +258,57 @@ stable master branch. We want our tree to look like this:
   - git log refB --not refA
 - git log master...experiment :: only reachable by one branch not both
 - git log --left-right master...experiment :: show which one
-** inspecting commits
+* inspecting commits
 - git reflog :: show log of previous head positions
 - git show HEAD@{5} :: show fifth prior value of head
 - git show master@{yesterday} :: see where master branch was yesterday
 - git log -g master :: show reflog info in log command
 - git show head^2 :: show second parent of head
 - git show head~2 :: show grandparent of head (same as head^^)
-** tips and tricks
-*** auto completion
+* tips and tricks
+** auto completion
 - git clone git://git.kernel.org/pub/scm/git/git.git :: clone
 - source git/contrib/completion/git-completion.bash :: source script
-*** aliases
+** aliases
 - git config --global alias.co checkout :: create alias for checkout
 - git config --global alias.unstage 'reset head --' :: alias for unstage
-*** checking for whitespace
+** checking for whitespace
 - git diff --check :: check for whitespace issues
-*** ignore https certificate
+** ignore https certificate
 - GIT_SSL_NO_VERIFY=true :: environment variable to ignore https certificates
-*** purge file from history
+** purge file from history
 git filter-branch --index-filter 'git rm --cached --ignore-unmatch password' HEAD
-** send patches per email
-*** install cpan modules
+* send patches per email
+** install cpan modules
 - sudo cpan Net::SMTP::SSL :: ssl support
 - sudo cpan MIME::Base64 :: base64 support
 - sudo cpan Authen::SASL :: sasl authentication
 - sudo cpan IO::Socket::SSL :: socket suport
-*** configuration ptxdist
+** configuration ptxdist
 - git config --global sendemail.smtpserver smtp.emenda.ch :: server
 - git config --global sendemail.smtpserverport 587 :: port
 - git config --global sendemail.smtpencryption tls :: encryption
 - git config --global sendemail.smtpuser ptxdist@emenda.ch :: username
-*** configuration gmail
+** configuration gmail
 - git config --global sendemail.smtpserver smtp.gmail.com :: server
 - git config --global sendemail.smtpserverport 587 :: port
 - git config --global sendemail.smtpencryption tls :: encryption
 - git config --global sendemail.smtpuser martin.halder@gmail.com :: username
-*** format patch
+** format patch
 - git format-patch -M origin/master -o tmp/ --signoff -2 :: create
      patches from last 2 commits in tmp and signoff, look for renames
-*** send email
+** send email
 - git send-email --annotate --to martin.halder@gmail.com tmp/ ::
      prepare email for edit, patches from tmp
-** git reset and checkout
-*** head
-**** what is the head
+* git reset and checkout
+** head
+*** what is the head
 The head in Git is the pointer to the current branch reference, which
 is in turn a pointer to the last commit you made or the last commit
 that was checked out into your working directory. That also means it
 will be the parent of the next commit you do. It's generally simplest
 to think of it as head is the snapshot of your last commit.
-**** working with head
+*** working with head
 In fact, it's pretty easy to see what the snapshot of your head looks
 like. Here is an example of getting the actual directory listing and
 SHA checksums for each file in the head snapshot:
@@ -330,8 +329,8 @@ $ git ls-tree -r cfda3bf379e4f8dba8717dee55aab78aef7f4daf
 100644 blob 8f94139338f9404f2...   Rakefile
 040000 tree 99f1a6d12cb4b6f19...   lib
 #+END_SRC
-*** index
-**** what is the index
+** index
+*** what is the index
 The Index is your proposed next commit. Git populates it with a list
 of all the file contents that were last checked out into your working
 directory and what they looked like when they were originally checked
@@ -340,18 +339,18 @@ but for our purposes it's close enough. When you run git commit, that
 command only looks at your Index by default, not at anything in your
 working directory. So, it's simplest to think of it as the Index is
 the snapshot of your next commit.
-**** working with index
+*** working with index
 #+begin_src sh
 $ git ls-files -s
 100644 a906cb2a4a904a152e80877d4088654daad0c859 0	README
 100644 8f94139338f9404f26296befa88755fc2598c289 0	Rakefile
 100644 47c6340d6459e05787f644c2447d2595f5d3a54b 0	lib/simplegit.rb
 #+END_SRC
-*** sandbox
-**** what is the sandbox
+** sandbox
+*** what is the sandbox
 The Working Directory is your scratch space, used to easily modify
 file content.
-**** working with sandbox
+*** working with sandbox
 #+begin_src sh
 $ tree
 .
@@ -362,15 +361,15 @@ $ tree
 
 1 directory, 3 files
 #+end_src
-*** workflow overview
+** workflow overview
 
-        head    index   sandbox
-          o-------o------->      checkout
-                  <-------o      add
-          <-------o              commit
+       head    index   sandbox
+         o-------o------->      checkout
+                 <-------o      add
+         <-------o              commit
 
-*** workflow example
-**** first edit
+** workflow example
+*** first edit
 - git init and edit file :: just change file
   - head    :: 
   - index   :: 
@@ -388,7 +387,7 @@ $ tree
 
          o---A  head master file.txt v1
 
-**** second edit
+*** second edit
 - edit file :: change file
   - head    :: file.txt v1
   - index   :: file.txt v1
@@ -408,7 +407,7 @@ $ tree
              /
         o---A  file.txt v1
 
-*** the role of reset
+** the role of reset
 1. move whatever branch head points to (stop if --soft)
 2. then, make the Index look like that (stop here unless --hard) 
 3. then, make the sandbox look like the index
@@ -420,7 +419,7 @@ Directory.
 
 The reset command directly manipulates these three trees in a simple
 and predictable way. It does up to three basic operations.
-**** step 1: moving head
+*** step 1: moving head
 This is essentially undoing your last commit. Basicall what git commit
 --amend would have done.
 
@@ -428,7 +427,7 @@ The first thing reset will do is move what head points to.
 
 Unlike checkout it does not move what branch head points to, it
 directly changes the SHA of the reference itself.
-***** before reset
+**** before reset
 - head    :: file.txt v3
 - index   :: file.txt v3
 - sandbox :: file.txt v3
@@ -439,7 +438,7 @@ directly changes the SHA of the reference itself.
              /
         o---A  file.txt v1
 
-***** git reset --soft head~
+**** git reset --soft head~
 - head    :: file.txt v2
 - index   :: file.txt v3
 - sandbox :: file.txt v3
@@ -450,12 +449,12 @@ directly changes the SHA of the reference itself.
              /
         o---A  file.txt v1
 
-**** step 2: updating the index
+*** step 2: updating the index
 The next thing reset will do is to update the Index with the contents
 of whatever tree head now points to so they're the same.
 
 This is basically undoing your commit and your adds to the index.
-***** before reset
+**** before reset
 - head    :: file.txt v3
 - index   :: file.txt v3
 - sandbox :: file.txt v3
@@ -466,7 +465,7 @@ This is basically undoing your commit and your adds to the index.
              /
         o---A  file.txt v1
 
-***** git reset [--mixed] head~
+**** git reset [--mixed] head~
 - head    :: file.txt v2
 - index   :: file.txt v2
 - sandbox :: file.txt v3
@@ -477,7 +476,7 @@ This is basically undoing your commit and your adds to the index.
              /
         o---A  file.txt v1
 
-**** step 3: updating sandbox
+*** step 3: updating sandbox
 The third thing that reset will do is to then make the Working
 Directory look like the Index. If you use the --hard option, it will
 continue to this stage.
@@ -487,7 +486,7 @@ sandbox.
 
 It's important to note at this point that this is the only way to make
 the reset command dangerous.
-***** before reset
+**** before reset
 - head    :: file.txt v3
 - index   :: file.txt v3
 - sandbox :: file.txt v3
@@ -498,7 +497,7 @@ the reset command dangerous.
              /
         o---A  file.txt v1
 
-***** git reset --hard head~
+**** git reset --hard head~
 - head    :: file.txt v2
 - index   :: file.txt v2
 - sandbox :: file.txt v2
@@ -509,7 +508,7 @@ the reset command dangerous.
              /
         o---A  file.txt v1
 
-*** reset with path
+** reset with path
 If you specify a path, reset will skip the first step and just do the
 other ones but limited to a specific file or set of files.
 
@@ -523,36 +522,36 @@ There is not git reset --hard with paths.
 3. not possible
 
 This is basically the opposite of add.
-**** updating the index
-***** before reset
+*** updating the index
+**** before reset
 - head    :: file.txt v3
 - index   :: file.txt v4
 - sandbox :: file.txt v4
-***** git reset [--mixed] (head) file.txt
+**** git reset [--mixed] (head) file.txt
 - head    :: file.txt v3
 - index   :: file.txt v3
 - sandbox :: file.txt v4
-**** updating the index with not head
-***** before reset
-****** repo
+*** updating the index with not head
+**** before reset
+***** repo
 | head        | index       | sandbox     |
 | 38eb946     |             |             |
 |-------------+-------------+-------------|
 | v3 file.txt | v3 file.txt | v3 file.txt |
-****** git tree
+***** git tree
 |             |             | head        |
 |             |             | master      |
 |-------------+-------------+-------------|
 | eb43f8      | 9e5e6a4     | 38eb946     |
 |-------------+-------------+-------------|
 | v1 file.txt | v2 file.txt | v3 file.txt |
-***** git reset [--mixed] eb43f8 -- file.txt
-****** repo
+**** git reset [--mixed] eb43f8 -- file.txt
+***** repo
 | head        | index       | sandbox     |
 | 38eb946     |             |             |
 |-------------+-------------+-------------|
 | v3 file.txt | v1 file.txt | v3 file.txt |
-****** git tree
+***** git tree
 |             |             | head        |
 |             |             | master      |
 |-------------+-------------+-------------|
@@ -560,10 +559,10 @@ This is basically the opposite of add.
 |-------------+-------------+-------------|
 | v1 file.txt | v2 file.txt | v3 file.txt |
 
-*** example merging commits
+** example merging commits
 In this example we have 3 commits and the second is work in progress
 and should be removed.
-**** before reset
+*** before reset
 - head    :: file-a.txt v3 file-b.txt v1
 - index   :: file-a.txt v3 file-b.txt v1
 - sandbox :: file-a.txt v3 file-b.txt v1
@@ -574,7 +573,7 @@ and should be removed.
              /
         o---A  file-a.txt v1
 
-**** git reset --soft head~2
+*** git reset --soft head~2
 - head    :: file-a.txt v1
 - index   :: file-a.txt v3 file-b.txt v1
 - sandbox :: file-a.txt v3 file-b.txt v1
@@ -585,7 +584,7 @@ and should be removed.
              /
         o---A  head file-a.txt v1
 
-**** git commit
+*** git commit
 - head    :: file-a.txt v1
 - index   :: file-a.txt v3 file-b.txt v1
 - sandbox :: file-a.txt v3 file-b.txt v1
@@ -594,35 +593,35 @@ and should be removed.
              /
         o---A  file-a.txt v1
 
-*** difference between checkout and reset
+** difference between checkout and reset
 Like reset, checkout manipulates the three trees and it is a bit
 different depending on whether you give the command a file path or
 not. So, let's look at both examples seperately.
-**** git checkout [branch]
+*** git checkout [branch]
 git checkout [branch] is pretty similar to git reset --hard [branch]
 with two important differences:
 1. checkout is working directory safe. It will update all sandbox
    except the files you have modified.
 2. how head is updated. Where reset will move the branch that head
    points to, checkout will move head itself to point to another branch.
-***** before command
-****** git tree
+**** before command
+***** git tree
 |             | head        |
 | master      | develop     |
 |-------------+-------------|
 | eb43f8      | 38eb946     |
 |-------------+-------------|
 | v1 file.txt | v2 file.txt |
-***** git checkout master
-****** git tree
+**** git checkout master
+***** git tree
 | head        |             |
 | master      | develop     |
 |-------------+-------------|
 | eb43f8      | 38eb946     |
 |-------------+-------------|
 | v1 file.txt | v2 file.txt |
-***** git reset master
-****** git tree
+**** git reset master
+***** git tree
 | head        |
 | master      |
 | develop     |
@@ -630,7 +629,7 @@ with two important differences:
 | eb43f8      |
 |-------------|
 | v1 file.txt | 
-**** git checkout [branch] file
+*** git checkout [branch] file
 The other way to run checkout is with a file path, which like reset,
 does not move head.
 
@@ -646,7 +645,7 @@ The only difference is that reset with a file name will not accept
 Also, like git reset and git add, checkout will accept a --patch
 option to allow you to selectively revert file contents on a
 hunk-by-hunk basis.
-*** comparison table reset and checkout
+** comparison table reset and checkout
 |                          | head | index | sandbox | safe |
 |--------------------------+------+-------+---------+------|
 | commit level             |      |       |         |      |
@@ -661,7 +660,7 @@ hunk-by-hunk basis.
 | reset (commit) [file]    | no   | yes   | no      | yes  |
 | checkout (commit) [file] | no   | yes   | yes     | no   |
 
-** git bisect
+* git bisect
 - git bisect start :: enters bisect mode
 - git bisect bad :: current is a bad commit
 - git bisect good v2.6.27 :: tell git a good commit
@@ -670,13 +669,13 @@ hunk-by-hunk basis.
 - git bisect replay :: replay bisect session with logfile as input
 - git bisect visualize :: visually insect set of commits still in range
 - git bisect reset :: places you back on original branch
-** packaging
+* packaging
 - git archive branchname :: create an archive from branchname to stdout
   - format=zip :: zip
   - format=tar :: tar
   - prefix=directory name :: create prefix
 - git archive ... | gzip > my.tgz :: pipe to gzip and write to file
-** lowlevel commands
+* lowlevel commands
 - git ls-files :: show cached files in the stage
 - git cat-file -p 3jds3 :: list content of object, like blob or tree
 - git rev-parse 3ba31 :: lookup SHA1 by unique prefix
