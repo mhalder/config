@@ -51,8 +51,11 @@ set modeline
 set ch=2
 
 " show special characters, invert with leader-le, spaces with leader-sp and leader-su
-" set listchars=tab:\>\.,eol:$
-set listchars=tab:▸\ ,eol:¬
+if has("win32")
+    set listchars=tab:\>\.,eol:$
+else
+    set listchars=tab:▸\ ,eol:¬
+endif
 set nolist
 nmap <silent> <leader>le :set list!<CR>
 nnoremap <silent> <leader>sp :call Preserve("%s/ /./g")<CR>
