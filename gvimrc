@@ -11,7 +11,7 @@ if has("win32")
 elseif has("mac")
     set gfn=DejaVu\ Sans\ Mono:h11.00
 else
-    set gfn=DejaVu\ Sans\ Mono\ 10.00
+    set gfn=DejaVu\ Sans\ Mono\ 9.00
 endif
 
 " highlight current line, could do crosshair but disturbing
