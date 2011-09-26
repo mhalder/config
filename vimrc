@@ -274,8 +274,8 @@ nmap <leader>bu [e
 nmap <leader>bd ]e
 
 " bubble multiple lines
-vmap <leader>bmu [egv
-vmap <leader>bmd ]egv
+vmap <leader>bu [egv
+vmap <leader>bd ]egv
 
 " make tab moving easier
 nmap <leader>tn :tabnew<CR>

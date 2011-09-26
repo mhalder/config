@@ -32,12 +32,12 @@ gV `[v`]
 ,dg :diffget<CR>
 ,du :diffupdate<CR>
 * windows
-,h :wincmd h<CR>
-,j :wincmd j<CR>
-,k :wincmd k<CR>
-,l :wincmd l<CR>
-,sb :wincmd p<CR>
-,s8 :vertical resize 83<CR>
+,h  -> move to left window
+,j  -> move to lower window
+,k  -> move to left window
+,l  -> move to right window
+,sb -> move to previous window
+,s8 -> vertical resize 83
 ,cj :wincmd j<CR>:close<CR>
 ,ck :wincmd k<CR>:close<CR>
 ,ch :wincmd h<CR>:close<CR>
@@ -57,22 +57,22 @@ gV `[v`]
 <C-9> <C-W>+
 <C-0> <C-W>>
 * config files
-,ev :tabedit $HOME/config/vimrc<CR>
-,sv :so $HOME/config/vimrc<CR>
-,eg :tabedit $HOME/config/gvimrc<CR>
-,sg :so $HOME/config/gvimrc<CR>
-,vh :tabedit ~/config/vim/vimhelp.org<CR>
-,gh :tabedit ~/config/git/githelp.org<CR>
-,ea :tabedit ~/config/vim/abbrev.vim<CR>
+,ev -> edit vimrc in new tab
+,sv -> source vimrc
+,eg -> edit gvimrc in new tab
+,sg -> source gvimrc
+,vh -> edit vimhelp.org in new tab
+,gh -> edit githelpl.org in new tab
+,ea -> edit abbrev.vim in new tab
 * path expansion
-%% <C-R>=expand('%:h').'/'<cr>
-,ew :e %%
-,es :sp %%
-,evs :vsp %%
-,et :tabe %%
+%%   -> expand to current file path
+,ew  -> edit with current file path
+,es  -> split with current file path
+,evs -> vsplit with current file path
+,et  -> tab with current file path
 * visual mode
-jj <Esc>
-> >gv
-< <gv
-,bmu [egv
-,bmd ]egv
+jj  -> escape visual
+>   -> indent +
+<   -> indent -
+,bu -> bubble upwards
+,bd -> bubble downwards
