@@ -1,8 +1,8 @@
 set nocompatible
 
 " load and call pathogen
-source ~/config/vim/bundle/pathogen/autoload/pathogen.vim
-call pathogen#infect('~/config/vim/bundle')
+source $HOME/config/vim/bundle/pathogen/autoload/pathogen.vim
+call pathogen#infect('$HOME/config/vim/bundle')
 
 " set filetype and syntax stuff to on
 filetype on
@@ -11,7 +11,7 @@ filetype indent on
 syntax on
 
 " source abbreviations
-:so ~/config/vim/abbrev.vim
+:so $HOME/config/vim/abbrev.vim
 
 " set leader to , instead of \
 let mapleader=","
@@ -249,9 +249,9 @@ nmap <silent> <leader>ev :tabedit $HOME/config/vimrc<CR>
 nmap <silent> <leader>sv :so $HOME/config/vimrc<CR>
 nmap <silent> <leader>eg :tabedit $HOME/config/gvimrc<CR>
 nmap <silent> <leader>sg :so $HOME/config/gvimrc<CR>
-nmap <silent> <leader>vh :tabedit ~/config/vim/vimhelp.org<CR>
-nmap <silent> <leader>gh :tabedit ~/config/git/githelp.org<CR>
-nmap <silent> <leader>ea :tabedit ~/config/vim/abbrev.vim<CR>
+nmap <silent> <leader>vh :tabedit $HOME/config/vim/vimhelp.org<CR>
+nmap <silent> <leader>gh :tabedit $HOME/config/git/githelp.org<CR>
+nmap <silent> <leader>ea :tabedit $HOME/config/vim/abbrev.vim<CR>
 
 " use reselect visual when indenting in visual mode
 vmap > >gv
