@@ -32,30 +32,26 @@ gV `[v`]
 ,dg :diffget<CR>
 ,du :diffupdate<CR>
 * windows
-,h  -> move to left window
-,j  -> move to lower window
-,k  -> move to left window
-,l  -> move to right window
-,sb -> move to previous window
-,s8 -> vertical resize 83
-,cj :wincmd j<CR>:close<CR>
-,ck :wincmd k<CR>:close<CR>
-,ch :wincmd h<CR>:close<CR>
-,cl :wincmd l<CR>:close<CR>
-,cc :close<CR>
-,cw :cclose<CR>
-,ml <C-W>L
-,mk <C-W>K
-,mh <C-W>H
-,mj <C-W>J
-<C-F9>  :vertical resize -10<CR>
-<C-F10> :resize +10<CR>
-<C-F11> :resize -10<CR>
-<C-F12> :vertical resize +10<CR>
-<C-7> <C-W>>
-<C-8> <C-W>+
-<C-9> <C-W>+
-<C-0> <C-W>>
+,h      -> move to left window
+,j      -> move to lower window
+,k      -> move to left window
+,l      -> move to right window
+,sb     -> move to previous window
+,s8     -> vertical resize 83
+,cj     -> close lower window
+,ck     -> close upper window
+,ch     -> close left window
+,cl     -> close right window
+,cc     -> close current window
+,cw     -> close command window
+,ml     -> move window right
+,mk     -> move window up
+,mh     -> move window left
+,mj     -> move window down
+<C-F9>  -> vertical increase current window
+<C-F10> -> vertical decreae current window
+<C-F11> -> increase current window
+<C-F12> -> decrease current window
 * config files
 ,ev -> edit vimrc in new tab
 ,sv -> source vimrc
