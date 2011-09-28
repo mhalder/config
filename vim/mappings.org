@@ -1,36 +1,39 @@
+* save and exit
+,jj -> :q
+,jk -> :w
+,jl -> :wq
 * various
-,le :set list!<CR>
-,sp :call Preserve("%s/ /./g")<CR>
-,su :call Preserve("undo")<CR>
-,th :silent :set hlsearch!<CR>
-,s :set spell!<CR>
-,jj :q<CR>
-,jk :w<CR>
-,jl :wq<CR>
-,hh <ESC>:exec "help ".expand("<cWORD>")<CR>
-,gw :vimgrep /<C-r><C-w>/ %<CR>:ccl<CR>:cwin<CR><C-W>J:nohls<CR>
-,nt :NERDTreeToggle<CR>
-,un :GundoToggle<CR>
-,bu [e
-,bd ]e
-,tn :tabnew<CR>
-,te :tabedit 
-,tf :tabnext<CR>
-,tb :tabp<CR>
-,tc :tabc<CR>
-,on :only<CR>
-,ls :ls<CR>
-gV `[v`]
-,an :set number<CR>
-,rn :set relativenumber<CR>
-,sw :call Preserve("%s/\\s\\+$//e")<CR>
-,ff :call Preserve("normal gg=G")<CR>
-,be :BufExplorer<CR>
-,gs :Gstatus<CR>
-,gd :Gdiff<CR>
-,dp :diffput<CR>
-,dg :diffget<CR>
-,du :diffupdate<CR>
+,hh -> get help on word under cursor
+,gw -> search word, results in cwindow
+gV  -> visible select lines last edited
+,an -> line numbers
+,rn -> relative line numbers
+* tabs
+,tn -> create new tab
+,te -> prompt for file in new tab
+,tf -> next tab
+,tb -> previous tab
+,tc -> close tab
+* format
+,su -> undo with preserve
+,th -> toggle hightlight search
+,s  -> toggle spell checking
+,sp -> convert all spaces to dots
+,le -> show line endings
+,sw -> strip trailing whitespace
+,ff -> format whole file
+* plugins
+,be -> open bufexplorer
+,nt -> toggle nerdtree
+,un -> toggle gundo
+,bu -> bubble line up
+,bd -> bubble line down
+* fugitive
+,gs -> Gstatus
+,gd -> Gdiff
+,dp -> diffput
+,dg -> diffget
+,du -> diffupdate
 * windows
 ,h      -> move to left window
 ,j      -> move to lower window
@@ -48,6 +51,8 @@ gV `[v`]
 ,mk     -> move window up
 ,mh     -> move window left
 ,mj     -> move window down
+,on     -> make buffer the only one
+,ls     -> show buffer list
 <C-F9>  -> vertical increase current window
 <C-F10> -> vertical decreae current window
 <C-F11> -> increase current window
