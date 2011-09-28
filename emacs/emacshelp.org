@@ -1,0 +1,294 @@
+* emacs
+C-g                      ▸ keyboard-quit                       ▸ quit command buffer
+C-x C-c                  ▸ save-buffers-kill-terminal          ▸ leaving emacs
+<Insert>                 ▸ overwrite-mode                      ▸ overwrite mode
+-                        ▸ recover-file                        ▸ recover from auto saved file #file#
+C-x <Esc> <Esc>          ▸ -                                   ▸ repeat last complex command
+    M-p                  ▸ -                                   ▸ go to previous
+    M-n                  ▸ -                                   ▸ go to next
+-                        ▸ set-variable                        ▸ change value of variable
+-                        ▸ byte-recompile-directory            ▸ compile .el to .elc to speed up starting
+C-h m                    ▸ describe-mode                       ▸ show all current key bindings
+* moving
+C-n                      ▸ next-line                           ▸ down
+C-p                      ▸ previous-line                       ▸ up
+C-f                      ▸ forward-character                   ▸ right
+C-b                      ▸ backward-character                  ▸ left
+C-l                      ▸ recenter-top-botton                 ▸ center current line
+M-f                      ▸ forward-word                        ▸ next word
+M-b                      ▸ backward-word                       ▸ previous word
+C-a                      ▸ move-beginning-of-line              ▸ start of line
+C-e                      ▸ move-end-of-line                    ▸ end of line
+M-a                      ▸ backward-sentence                   ▸ previous sentence
+M-e                      ▸ forward-sentence                    ▸ next sentence
+M-<                      ▸ beginning-of-buffer                 ▸ go to beginning of file
+M->                      ▸ end-of-buffer                       ▸ go to end of file
+C-v                      ▸ scroll-up                           ▸ scroll page up
+M-v                      ▸ scroll-down                         ▸ scroll page down
+M-g g                    ▸ goto-line                           ▸ goto line
+-                        ▸ goto-char                           ▸ goto char
+C-l                      ▸ recenter-top-botton                 ▸ center current line
+* delete, copy and undo
+C-_ and C-x u            ▸ undo                                ▸ undo
+C-d                      ▸ delete                              ▸ delete char
+<Del>                    ▸ backward-delete                     ▸ delete before char
+M-d                      ▸ forward-kill-word                   ▸ kill a word forward
+C-<Bs>                   ▸ backward-kill-word                  ▸ kill a word back
+C-k                      ▸ kill                                ▸ kill until end of line, also joining
+C-w                      ▸ kill-region                         ▸ delete region
+M-w                      ▸ kill-ring-save                      ▸ copy, delete region without delete
+M-k                      ▸ kill-sentence                       ▸ delete sentence
+C-x <Del>                ▸ backward-kill-sentence              ▸ delete back to start of sentence
+C-y                      ▸ yank                                ▸ reinsert the last killed text
+M-y                      ▸ yank-pop                            ▸ yank older text from kill ring
+* search and replace
+C-s                      ▸ isearch-forward-regexp              ▸ incremental search forward
+    M-p                  ▸ -                                   ▸ go to previous
+    M-n                  ▸ -                                   ▸ go to next
+C-M-s                    ▸ isearch-repeat-forward              ▸ redo last search forward
+C-M-r                    ▸ isearch-repeat-backward             ▸ redo last search backwards
+C-s <Enter>              ▸ -                                   ▸ regular search
+-                        ▸ word-search-forward                 ▸ word search
+C-r                      ▸ isearch-backward-regexp             ▸ incremental search backward
+C-s C-w                  ▸ isearch-yank-word                   ▸ start search with word under cursor
+C-s C-y                  ▸ isearch-yank-line                   ▸ start search with text until line end
+C-s M-y                  ▸ isearch-yank-kill                   ▸ start search with text from kill ring
+C-s C-s                  ▸ isearch-repeat-forward              ▸ repeat last forward search
+C-r C-r                  ▸ isearch-repeat-backward             ▸ repeat last backward search
+-                        ▸ replace-string                      ▸ replace a string from cursor forward
+M-%                      ▸ query-replace                       ▸ query replace
+    <Space> or y         ▸ -                                   ▸ replace string
+    <Del> or n           ▸ -                                   ▸ dont replace, go to next
+    .                    ▸ -                                   ▸ replace and quit
+    ,                    ▸ -                                   ▸ replace and show result but wait for ack
+    !                    ▸ -                                   ▸ replace all the rest without asking
+    ^                    ▸ -                                   ▸ back to previous instance
+    <Enter> or q         ▸ -                                   ▸ exit
+    E                    ▸ -                                   ▸ modify replacement string
+    C-r                  ▸ -                                   ▸ enter recursive edit
+    C-w                  ▸ -                                   ▸ delete instance and enter recursive edit
+    C-M-c                ▸ -                                   ▸ exit recursive edit and resume
+    C-]                  ▸ -                                   ▸ exit recursive edit and exit query replace
+-                        ▸ (setq-default case-fold-search nil) ▸ require exact search matches (default t)
+-                        ▸ (setq-default case-replace nil)     ▸ option for fitting case (nil means no change) (default t)
+* marks
+C-<Space>                ▸ set-mark-command                    ▸ set a mark
+C-u C-<Space>            ▸                                     ▸ go to last mark
+C-x C-x                  ▸ exchange-point-and-mark             ▸ swap point and mark
+M-h                      ▸ mark-paragraph                      ▸ mark whole paragraph automatically
+C-x h                    ▸ mark-whole-buffer                   ▸ mark whole buffer
+* repeating
+M-5 C-n                  ▸ digit-argument                      ▸ repeat command 5 times, go 5 lines down
+C-u 5                    ▸ universal-argument                  ▸ repeat next command 5 times
+* transposing
+C-t                      ▸ transpose-chars                     ▸ transpose two chars
+M-t                      ▸ transpose-words                     ▸ transpose two words
+C-x C-t                  ▸ transpose-lines                     ▸ transpose two lines
+* zooming
+C-+                      ▸ text-scale-increase                 ▸ increase font size
+C--                      ▸ text-scale-decrease                 ▸ decrease font size
+* capitalizing
+M-c                      ▸ capitalize-word                     ▸ capitalize first letter of word
+M-u                      ▸ upcase-word                         ▸ uppercase word
+M-l                      ▸ downcase-word                       ▸ downcasw word
+Meta-M-c                 ▸ negative;capitalize-word            ▸ capitalize previous word
+Meta-M-u                 ▸ negative;upcase-word                ▸ uppercase previous word
+Meta-M-l                 ▸ negative;downcase-word              ▸ downcase previous word
+* help
+C-h k                    ▸ describe-key                        ▸ get help for key combination
+C-h f                    ▸ describe-function                   ▸ get help for function
+C-h i                    ▸ info                                ▸ start info directory
+C-h t                    ▸ help-with-tutorial                  ▸ start emacs tutorial
+C-h v                    ▸ describe-variable                   ▸ print current value of variable
+C-h a                    ▸ apropos                             ▸ make apropos search
+C-h i                    ▸ info                                ▸ start info documentation reader
+C-h b                    ▸ describe-bindings                   ▸ show all defined keys
+-                        ▸ man                                 ▸ open man page
+q                        ▸ -                                   ▸ quit help
+* autocompletion
+<Esc> <Tab>              ▸ completion-at-point                 ▸ try to complete current word
+-                        ▸ ispell-complete-word                ▸ complete current word with ispell
+* files
+C-x C-f                  ▸ find-file                           ▸ opening a file
+C-x M-f                  ▸ find-file-other-window              ▸ opening a file in other window
+C-x C-p                  ▸ -                                   ▸ mark a whole page
+C-x C-v                  ▸ find-alternate-file                 ▸ open different file
+C-x C-s                  ▸ save-buffer                         ▸ save buffer
+C-x s                    ▸ save-some-buffers                   ▸ save all buffer
+C-x C-w                  ▸ write-file                          ▸ save file as
+C-x i                    ▸ insert-file                         ▸ insert file at position
+C-x C-q                  ▸ toggle-read-only                    ▸ make buffer readonly
+* windows and buffers
+frame                    ▸ -                                   ▸ typical window
+window                   ▸ -                                   ▸ split screens
+buffer                   ▸ -                                   ▸ text buffer, could be linked to a file
+-                        ▸ make-frame                          ▸ create new frame
+-                        ▸ make-frame-on-display               ▸ create new frame on xserver display
+C-x 0                    ▸ delete-window                       ▸ delete current window
+C-x 1                    ▸ delete-other-windows                ▸ close all windows except current one
+C-x 2                    ▸ split-window-vertically             ▸ split window vertically
+C-x 3                    ▸ split-window-horizontally           ▸ split window horizontally
+C-x b                    ▸ switch-to-buffer                    ▸ switch to buffer, do not link to file, use C-k to kill selected
+C-x C-b                  ▸ ibuffer                             ▸ edit list of buffers
+    h                    ▸ -                                   ▸ display help
+    m                    ▸ -                                   ▸ mark
+    u                    ▸ -                                   ▸ unmark
+    d                    ▸ -                                   ▸ mark buffer for delete
+    x                    ▸ -                                   ▸ execute kill
+    k                    ▸ -                                   ▸ remove marked buffers (only from view)
+    S                    ▸ -                                   ▸ save marked buffers
+C-x o                    ▸ other-window                        ▸ switch to other window
+C-x 4 b                  ▸ switch-to-buffer-other-window       ▸ open buffer in other window
+C-x C-f                  ▸ find-file                           ▸ opening a buffer, new if does not exist
+C-x k                    ▸ kill-buffer                         ▸ close buffer
+-                        ▸ kill-some-buffers                   ▸ ask interactively to clean up
+-                        ▸ delete-windows-on                   ▸ delete all windows on a buffer
+C-M-v                    ▸ scroll-other-window                 ▸ scroll down in other window
+C-x <                    ▸ scroll-left                         ▸ scroll to left
+C-x >                    ▸ scroll-right                        ▸ scroll to right
+C-x ^                    ▸ enlarge-window                      ▸ increase window size
+-                        ▸ shrink-window                       ▸ decrease window size
+C-x }                    ▸ enlarge-window-horizontally         ▸ increase window size horizontally
+C-x {                    ▸ shrink-window-horizontally          ▸ decrease window size horizontally
+C-x -                    ▸ shrink-window-if-larger-than..      ▸ shrink window if bigger than buffer
+C-x +                    ▸ balance-windows                     ▸ create equal size windows
+-                        ▸ compare-windows                     ▸ show first difference of two windows
+* filling and formatting
+-                        ▸ auto-fill-mode                      ▸ toggle auto fill mode
+-                        ▸ fill-paragraph                      ▸ reformat paragraph
+-                        ▸ fill-region                         ▸ reformat region with paragraphs
+* key mapping
+-                        ▸ (global-set-key "\C-cm" 'undo)      ▸ map undo to C-c m
+* spell checker
+-                        ▸ ispell-buffer                       ▸ start checking current buffer
+M-$                      ▸ ispell-word                         ▸ checking current word
+-                        ▸ flyspell-mode                       ▸ background spell checking mode (new text)
+-                        ▸ flyspell-prog-mode                  ▸ only in comments
+-                        ▸ flyspell-buffer                     ▸ check current buffer (existing)
+* abbreviations
+M-/                      ▸ hippie-expand                       ▸ dynamic search for matching word, do multiple times
+-                        ▸ abbrev-mode                         ▸ go to abbreviation mode
+word C-x a g             ▸ add-global-abbrev                   ▸ enter abbrev for word global (local with l)
+-                        ▸ list-abbrevs                        ▸ list all abbrevs, listed by mode
+-                        ▸ edit-abbrevs                        ▸ editable list, then
+-                        ▸ write-abbrev-file                   ▸ save changes
+-                        ▸ kill-all-abbrevs                    ▸ disables abbrevs for current session
+-                        ▸ (setq-default abbrev-mode t)        ▸ options for .emacs file
+-                        ▸ (read-abbrev-file "~/.abbrev_defs") ▸ set file name
+-                        ▸ (setq save-abbrevs t)               ▸ enable saving
+* bookmarks
+C-x r m                  ▸ bookmark-set                        ▸ set bookmark
+C-x r b                  ▸ bookmark-jump                       ▸ jump to bookmark
+C-x r l                  ▸ bookmark-bmenu-list                 ▸ list all bookmarks
+    <Enter>              ▸                                     ▸ go to bookmark
+    f or j               ▸                                     ▸ go to bookmark
+    d                    ▸                                     ▸ mark bookmark for delete
+    x                    ▸                                     ▸ execute kill
+    r                    ▸                                     ▸ rename bookmark
+    s                    ▸                                     ▸ save all bookmarks to .emacs.bmk
+    m                    ▸                                     ▸ mark bookmark
+    m                    ▸                                     ▸ unmark bookmark
+    v                    ▸                                     ▸ view all marked bookmarks
+    t                    ▸                                     ▸ toggle view
+    o                    ▸                                     ▸ open bookmark in new window
+    w                    ▸                                     ▸ display location of file in minibuffer
+    e                    ▸                                     ▸ add annotation to bookmark (quit with C-c C-c, need to save)
+    a                    ▸                                     ▸ list annotation
+    A                    ▸                                     ▸ list all annotations
+    q                    ▸                                     ▸ quit bookmark list
+-                        ▸ bookmark-rename                     ▸ rename bookmark
+-                        ▸ bookmark-delete                     ▸ delete bookmark
+* work environment
+M-!                      ▸ shell-command                       ▸ run shell command
+C-c s                    ▸ shell-command-on-region             ▸ shell command on region, self mapped in custom.el
+C-u M-!                  ▸ -                                   ▸ replace original buffer text
+C-u C-c s                ▸ -                                   ▸ replace original buffer text
+* shell mode
+-                        ▸ shell                               ▸ start shell mode
+C-c C-c                  ▸ comint-interrupt-subjob             ▸ <Ctrl>-c
+C-c C-z                  ▸ comint-stop-subjob                  ▸ <Ctrl>-z
+C-d                      ▸ comint-delchar-or-maybe-eof         ▸ send EOF if end of buffer; else del character
+C-c C-d                  ▸ comint-send-of                      ▸ <Ctrl>-d
+M-p                      ▸ comint-previous-input               ▸ previous shell commands
+M-n                      ▸ comint-next-input                   ▸ next shell commands
+C-c C-o                  ▸ comint-kill-output                  ▸ flush long shell output
+C-c C-r                  ▸ comint-show-output                  ▸ go to start of output
+C-c C-e                  ▸ comint-show-maximum-output          ▸ go to end of output
+C-c C-p                  ▸ comint-previous-prompt              ▸ go to previous command group
+C-c C-n                  ▸ comint-next-prompt                  ▸ go to next command group
+C-c C-u                  ▸ comint-kill-input                   ▸ clear input line <Ctrl>-u
+-                        ▸ rename-uniquely                     ▸ rename shell to create second one
+shell-file-name          ▸ -                                   ▸ contains name of shell
+.emacs_bash              ▸ -                                   ▸ emacs specific initialization
+-                        ▸ send-invisible                      ▸ enter nonechoed text
+* emacs shell
+C-x m                    ▸ eshell                              ▸ start emacs shell
+* directory editor
+C-x d                    ▸ dired                               ▸ start directory editor
+    -                    ▸ (global-font-lock-mode t)           ▸ if you dont see colored directories
+    s                    ▸ dired-sort-toggle-or-edit           ▸ sort alpha or by date
+    n or p               ▸ -                                   ▸ move up or down
+    v                    ▸ dired-view-file                     ▸ quick view file or directory
+        s                ▸ -                                   ▸ search
+        =                ▸ -                                   ▸ tell which is current line
+        q                ▸ -                                   ▸ go back
+    e or f               ▸ -                                   ▸ edit file in normal edit buffer
+    <Enter>              ▸ -                                   ▸ edit file in normal edit buffer
+    C-s                  ▸ -                                   ▸ search
+    m                    ▸ -                                   ▸ mark
+    u                    ▸ -                                   ▸ unmark
+    d                    ▸ -                                   ▸ mark file for delete
+    x                    ▸ -                                   ▸ execute kill
+    #                    ▸ -                                   ▸ mark auto-save files for deletion
+    h                    ▸ -                                   ▸ display help
+    k                    ▸ -                                   ▸ remove marked buffers (only from view)
+    D                    ▸ -                                   ▸ delete immediately
+    C                    ▸ -                                   ▸ copy file
+    R                    ▸ -                                   ▸ rename file, if more files then move
+    S                    ▸ -                                   ▸ symlink file
+    %l %u                ▸ -                                   ▸ change marked files to uppercase or lowercase
+    Z                    ▸ -                                   ▸ compress or uncompress file
+    -                    ▸ auto-compress-mode                  ▸ enable or disable automatic compression mode
+    =                    ▸ -                                   ▸ create diff in a diff buffer
+    M-=                  ▸ -                                   ▸ diff to backup file
+    !                    ▸ -                                   ▸ run command on file (* for marked files) eg. sort * > sorted
+    g                    ▸ -                                   ▸ update view
+    M-<Del>              ▸ dired-unmark-all-files              ▸ unmark all files
+    * *                  ▸ -                                   ▸ mark all executable files
+    * /                  ▸ -                                   ▸ mark all directories
+    * @                  ▸ -                                   ▸ mark all symbolic links
+    -                    ▸ dired-garbage-files-regexp          ▸ regexp for garbage files
+    %m                   ▸ -                                   ▸ mark files by regexp
+    %g                   ▸ -                                   ▸ mark files by content regexp
+    +                    ▸ -                                   ▸ create directory
+    Q                    ▸ -                                   ▸ query replace through all marked files
+    A                    ▸ -                                   ▸ search across files for regexp
+    ^                    ▸ -                                   ▸ go to parent directory
+    < >                  ▸ -                                   ▸ go to previous or next directory
+    i                    ▸ -                                   ▸ insert subdir in current buffer
+* macros
+C-x (                    ▸ kmacro-start-macro                  ▸ start macro recording
+C-x )                    ▸ kmacro-end-macro                    ▸ end recording
+C-x e                    ▸ kmacro-end-and-call-macro           ▸ playback recorded macro
+C-x C-k e                ▸ edit-kbd-macro                      ▸ edit macro
+* programming modes
+M-;                      ▸ comment-dwim                        ▸ comment region
+M-.                      ▸ find-tag                            ▸ find tag (find . | xargs egrep -a -f TAGS)
+-                        ▸ visit-tags-table                    ▸ invoke to load a new TAGS file
+C-c i                    ▸ indent-region                       ▸ indent region according to indent rules, self mapped in custom.el
+* vc mode
+C-x v =                  ▸ vc-diff                             ▸ diff against HEAD
+C-u C-x v =              ▸ -                                   ▸ compare two arbitrary revisions
+C-x v u                  ▸ vc-revert                           ▸ discard changes
+C-x v ~                  ▸ vc-revision-other-window            ▸ open arbitrary revision in other window
+C-x v l                  ▸ vc-print-log                        ▸ view commit log
+    f                    ▸ -                                   ▸ view revision
+    d                    ▸ -                                   ▸ view diff
+C-x v i                  ▸ -                                   ▸ add unrevisioned file
+* font
+-                        ▸ -                                   ▸ (set-face-attribute 'default nil :font '"DejaVu Sans Mono-10")
+* cool extensions
+magit
+flymake-mode
+follow-mode
+whitespace-mode
