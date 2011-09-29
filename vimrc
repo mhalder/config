@@ -319,6 +319,9 @@ map <leader>dp :diffput<CR>
 map <leader>dg :diffget<CR>
 map <leader>du :diffupdate<CR>
 
+imap <leader>xp <C-\>
+imap <leader>xx <C-r><C-r><C-\>
+
 " Show syntax highlighting groups for word under cursor
 nmap <C-S-P> :call <SID>SynStack()<CR>
 function! <SID>SynStack()
