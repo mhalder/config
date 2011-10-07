@@ -245,6 +245,9 @@ noremap <silent> <C-8> <C-W>+
 noremap <silent> <C-9> <C-W>+
 noremap <silent> <C-0> <C-W>>
 
+" same for buffers
+noremap <silent> <leader>db :bd<CR>
+
 nmap <silent> <leader>ev :tabedit $HOME/config/vimrc<CR>
 nmap <silent> <leader>sv :so $HOME/config/vimrc<CR>
 nmap <silent> <leader>eg :tabedit $HOME/config/gvimrc<CR>
@@ -287,6 +290,42 @@ nmap <leader>on :only<CR>
 
 " visually select the text that was last edited/pasted
 nmap gV `[v`]
+
+" cscope mapping for ctrl-_
+nmap <C-_>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap <C-_>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+
+" ctrl-space for horizontal split
+nmap <C-Space>s :scs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <C-Space>g :scs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-Space>c :scs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-Space>t :scs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <C-Space>e :scs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <C-Space>f :scs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap <C-Space>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <C-Space>d :scs find d <C-R>=expand("<cword>")<CR><CR>
+
+" ctrl-space-space for vertical split
+nmap <C-Space><C-Space>s
+    \:vert scs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <C-Space><C-Space>g
+    \:vert scs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-Space><C-Space>c
+    \:vert scs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-Space><C-Space>t
+    \:vert scs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <C-Space><C-Space>e
+    \:vert scs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <C-Space><C-Space>i
+    \:vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <C-Space><C-Space>d
+    \:vert scs find d <C-R>=expand("<cword>")<CR><CR>
 
 " strip trailing whitespaces with leader-sw and format file with leader-ff
 nnoremap <silent> <leader>sw :call Preserve("%s/\\s\\+$//e")<CR>
