@@ -60,12 +60,12 @@ howto                                        ▸ First use search, then copy to 
     =       \=                               ▸ 0 or 1
 /\v(.y){3}                                   ▸ finds eg. syzygy in very magic (egrep, perl, python)
 /\(.y\)\{3}                                  ▸ finds eg. syzygy in magic (grep)
-* great Replace Examples
+* great replace examples
 :%s/^.*>\(.*\)<.*/\1/                        ▸ remove everything outside < and >, e. g. abcde>a test<abcde
 :g/\s*DEBUG/exe "norm! I/* \<Esc>A */\<Esc>" ▸ comment all lines with DEBUG (and trailing whitespaces)
 \v'(('\w|[^'])*)'                            ▸ search in very magic ' not followed or not ' and put to register
 %s//"\1"/g                                   ▸ replace last search with register
-* basic Movement
+* basic movement
 h,j,k,l                                      ▸ no comment
 gj,gk,g0,g^,g$                               ▸ move to visible not numbered lines
 w,b                                          ▸ next or previous word
@@ -79,7 +79,7 @@ ctrl-f and ctrl-b                            ▸ forward or backward a page
 ctrl-u and ctrl-d                            ▸ forward or backward a halfpage
 H,M,L:                                       ▸ head, middle, last
 gg and G                                     ▸ top, bottom of file, 500G: Go to line 500
-* advanced Movement
+* advanced movement
 %                                            ▸ match brackets
 { and }                                      ▸ go forward or backward one paragraph
 ( and )                                      ▸ go forward or backward one sentence
@@ -95,7 +95,7 @@ ci(                                          ▸ change all inside braces, works
 Vip                                          ▸ select current paragraph in line mode
 s<li>                                        ▸ surround selected text with <li> tag (in visual mode)
 vit                                          ▸ select inner text inside a tag (eg a link)
-* basic Editing
+* basic editing
 i,I                                          ▸ start editing, start of line
 a,A                                          ▸ start editing, end of line
 o,O                                          ▸ inserting line after current, before
@@ -111,7 +111,7 @@ p                                            ▸ paste after cursor
 P                                            ▸ paste before cursor
 J                                            ▸ join lines
 gJ                                           ▸ join lines without space
-* visual Mode
+* visual mode
 V                                            ▸ visual Line mode, great to join multiple lines with higlighting
 v                                            ▸ visual mode
 o                                            ▸ switch between start and end marker
@@ -155,6 +155,8 @@ vim a.txt b.txt c.txt                        ▸ open vim with three files, args
 :put                                         ▸ for buffer (:put + for clipboard, \" for default register)
 :$put +                                      ▸ clipboard at end of file
 "*p                                          ▸ clipboard also in * register
+:set paste                                   ▸ go into paste mode
+i cmd+v                                      ▸ paste on mac
 * buffers
 :ls and :ls!                                 ▸ list all buffers (see help :ls for meaning), list all
     %a                                       ▸ active
@@ -193,7 +195,7 @@ vim -p file1 file2                           ▸ open two files in tabs
 ctrl-w T                                     ▸ move current window to own tab
 :tabmove                                     ▸ move tab to end, :tabmove 2 move tab to second position
 gt                                           ▸ go to next tab, 3gt go to third tab
-* insert Mode
+* insert mode
 :h ins-special-keys                          ▸ list over all special keys in insert mode
 ctrl-t and ctrl-d                            ▸ change indenting (use >> and << in normal mode)
 ctrl-w                                       ▸ delete word before cursor
@@ -249,7 +251,7 @@ ctrl-a, ctrl-x                               ▸ add or substract a count to a n
 :set list                                    ▸ show line endings
 :set list!                                   ▸ revert setting
 :set listchars=tab:\>\.,eol:$                ▸ show tabs as >... and eol as $
-* tags and Taglist plugin
+* tags and taglist plugin
 find /src -name "*.c" | xargs etags          ▸ create tagfile, also with "*.h" files with option -or
 :set tags=tagfile                            ▸ use tagfile, navigation like in help
 :tags                                        ▸ show tagstack
@@ -257,7 +259,7 @@ find /src -name "*.c" | xargs etags          ▸ create tagfile, also with "*.h"
 :tselect and :ptselect                       ▸ show list ov available tags (with preview)
 :tnext and :tprev                            ▸ move up and down in taglist
 :TlistOpen                                   ▸ open tagbrowser from taglist plugin
-* changelist and Jumplist
+* changelist and jumplist
 g;                                           ▸ go to last edit location, step by step, forward with g,
 :changes                                     ▸ look at the changelist
 ctrl-o and i                                 ▸ forward and backward in jumplist
@@ -286,7 +288,7 @@ ctrl-x and                                   ▸
 "zde                                         ▸ delete word (de) and save in register z
 :registers                                   ▸ see all contents
 "+ or "*                                     ▸ system clipboard
-* spell Checking
+* spell checking
 :set spell                                   ▸ enable spell checking
 :set spelllang=de,en                         ▸ switch to German and English
 z=                                           ▸ ask suggestion in normal mode
@@ -298,7 +300,7 @@ zG                                           ▸ add to internal wordlist (valid
 zg                                           ▸ add to spellfile (default in .vim/spell)
 zw                                           ▸ mark good word as bad
 zug, zuw                                     ▸ undo zg, zw
-* file Explorer
+* file explorer
 enter                                        ▸ go to directory
 -                                            ▸ go up one directory
 :e. or :sp.                                  ▸ (all split commands) open explorer in current directory
@@ -307,7 +309,7 @@ enter                                        ▸ go to directory
 d                                            ▸ new directory
 R                                            ▸ rename
 D                                            ▸ delete
-* directory Editor
+* directory editor
 :e Directory                                 ▸ open directory in dired
     i                                        ▸ change view: thin,long,wide,tree
     s                                        ▸ sort on name,time,size
@@ -319,7 +321,7 @@ D                                            ▸ delete
     D                                        ▸ delete
     R                                        ▸ move dir
     -                                        ▸ go up one level
-* vim Runtime
+* vim runtime
 :set rtp                                     ▸ runtime path for tayloring vim, create structure in home directory
 :helptags                                    ▸ recreate tag on some directory, eg. ~/.vim/docs
 * nice to know
@@ -333,11 +335,11 @@ D                                            ▸ delete
 :set syntax=c                                ▸ enable syntax highlighting
 @:                                           ▸ repeat last command
 :version                                     ▸ display version string and home directories
-* plugin Matchit
+* plugin matchit
 let b:match_words = '\<if\>:\<else\>'        ▸ switch between if and else
 %                                            ▸ forwards
 g%                                           ▸ backwards
-* tabulator and Whitespaces
+* tabulator and whitespaces
 :set [no]exandtab                            ▸ switch indent mode
 retab!                                       ▸ switch from tabs to spaces and vice versa
 hi NonText guifg=#4a4a59                     ▸ invisible colors for list (colorscheme)
@@ -350,7 +352,7 @@ gqip                                         ▸ format paragraph with external 
     -r                                       ▸ pad empty lines
     -e                                       ▸ remove unnecessary lines
     -q                                       ▸ handle nested quotes
-* filename and Path
+* filename and path
 echo expand('%')                             ▸ echo current filename
 :p:h                                         ▸ for absolute path without filename
 :cd %:p:h                                    ▸ change to path of current file
@@ -369,7 +371,7 @@ vim-tocterm                                  ▸ convert gui themes to colored t
 :set equalprg=extern                         ▸ set external formatter program
 vi}                                          ▸ visual select region with }, i = inside the braces
 =i}                                          ▸ format this block (indent commands can go with motion)
-* command Window
+* command window
 / ctrl-p                                     ▸ bring up last search result
 ctrl-p and n                                 ▸ go back and forth
 q/                                           ▸ bring up command line window for search
@@ -419,7 +421,7 @@ comm1 | comm2                                ▸ run two commands sequentally
     //3                                      ▸ merge branch
     :diffget and diffput                     ▸ state single hunks
     dp                                       ▸ works in three-way diff, put to working copy
-    :Gwrite                                  ▸ use to save and close diff windows   
+    :Gwrite                                  ▸ use to save and close diff windows
     :Gwrite from either branch               ▸ take target or merge completely and save
 :Gedit branch:file                           ▸ open file from branch in readonly buffer
     :Gsplit                                  ▸ split

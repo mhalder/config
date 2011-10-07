@@ -78,8 +78,6 @@ alias gl='git pull'
 alias glo='git pull origin master'
 alias gp='git push'
 alias gpo='git push origin master'
-alias gst='git status'
-alias gt='git status'
 alias g='git status'
 
 # git clone from github

@@ -1,61 +1,62 @@
+* save and exit
+,jj -> :q
+,jk -> :w
+,jl -> :wq
 * various
-,le :set list!<CR>
-,sp :call Preserve("%s/ /./g")<CR>
-,su :call Preserve("undo")<CR>
-,th :silent :set hlsearch!<CR>
-,s :set spell!<CR>
-,jj :q<CR>
-,jk :w<CR>
-,jl :wq<CR>
-,hh <ESC>:exec "help ".expand("<cWORD>")<CR>
-,gw :vimgrep /<C-r><C-w>/ %<CR>:ccl<CR>:cwin<CR><C-W>J:nohls<CR>
-,nt :NERDTreeToggle<CR>
-,un :GundoToggle<CR>
-,bu [e
-,bd ]e
-,tn :tabnew<CR>
-,te :tabedit 
-,tf :tabnext<CR>
-,tb :tabp<CR>
-,tc :tabc<CR>
-,on :only<CR>
-,ls :ls<CR>
-gV `[v`]
-,an :set number<CR>
-,rn :set relativenumber<CR>
-,sw :call Preserve("%s/\\s\\+$//e")<CR>
-,ff :call Preserve("normal gg=G")<CR>
-,be :BufExplorer<CR>
-,gs :Gstatus<CR>
-,gd :Gdiff<CR>
-,dp :diffput<CR>
-,dg :diffget<CR>
-,du :diffupdate<CR>
+,hh -> get help on word under cursor
+,gw -> search word, results in cwindow
+gV  -> visible select lines last edited
+,an -> line numbers
+,rn -> relative line numbers
+* tabs
+,tn -> create new tab
+,te -> prompt for file in new tab
+,tf -> next tab
+,tb -> previous tab
+,tc -> close tab
+* format
+,su -> undo with preserve
+,th -> toggle hightlight search
+,s  -> toggle spell checking
+,sp -> convert all spaces to dots
+,le -> show line endings
+,sw -> strip trailing whitespace
+,ff -> format whole file
+* plugins
+,be -> open bufexplorer
+,nt -> toggle nerdtree
+,un -> toggle gundo
+,bu -> bubble line up
+,bd -> bubble line down
+* fugitive
+,gs -> Gstatus
+,gd -> Gdiff
+,dp -> diffput
+,dg -> diffget
+,du -> diffupdate
 * windows
-,h  -> move to left window
-,j  -> move to lower window
-,k  -> move to left window
-,l  -> move to right window
-,sb -> move to previous window
-,s8 -> vertical resize 83
-,cj :wincmd j<CR>:close<CR>
-,ck :wincmd k<CR>:close<CR>
-,ch :wincmd h<CR>:close<CR>
-,cl :wincmd l<CR>:close<CR>
-,cc :close<CR>
-,cw :cclose<CR>
-,ml <C-W>L
-,mk <C-W>K
-,mh <C-W>H
-,mj <C-W>J
-<C-F9>  :vertical resize -10<CR>
-<C-F10> :resize +10<CR>
-<C-F11> :resize -10<CR>
-<C-F12> :vertical resize +10<CR>
-<C-7> <C-W>>
-<C-8> <C-W>+
-<C-9> <C-W>+
-<C-0> <C-W>>
+,h      -> move to left window
+,j      -> move to lower window
+,k      -> move to left window
+,l      -> move to right window
+,sb     -> move to previous window
+,s8     -> vertical resize 83
+,cj     -> close lower window
+,ck     -> close upper window
+,ch     -> close left window
+,cl     -> close right window
+,cc     -> close current window
+,cw     -> close command window
+,ml     -> move window right
+,mk     -> move window up
+,mh     -> move window left
+,mj     -> move window down
+,on     -> make buffer the only one
+,ls     -> show buffer list
+<C-F9>  -> vertical increase current window
+<C-F10> -> vertical decreae current window
+<C-F11> -> increase current window
+<C-F12> -> decrease current window
 * config files
 ,ev -> edit vimrc in new tab
 ,sv -> source vimrc

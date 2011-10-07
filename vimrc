@@ -140,7 +140,7 @@ set guioptions=ac
 "      "," key and the "d" key.  If the "d" key isn't pressed before the
 "      timeout expires, one of two things happens: The "," command is executed
 "      if there is one (which there isn't) or the command aborts.
-set timeoutlen=500
+set timeoutlen=300
 
 " keep some stuff in the history
 set history=100
@@ -225,10 +225,6 @@ noremap <silent> <leader>j :wincmd j<CR>
 noremap <silent> <leader>k :wincmd k<CR>
 noremap <silent> <leader>l :wincmd l<CR>
 noremap <silent> <leader>sb :wincmd p<CR>
-noremap <silent> <C-F9>  :vertical resize -10<CR>
-noremap <silent> <C-F10> :resize +10<CR>
-noremap <silent> <C-F11> :resize -10<CR>
-noremap <silent> <C-F12> :vertical resize +10<CR>
 noremap <silent> <leader>s8 :vertical resize 83<CR>
 noremap <silent> <leader>cj :wincmd j<CR>:close<CR>
 noremap <silent> <leader>ck :wincmd k<CR>:close<CR>
@@ -240,10 +236,10 @@ noremap <silent> <leader>ml <C-W>L
 noremap <silent> <leader>mk <C-W>K
 noremap <silent> <leader>mh <C-W>H
 noremap <silent> <leader>mj <C-W>J
-noremap <silent> <C-7> <C-W>>
-noremap <silent> <C-8> <C-W>+
-noremap <silent> <C-9> <C-W>+
-noremap <silent> <C-0> <C-W>>
+noremap <silent> <C-F9>  :vertical resize -10<CR>
+noremap <silent> <C-F10> :vertical resize +10<CR>
+noremap <silent> <C-F11> :resize +10<CR>
+noremap <silent> <C-F12> :resize -10<CR>
 
 " same for buffers
 noremap <silent> <leader>db :bd<CR>
@@ -361,6 +357,9 @@ map <leader>gd :Gdiff<CR>
 map <leader>dp :diffput<CR>
 map <leader>dg :diffget<CR>
 map <leader>du :diffupdate<CR>
+
+imap <leader>xp <C-\>
+imap <leader>xx <C-r><C-r><C-\>
 
 " Show syntax highlighting groups for word under cursor
 nmap <C-S-P> :call <SID>SynStack()<CR>
