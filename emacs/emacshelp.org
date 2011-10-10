@@ -292,3 +292,21 @@ magit
 flymake-mode
 follow-mode
 whitespace-mode
+* org mode
+** task planning and agenda
+C-M-r                    ▸ remember                            ▸ add a task or note to todo.org
+C-c C-s                  ▸ org-schedule                        ▸ schedule an item
+C-c C-x C-s              ▸ org-archive-subtree                 ▸ move a subtree to archive
+.                        ▸ -                                   ▸ go to current day
+,                        ▸ -                                   ▸ change priority
+d                        ▸ -                                   ▸ switch to current day
+r                        ▸ -                                   ▸ refresh agenda
+C-c a                    ▸ org-agenda-list                     ▸ show next weeks tasks 
+C-c t                    ▸ org-todo-list                       ▸ show todo list
+** useful org commands
+C-c C-x b                ▸ org-tree-to-indirect-buffer         ▸ show subtree in an indirect buffer
+C-x n s                  ▸ org-narrow-to-subtree               ▸ narrow subtree to current
+C-x n w                  ▸ widen                               ▸ widen subtree view again
+C-c *                    ▸ org-ctrl-c-star                     ▸ turn all marked entries to headlines and back
+C-c /                    ▸ org-sparse-tree                     ▸ sparse tree
+M-g n or p               ▸ next-error, previous-error          ▸ jump to next sparse tree match
