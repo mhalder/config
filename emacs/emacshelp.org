@@ -27,7 +27,6 @@ C-v                      ▸ scroll-up                           ▸ scroll page
 M-v                      ▸ scroll-down                         ▸ scroll page down
 M-g g                    ▸ goto-line                           ▸ goto line
 -                        ▸ goto-char                           ▸ goto char
-C-l                      ▸ recenter-top-botton                 ▸ center current line
 * delete, copy and undo
 C-_ and C-x u            ▸ undo                                ▸ undo
 C-d                      ▸ delete                              ▸ delete char
@@ -296,6 +295,7 @@ whitespace-mode
 ** task planning and agenda
 C-M-r                    ▸ remember                            ▸ add a task or note to todo.org
 C-c C-s                  ▸ org-schedule                        ▸ schedule an item
+C-c C-w                  ▸ org-refile                          ▸ refile a task to subtree
 C-c C-x C-s              ▸ org-archive-subtree                 ▸ move a subtree to archive
 .                        ▸ -                                   ▸ go to current day
 ,                        ▸ -                                   ▸ change priority
@@ -303,6 +303,8 @@ d                        ▸ -                                   ▸ switch to c
 r                        ▸ -                                   ▸ refresh agenda
 C-c a                    ▸ org-agenda-list                     ▸ show next weeks tasks 
 C-c t                    ▸ org-todo-list                       ▸ show todo list
+C-c m                    ▸ org-tags-view                       ▸ show matching tags
+C-c C-c                  ▸ -                                   ▸ set a tag
 ** useful org commands
 C-c C-x b                ▸ org-tree-to-indirect-buffer         ▸ show subtree in an indirect buffer
 C-x n s                  ▸ org-narrow-to-subtree               ▸ narrow subtree to current
