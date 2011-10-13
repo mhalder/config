@@ -6,4 +6,4 @@ else
   export EDITOR="gvim -f"
 fi
 
-export PATH=$PATH:~/bin
+export PATH=~/bin:$PATH

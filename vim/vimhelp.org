@@ -452,3 +452,10 @@ comm1 | comm2                                ▸ run two commands sequentally
 :Ggrep 'word' tagname or sha                 ▸ grep for word in specific commit
 :Glog --grep=word --                         ▸ grep for word commit messages
 :Glog -Sword --                              ▸ search for commits which added or removed word
+* xp template							       :TODO:
+TODO customize
+* plugin tasklist
+<leader>t                                    ▸ generate tasklist for TODO, FIXME
+* plugin omnicomplete
+<C-x> <C-o>
+TODO pythoncomplete
