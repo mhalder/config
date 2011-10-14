@@ -2,6 +2,8 @@ Prerequisites
 
     ack plugin: needs ack - p5-app-ack on MacPorts
     fugitive plugin: needs git obviously
+    vimpdb: install vimpdb from pypi: pip install vimpdb
+    omnicompletion: needs exuberant ctags
 
 Installation
 
