@@ -1,8 +1,8 @@
 Prerequisites
 
-    ack plugin: needs ack - p5-app-ack on MacPorts
+    ack plugin: needs ack (p5-app-ack on MacPorts, ack-grep in Ubuntu)
     fugitive plugin: needs git obviously
-    vimpdb: install vimpdb from pypi: pip install vimpdb
+    vimpdb: install vimpdb from pypi (pip install vimpdb)
     omnicompletion: needs exuberant ctags
 
 Installation
@@ -25,3 +25,9 @@ Create symlinks
     ln -s ~/config/bin ~/bin
 
     ln -s ~/config/bash/ctags ~/.ctags
+
+Create tags for c++ and stl
+
+    cd ~/config/vim/tags && tar xjvf cpp_src.tar.bz2
+    ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ -f stl cpp_src 
+    ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ -f cpp /usr/include/c++
