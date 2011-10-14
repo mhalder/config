@@ -1,4 +1,6 @@
 *.swp
 *~
 vim/.netrwhist
-ssh/id_rsa*
+bin/ctags
+vim/tags/cpp
+vim/tags/stl
