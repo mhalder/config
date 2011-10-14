@@ -23,19 +23,3 @@ Create symlinks
     ln -s ~/config/bin ~/bin
 
     ln -s ~/config/bash/ctags ~/.ctags
-
-To install the fugitive plugin, follow these steps:
-
-    cd ~/config
-    git submodule add http://github.com/tpope/vim-fugitive.git vim/bundle/fugitive
-
-This will update the '.gitmodules' file by appending something like:
-
-    [submodule "vim/bundle/fugitive"]
-        path = vim/bundle/fugitive
-        url = http://github.com/tpope/vim-fugitive.git
-    
-Commit these changes as follows:
-
-    git add .
-    git commit -m "added the fugitive bundle"
