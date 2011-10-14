@@ -82,3 +82,6 @@
 	path = vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
     ignore = dirty
+[submodule "vim/bundle/minibufexpl"]
+	path = vim/bundle/minibufexpl
+	url = https://github.com/fholgado/minibufexpl.vim.git

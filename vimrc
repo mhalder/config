@@ -16,10 +16,7 @@ syntax on
 " set leader to , instead of \
 let mapleader=","
 
-" omnicompletion for cpp
-au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
-set ofu=syntaxcomplete#Complete
-set tags+=~/config/vim/tags/cpp
+" configure omnicomplete
 let OmniCpp_NamespaceSearch = 1
 let OmniCpp_GlobalScopeSearch = 1
 let OmniCpp_ShowAccess = 1
@@ -28,13 +25,25 @@ let OmniCpp_MayCompleteDot = 1 " autocomplete after .
 let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
 let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
 let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+set ofu=syntaxcomplete#Complete
 " automatically open and close the popup menu / preview window
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
+
+" load tagfiles
+set tags+=~/config/vim/tags/stl
+set tags+=~/config/vim/tags/cpp
+
+" omnicompletion for cpp
+au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
 noremap <silent> <leader>ct :silent :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 " tagbar
 noremap <silent> <leader>yy :TagbarToggle<CR>
+
+" minibufexplorer
+noremap <silent> <leader>mb :MiniBufExplorer<CR>
+
 " startup window configuration
 set lines=50 columns=120
 
