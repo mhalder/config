@@ -32,6 +32,8 @@ else
     alias ls='ls --color'
     alias la='ls --color -l -A'    # long, almost all. color
     alias l.='ls -d .*'
+
+    alias py='pyclewn --editor=/usr/bin/gvim'
 fi
 
 alias c='clear'

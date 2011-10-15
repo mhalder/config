@@ -2,5 +2,6 @@
 *~
 vim/.netrwhist
 bin/ctags
+bin/pyclewn
 vim/tags/cpp
 vim/tags/stl
