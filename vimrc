@@ -25,6 +25,10 @@ let mapleader=","
 au! BufEnter *.cpp let b:fswitchdst = 'hpp' | let b:fswitchlocs = 'rel:include'
 au! BufEnter *.hpp let b:fswitchdst = 'cpp' | let b:fswitchlocs = 'rel:..'
 
+" minibufeplorer does not work with fugitive, souce on demand
+noremap <silent> <leader>sm :source $HOME/config/vim/source/minibufexpl.vim<CR>
+noremap <silent> <leader>em :MiniBufExplorer<CR>
+
 " cmake
 :autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in runtime! indent/cmake.vim 
 :autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in setf cmake
