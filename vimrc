@@ -4,6 +4,11 @@ set nocompatible
 source $HOME/config/vim/bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect('$HOME/config/vim/bundle')
 
+" add xptemplate global personal directory value
+if has("unix")
+  set runtimepath+=~/.vim/xpt-personal
+endif
+
 " set filetype and syntax stuff to on
 filetype on
 filetype plugin on
@@ -15,6 +20,15 @@ syntax on
 
 " set leader to , instead of \
 let mapleader=","
+
+" fswitch
+au! BufEnter *.cpp let b:fswitchdst = 'hpp' | let b:fswitchlocs = 'rel:include'
+au! BufEnter *.hpp let b:fswitchdst = 'cpp' | let b:fswitchlocs = 'rel:..'
+
+" cmake
+:autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in runtime! indent/cmake.vim 
+:autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in setf cmake
+:autocmd BufRead,BufNewFile *.ctest,*.ctest.in setf cmake
 
 " configure omnicomplete
 let OmniCpp_NamespaceSearch = 1
