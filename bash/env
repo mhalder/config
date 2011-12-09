@@ -1,6 +1,7 @@
 OS=`uname`
 if [[ "$OS" == 'Darwin' ]]; then
   export VIM_APP_DIR=/Applications/MacVim
+  export PATH=/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH
   export EDITOR="mvim -f"
 else
   export EDITOR="gvim -f"
