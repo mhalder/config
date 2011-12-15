@@ -67,6 +67,7 @@ alias gb='git branch'
 alias gba='git branch -a'
 alias gc='git commit -v'
 alias gca='git commit -v -a'
+alias gvs='gvim .git/index'
 
 # commit pending changes and quote all args as message
 function gg() { 

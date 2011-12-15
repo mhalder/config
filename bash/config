@@ -1,6 +1,6 @@
 # Colors from http://wiki.archlinux.org/index.php/Color_Bash_Prompt
 # misc
-NO_COLOR='\e[0m' #disable any colors
+NOC='\e[0m' #disable any colors
 # regular colors
 BLACK='\e[0;30m'
 RED='\e[0;31m'
@@ -38,7 +38,15 @@ BMAGENTA='\e[45m'
 BCYAN='\e[46m'
 BWHITE='\e[47m'
 
+__return_value ()
+{
+    value=$?
+    if [ "$value" != 0 ]; then
+        echo "[$value] "
+    fi
+}
+
 # Update the command prompt to be <user>:<current_directory>(git_branch) >
 # Note that the git branch is given a special color
-PS1="\n\w \[$EBLUE\]\$(vcprompt)\[$NO_COLOR\] mac \n$ "
+PS1="\n\[$RED\]\$(__return_value)\[$EGREEN\]\w \[$EBLUE\][\$(vcprompt)] \[$BLUE\]\u@\h\n\[$NOC\]$ "
 

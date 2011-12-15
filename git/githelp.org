@@ -13,6 +13,8 @@
 - .git/config :: project specific config file
 - $HOME/.gitconfig :: for Windows, also looks in msys root relative /etc/gitconfig
 ** ignoring files
+- ~/.gitignore :: global gitignore file, configure with: git config --global
+   core.excludesfile ~/.gitignore
 - .gitignore :: project specific, will be commited
 - .git/info/exclude :: project specific, only locally
 ** useful options
