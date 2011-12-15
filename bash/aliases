@@ -10,6 +10,7 @@ if [[ "$OS" == 'Darwin' ]]; then
     alias ev='mvim --remote-silent ~/bin/vim/vim-commands.txt'
     alias gv='mvim --remote-silent'
     alias gw='mvim -f'
+    alias gvs='mvim --remote-silent .git/index'
 
     alias ec='emacsclient --no-wait'
     alias em='open -a Emacs'
@@ -27,6 +28,7 @@ else
     alias ev='gvim --remote-silent ~/bin/vim/vim-commands.txt'
     alias gv='gvim --remote-silent'
     alias gw='gvim -f'
+    alias gvs='gvim --remote-silent .git/index'
 
     alias l='ls --color -l -h -t' # long, human, color, sort by time
     alias ls='ls --color'
@@ -67,7 +69,6 @@ alias gb='git branch'
 alias gba='git branch -a'
 alias gc='git commit -v'
 alias gca='git commit -v -a'
-alias gvs='gvim .git/index'
 
 # commit pending changes and quote all args as message
 function gg() { 
