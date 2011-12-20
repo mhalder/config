@@ -46,7 +46,9 @@ __return_value ()
     fi
 }
 
+export VCPROMPT_FORMAT="[%s:%b%u%m] "
+
 # Update the command prompt to be <user>:<current_directory>(git_branch) >
 # Note that the git branch is given a special color
-PS1="\n\[$RED\]\$(__return_value)\[$EGREEN\]\w \[$EBLUE\][\$(vcprompt)] \[$BLUE\]\u@\h\n\[$NOC\]$ "
+PS1="\n\[$RED\]\$(__return_value)\[$EGREEN\]\w \[$EBLUE\]\$(vcprompt)\[$BLUE\]\u@\h\n\[$NOC\]$ "
 
