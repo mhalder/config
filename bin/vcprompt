@@ -72,7 +72,7 @@ SYSTEMS = []
 # status indicators
 STAGED = '*'
 MODIFIED = '+'
-UNTRACKED = '?'
+UNTRACKED = '!'
 
 
 def helper(*args, **kwargs):

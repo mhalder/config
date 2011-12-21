@@ -47,6 +47,7 @@ __return_value ()
 }
 
 export VCPROMPT_FORMAT="[%s:%b%u%m] "
+export VCPROMPT_UNKNOWN="?"
 
 # Update the command prompt to be <user>:<current_directory>(git_branch) >
 # Note that the git branch is given a special color
