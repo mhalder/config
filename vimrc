@@ -65,7 +65,7 @@ noremap <silent> <leader>mb :MiniBufExplorer<CR>
 " startup window configuration
 set lines=50 columns=120
 
-" indentation and deskopt config
+" indentation and desktop config
 set cindent
 set smartindent
 set autoindent
