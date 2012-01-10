@@ -9,7 +9,7 @@ endif
 if has("win32")
     set gfn=Courier_New:h9:cANSI
 elseif has("mac")
-    set gfn=DejaVu\ Sans\ Mono:h11.00
+    set gfn=Ubuntu\ Mono:h13.00
 else
     set gfn=Ubuntu\ Mono\ 11.00
 endif
