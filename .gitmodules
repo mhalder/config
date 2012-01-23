@@ -100,5 +100,5 @@
     ignore = dirty
 [submodule "zsh/oh-my-zsh"]
 	path = zsh/oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh.git
+	url = git@github.com:mhalder/oh-my-zsh.git
     ignore = dirty
