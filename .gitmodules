@@ -102,3 +102,6 @@
 	path = zsh/oh-my-zsh
 	url = git@github.com:mhalder/oh-my-zsh.git
     ignore = dirty
+[submodule "vim/bundle/pydoc"]
+	path = vim/bundle/pydoc
+	url = https://github.com/fs111/pydoc.vim.git
