@@ -409,6 +409,10 @@ imap <leader>yy <C-\>
 imap <leader>xx <C-r><C-r><C-\>
 let g:xptemplate_key = '<Tab>' 
 
+" mappings pep8
+noremap <buffer> <leader>pe :call Pep8()<CR>
+noremap! <buffer> <leader>pe <Esc>:call Pep8()<CR>
+
 " Show syntax highlighting groups for word under cursor
 nmap <C-S-P> :call <SID>SynStack()<CR>
 function! <SID>SynStack()
