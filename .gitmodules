@@ -62,10 +62,6 @@
     path = vim/bundle/tcomment
     url = https://github.com/vim-scripts/tComment.git
     ignore = dirty
-[submodule "vim/bundle/taglist"]
-    path = vim/bundle/taglist
-    url = https://github.com/vim-scripts/taglist.vim.git
-    ignore = dirty
 [submodule "vim/bundle/xptemplate"]
 	path = vim/bundle/xptemplate
 	url = https://github.com/drmingdrmer/xptemplate.git
