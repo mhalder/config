@@ -197,6 +197,13 @@ stable master branch. We want our tree to look like this:
 - git stash list :: show all stashes
 - git stash drop stash@{0} :: drop stash 0
 - git stash branch testchanges :: create branch from stash
+* submodules
+- git add submodule url path
+- remove submodule:
+  - remove from .gitmodules
+  - remove from .git/config
+  - git rm --cached path/to/submodule
+  - commit, delete path/to/submodule
 * working with remotes
 - git remote -v :: show remotes with url
 - git remote add pb git://github.com/paulboone/ticgit.git :: add
