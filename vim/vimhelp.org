@@ -459,3 +459,46 @@ TODO customize
 * plugin omnicomplete
 <C-x> <C-o>
 TODO pythoncomplete
+* pyclewn debugger
+- import clewn.vim as vim; vim.pdb()
+- Cmapkeys
+  - B: list all breaks
+  - A: print argument list of current function
+  - S: step
+  - R: continue until return
+  - C: continue
+  - W: where
+  - Ctrl-z: interrupt pdb process
+  - Ctrl-n: next
+  - Ctrl-u: up
+  - Ctrl-d: down
+  - Ctrl-b: set breakpoint
+  - Ctrl-e: clear breakpoint
+  - Ctrl-p: print value under cursor
+* pdb commands
+  - h(help) [command]
+  - w(here)
+  - d(own)
+  - u(p)
+  - b(reak) [[filename:]lineno | function[,condition]]
+  - tbreak [[filename:]lineno | function[,condition]]
+  - cl(ear) [filename:]lineno | bpnumber [bpnumber ...]]
+  - disable [bpnumber [bpnumber ...]
+  - enable [bpnumber [bpnumber ...]
+  - ignore bpnumber [count]
+  - condition bpnumber [condition]
+  - commands bpnumber
+  - s(tep)
+  - n(ext)
+  - unt(il)
+  - r(eturn)
+  - c(cont)
+  - l(ist)
+  - a(rgs)
+  - p expression
+  - pp expression
+  - alias [name [command]]
+  - unalias name
+  - [!]statement
+  - run [args ...]
+
