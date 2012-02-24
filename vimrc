@@ -48,9 +48,15 @@ set ofu=syntaxcomplete#Complete
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
 
+" SuperTab
+let g:SuperTabDefaultCompletionType = "context"
+"
+" TaskList
+map <unique> <leader>tl <Plug>TaskList
+
 " load tagfiles
-set tags+=~/config/vim/tags/stl
-set tags+=~/config/vim/tags/cpp
+" set tags+=~/config/vim/tags/stl
+" set tags+=~/config/vim/tags/cpp
 
 " omnicompletion for cpp
 au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
@@ -405,9 +411,7 @@ map <leader>dg :diffget<CR>
 map <leader>du :diffupdate<CR>
 
 " mappings for xp template
-imap <leader>yy <C-\>
-imap <leader>xx <C-r><C-r><C-\>
-let g:xptemplate_key = '<Tab>' 
+let g:xptemplate_key = '<C-Tab>'
 
 " mappings pep8
 noremap <buffer> <leader>pe :call Pep8()<CR>
