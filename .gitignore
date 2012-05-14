@@ -5,3 +5,4 @@ bin/ctags
 bin/pyclewn
 vim/tags/cpp
 vim/tags/stl
+vim/bundle

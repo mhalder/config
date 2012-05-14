@@ -1,8 +1,51 @@
 set nocompatible
 
-" load and call pathogen
-source $HOME/config/vim/bundle/pathogen/autoload/pathogen.vim
-call pathogen#infect('$HOME/config/vim/bundle')
+if !isdirectory(expand("~/.vim/bundle/vundle"))
+  !mkdir -p ~/.vim/bundle
+  !git clone git://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+endif
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
+
+" my tpope bundles
+Bundle 'tpope/vim-fugitive.git'
+Bundle 'tpope/vim-pathogen.git'
+Bundle 'tpope/vim-git.git'
+Bundle 'tpope/vim-unimpaired.git'
+Bundle 'tpope/vim-repeat.git'
+Bundle 'tpope/vim-surround.git'
+Bundle 'tpope/vim-commentary.git'
+Bundle 'tpope/vim-speeddating.git'
+
+" my vim-scripts bundles
+Bundle 'vim-scripts/bufexplorer.zip.git'
+Bundle 'vim-scripts/tComment.git'
+Bundle 'vim-scripts/TaskList.vim.git'
+Bundle 'vim-scripts/OmniCppComplete.git'
+
+" my derekwyatt bundles
+Bundle 'derekwyatt/vim-fswitch.git'
+Bundle 'derekwyatt/vim-protodef.git'
+
+" my misc bundles
+Bundle 'scrooloose/nerdtree.git'
+Bundle 'sjl/gundo.vim.git'
+Bundle 'godlygeek/tabular.git'
+Bundle 'jceb/vim-orgmode.git'
+Bundle 'mirell/vim-matchit.git'
+Bundle 'mileszs/ack.vim.git'
+Bundle 'drmingdrmer/xptemplate.git'
+Bundle 'majutsushi/tagbar.git'
+Bundle 'ervandew/supertab.git'
+Bundle 'gregsexton/gitv.git'
+Bundle 'fs111/pydoc.vim.git'
+Bundle 'nvie/vim-pep8.git'
+Bundle 'kien/ctrlp.vim.git'
 
 " add xptemplate global personal directory value
 if has("unix")
