@@ -72,6 +72,20 @@ au! BufEnter *.hpp let b:fswitchdst = 'cpp' | let b:fswitchlocs = 'rel:..'
 noremap <silent> <leader>sm :source $HOME/config/vim/source/minibufexpl.vim<CR>
 noremap <silent> <leader>em :MiniBufExplorer<CR>
 
+" ctrl-p config
+map <leader>cp :CtrlP<CR>
+set wildignore+=*/tmp/,*.so,*.swp,*.zip,*.pyc,*.o,*~,*.obj
+let g:ctrlp_working_path_mode = 2
+let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+let g:ctrlp_user_command = {
+    \ 'types': {
+        \ 1: ['.git/', 'cd %s && git ls-files'],
+        \ 2: ['.hg/', 'hg --cwd %s locate -I .'],
+        \ 3: ['.svn/', 'cd %s && svn -R list'],
+        \ },
+    \ 'fallback': 'find %s -type f'
+    \ }
+
 " cmake
 :autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in runtime! indent/cmake.vim 
 :autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in setf cmake
