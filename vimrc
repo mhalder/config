@@ -463,6 +463,12 @@ map <leader>be :BufExplorer<CR>
 " mappings for fugitive
 map <leader>gs :Gstatus<CR>
 map <leader>gd :Gdiff<CR>
+map <leader>gb :Gblame<CR>
+map <leader>gl :Glog<CR>
+map <leader>gc :Gcommit<CR>
+map <leader>ge :Gvsplit :0<CR>
+map <leader>gv :Gitv<CR>
+map <leader>gf :Gitv!<CR>
 map <leader>dp :diffput<CR>
 map <leader>dg :diffget<CR>
 map <leader>du :diffupdate<CR>
