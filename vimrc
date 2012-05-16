@@ -44,7 +44,7 @@ Bundle 'majutsushi/tagbar.git'
 Bundle 'ervandew/supertab.git'
 Bundle 'gregsexton/gitv.git'
 Bundle 'fs111/pydoc.vim.git'
-Bundle 'nvie/vim-pep8.git'
+Bundle 'nvie/vim-flake8.git'
 Bundle 'kien/ctrlp.vim.git'
 
 " add xptemplate global personal directory value
@@ -457,8 +457,8 @@ map <leader>du :diffupdate<CR>
 let g:xptemplate_key = '<C-Tab>'
 
 " mappings pep8
-noremap <buffer> <leader>pe :call Pep8()<CR>
-noremap! <buffer> <leader>pe <Esc>:call Pep8()<CR>
+noremap <buffer> <leader>pe :call Flake8()<CR>
+noremap! <buffer> <leader>pe <Esc>:call Flake8()<CR>
 
 " Show syntax highlighting groups for word under cursor
 nmap <C-S-P> :call <SID>SynStack()<CR>
