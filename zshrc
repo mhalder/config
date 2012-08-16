@@ -7,6 +7,11 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="mhalder"
 
+# set correct python version for virtualenvwrapper
+if [ $OS = 'Darwin' ]; then
+    export VIRTUALENVWRAPPER_PYTHON=/opt/local/bin/python
+fi
+
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
