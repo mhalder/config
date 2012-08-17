@@ -13,6 +13,16 @@ if [ $OS = 'Darwin' ]; then
     export VIRTUALENVWRAPPER_PYTHON=/opt/local/bin/python
 fi
 
+# set env for zle
+export EDITOR=vim
+export VISUAL=gvim
+
+# set locale to english because of git
+export LC_ALL=en_US.UTF-8
+
+# switch of annoying beep
+setopt nobeep
+
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
