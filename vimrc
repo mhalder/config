@@ -103,10 +103,6 @@ let g:SuperTabDefaultCompletionType = "context"
 " TaskList
 map <unique> <leader>tl <Plug>TaskList
 
-" load tagfiles
-" set tags+=~/config/vim/tags/stl
-" set tags+=~/config/vim/tags/cpp
-
 " omnicompletion for cpp
 au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
 noremap <silent> <leader>ct :silent :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
