@@ -45,6 +45,7 @@ Bundle 'gregsexton/gitv.git'
 Bundle 'fs111/pydoc.vim.git'
 Bundle 'nvie/vim-flake8.git'
 Bundle 'kien/ctrlp.vim.git'
+Bundle 'Rip-Rip/clang_complete.git'
 
 " add xptemplate global personal directory value
 if has("unix")
@@ -89,6 +90,12 @@ let g:ctrlp_user_command = {
 :autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in runtime! indent/cmake.vim 
 :autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in setf cmake
 :autocmd BufRead,BufNewFile *.ctest,*.ctest.in setf cmake
+
+" clang_completion
+let g:clang_complete_auto = 0
+let g:clang_complete_copen = 1
+set completeopt=menuone,menu,longest
+set pumheight=15
 
 " SuperTab
 let g:SuperTabDefaultCompletionType = "context"
