@@ -23,3 +23,6 @@ create symlinks
     ln -s ~/config/vim ~/.vim
 
     ln -s ~/config/bin ~/bin
+
+    ln -s ~/config/git/githelpers ~/.githelpers
+    ln -s ~/config/git/gitconfig ~/.gitconfig
