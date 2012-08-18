@@ -46,6 +46,7 @@ Bundle 'fs111/pydoc.vim.git'
 Bundle 'nvie/vim-flake8.git'
 Bundle 'kien/ctrlp.vim.git'
 Bundle 'Rip-Rip/clang_complete.git'
+Bundle 'SirVer/ultisnips.git'
 
 " add xptemplate global personal directory value
 if has("unix")
