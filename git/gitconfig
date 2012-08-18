@@ -2,13 +2,16 @@
 	name = Martin Halder
 	email = martin.halder@gmail.com
 [diff]
+	tool = gvim -f
 [merge]
-	tool = vimdiff
+	tool = gvim -f
 [color]
 	ui = auto
+	diff = auto
+	status = auto
+	branch = auto
 [core]
-	excludesfile = /Users/halderm/.gitignore_global
-	editor = mvim -f
+	editor = gvim -f
 	trustExitCode = true
 [sendemail]
 	smtpserver = smtp.gmail.com
@@ -35,11 +38,11 @@
     # Divergence (commits we added and commits remote added)
     div = divergence
 
-    # Goodness (summary of diff lines added/removed/total)
+    # goodness (summary of diff lines added/removed/total)
     gn = goodness
     gnc = goodness --cached
 
-    # Fancy logging.
+    # fancy logging
     # h = head
     # hp = head with patch
     # r = recent commits, only current branch
