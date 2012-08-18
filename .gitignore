@@ -1,8 +1,7 @@
 *.swp
 *~
-vim/.netrwhist
 bin/ctags
 bin/pyclewn
-vim/tags/cpp
-vim/tags/stl
+bin/gvim
 vim/bundle
+vim/.netrwhist
