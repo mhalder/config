@@ -26,7 +26,6 @@ Bundle 'tpope/vim-speeddating.git'
 Bundle 'vim-scripts/bufexplorer.zip.git'
 Bundle 'vim-scripts/tComment.git'
 Bundle 'vim-scripts/TaskList.vim.git'
-Bundle 'vim-scripts/OmniCppComplete.git'
 
 " my derekwyatt bundles
 Bundle 'derekwyatt/vim-fswitch.git'
@@ -90,20 +89,6 @@ let g:ctrlp_user_command = {
 :autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in runtime! indent/cmake.vim 
 :autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in setf cmake
 :autocmd BufRead,BufNewFile *.ctest,*.ctest.in setf cmake
-
-" configure omnicomplete
-let OmniCpp_NamespaceSearch = 1
-let OmniCpp_GlobalScopeSearch = 1
-let OmniCpp_ShowAccess = 1
-let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
-let OmniCpp_MayCompleteDot = 1 " autocomplete after .
-let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
-let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
-let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
-set ofu=syntaxcomplete#Complete
-" automatically open and close the popup menu / preview window
-au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-set completeopt=menuone,menu,longest,preview
 
 " SuperTab
 let g:SuperTabDefaultCompletionType = "context"
