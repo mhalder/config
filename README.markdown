@@ -22,6 +22,8 @@ create symlinks
     ln -s ~/config/gvimrc ~/.gvimrc
     ln -s ~/config/vim ~/.vim
 
+    ln -s ~/config/tmux.conf ~/.tmux.conf
+
     ln -s ~/config/bin ~/bin
 
     ln -s ~/config/git/githelpers ~/.githelpers
