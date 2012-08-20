@@ -46,11 +46,6 @@ Bundle 'kien/ctrlp.vim.git'
 Bundle 'Rip-Rip/clang_complete.git'
 Bundle 'SirVer/ultisnips.git'
 
-" add xptemplate global personal directory value
-if has("unix")
-  set runtimepath+=~/.vim/xpt-personal
-endif
-
 " set filetype and syntax stuff to on
 filetype on
 filetype plugin on
@@ -111,9 +106,6 @@ noremap <silent> <leader>yy :TagbarToggle<CR>
 
 " minibufexplorer
 noremap <silent> <leader>mb :MiniBufExplorer<CR>
-
-" startup window configuration
-set lines=50 columns=120
 
 " indentation and desktop config
 set cindent
