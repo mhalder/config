@@ -3,5 +3,6 @@
 bin/ctags
 bin/pyclewn
 bin/gvim
+bin/tmux
 vim/bundle
 vim/.netrwhist
