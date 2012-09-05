@@ -52,6 +52,9 @@ filetype plugin on
 filetype indent on
 syntax on
 
+" set colorscheme
+colorscheme xoria256
+
 " source abbreviations
 :so $HOME/config/vim/abbrev.vim
 
