@@ -501,4 +501,10 @@ TODO pythoncomplete
   - unalias name
   - [!]statement
   - run [args ...]
-
+* vundle
+ i  :  run :BundleInstall with name taken from line cursor is positioned on
+ I  :  same as i, but runs :BundleInstall! to update bundle
+ D  :  delete selected bundle( be careful not to remove local modifications)
+ c  :  run :BundleClean
+ s  :  run :BundleSearch
+ R  :  fetch fresh script list from server
