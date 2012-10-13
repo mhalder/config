@@ -384,6 +384,7 @@ comm1 | comm2                                ▸ run two commands sequentally
 :Tab /:\zs                                   ▸ matches char after :
 :Tab /|                                      ▸ matches multiple | (like org table)
 * fugitive
+** reference
 :Git add %                                   ▸ add current file
 :Git rm %                                    ▸ delete current file
 :Git mv % path                               ▸ move current file
@@ -452,6 +453,60 @@ comm1 | comm2                                ▸ run two commands sequentally
 :Ggrep 'word' tagname or sha                 ▸ grep for word in specific commit
 :Glog --grep=word --                         ▸ grep for word commit messages
 :Glog -Sword --                              ▸ search for commits which added or removed word
+** cheat sheet
+*** complement command line
+:Git checkout master :: check out master branch
+:Gwrite = :Git add %
+:Gremove = :Git rm %
+:Gread = :Git checkout %
+:Gmove test.txt = :Git mv % test.txt
+:Gcommit = open split commit window
+:Gblame = open split window with blame
+*** gstatus
+ctrl-n and ctrl-p = navigating up and down
+- = git add and git reset, also in visual mode
+p = git add --patch
+enter = open file
+C = git commit
+*** browsing git objects
+**** open objects
+:Gedit :path/to/file = open index version of file
+split windows : Gsplit, Gvsplit, Gtabedit
+:Gedit branch:path/to/file = open index branch version of file
+:Gedit :0 = open index version of current file
+:Gedit sha1 : open git object
+**** navigation
+enter = open object under cursor, also for diff in commit objects
+a = toggle ls-tree view with sha1 and type
+:edit %:h = go to tree object of current file, also ..
+**** examine history
+:Glog -10 = load last 10 revs to quickfix
+:cnext = go to previous version
+with unimpaired : [q ]q and [Q ]Q
+go back with :Gedit
+:Glog -- = add commits to quickfix
+:Glog -- % = add commits to quickfix for current file
+**** searching history
+:Ggrep test = search for test in current working dir
+:Ggrep test master = search for test in different branch
+:Ggrep test sha1 = search for test in commit
+:Glog --grep=test -- = search for test in commit messages
+:Glog -Stest -- = search for commits with test in diff
+*** diff
+do and dp = diff obtain and diff put + diff update
+[c = jump to previous change
+]c = jump to next change
+*** resolving merge conflicts
+conflicts : first part from target, second from merge
+:Gdiff = open 3 way diff windows
+left : target branch : //2
+middle : working copy : filename
+right : merge branch : //3
+dp works without bufspec
+[c = jump to previous change
+]c = jump to next change
+:Gwrite = close and write index
+:Gwrite! (in target or merge) = keep this file entirely
 * plugin tasklist
 <leader>t                                    ▸ generate tasklist for TODO, FIXME
 * pyclewn debugger
