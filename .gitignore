@@ -6,3 +6,4 @@ bin/gvim
 bin/tmux
 vim/bundle
 vim/.netrwhist
+.DS_Store
