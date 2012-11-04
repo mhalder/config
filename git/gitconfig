@@ -13,6 +13,7 @@
 [core]
 	editor = gvim -f
 	trustExitCode = true
+	excludesfile = /Users/halderm/.gitignore
 [sendemail]
 	smtpserver = smtp.gmail.com
 	smtpserverport = 587
