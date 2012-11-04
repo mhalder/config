@@ -33,6 +33,10 @@ ln -sf ~/config/zsh/zshrc ~/.zshrc
 # bin dir
 rm -f ~/bin
 ln -sf ~/config/bin ~/bin 
+unamestr=`uname`
+if [[ "$unamestr" == 'Darwin' ]]; then
+    ln -sf ~/bin/mvim ~/bin/gvim
+fi
 
 # tmux
 ln -sf ~/config/tmux.conf ~/.tmux.conf 
