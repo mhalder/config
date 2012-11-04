@@ -18,17 +18,20 @@ ln -sf ~/config/bashrc ~/.bashrc
 
 # git
 ln -sf ~/config/git/gitconfig ~/.gitconfig 
+ln -sf ~/config/git/gitignore ~/.gitignore 
 ln -sf ~/config/git/githelpers ~/.githelpers 
 
 # vim
 ln -sf ~/config/gvimrc ~/.gvimrc 
 ln -sf ~/config/vimrc ~/.vimrc 
+rm -f ~/.vim
 ln -sf ~/config/vim ~/.vim 
 
 # zsh
 ln -sf ~/config/zsh/zshrc ~/.zshrc 
 
 # bin dir
+rm -f ~/bin
 ln -sf ~/config/bin ~/bin 
 
 # tmux
@@ -36,6 +39,8 @@ ln -sf ~/config/tmux.conf ~/.tmux.conf
 
 # prelude
 ln -sf ~/config/emacs/custom.el ~/src/prelude/personal/custom.el 
+rm -f ~/.emacs.d
+ln -sf ~/src/prelude ~/.emacs.d
 
 # oh-my-zsh
 echo switch to custom branch in oh-my-zsh
@@ -43,6 +48,7 @@ cd ~/src/oh-my-zsh
 git checkout -b custom
 
 echo creating oh-my-zsh links
+ln -sf ~/src/oh-my-zsh ~/.oh-my-zsh
 ln -sf ~/config/zsh/custom/mhalder.zsh ~/src/oh-my-zsh/custom/mhalder.zsh
 ln -sf ~/config/zsh/custom/plugins ~/src/oh-my-zsh/custom/plugins
 ln -sf ~/config/zsh/themes/mhalder.zsh-theme ~/src/oh-my-zsh/themes/mhalder.zsh-theme
@@ -51,4 +57,4 @@ ln -sf ~/config/zsh/plugins/virtualenvwrapper/virtualenvwrapper.plugin.zsh ~/src
 cd ~/src/oh-my-zsh
 git add themes/mhalder.zsh-theme
 echo committing
-git commit --all
+git commit --all -m 'customization'
