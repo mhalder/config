@@ -64,6 +64,15 @@
 ;; babel
 (setq org-confirm-babel-evaluate nil)
 
+;; active babel languages
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((R . t)
+   (emacs-lisp . t)
+   (sh . t)
+   (python . t)
+   ))
+
 ;; -------------------- org general setup
 ;; open .org and .org_archive files with org-mode
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\)$" . org-mode))
