@@ -192,5 +192,12 @@
    ("j" "journal" entry (file+datetree "~/org/journal.org")
       "* %? ")))
 
+;; -------------------- org column view
+;; setup default format
+(setq org-columns-default-format "%80ITEM(Task) %10Effort(Effort){:} %10CLOCKSUM")
+
+;; setup default estimates
+(setq org-global-properties (quote (("Effort_ALL" . "0:10 0:30 1:00 2:00 3:00 4:00 5:00 6:00 8:00"))))
+
 ;; -------------------- set startup file
 (find-file "~/org/start.org")
