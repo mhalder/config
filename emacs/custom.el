@@ -128,7 +128,7 @@
 ;; set keywords
 (setq org-todo-keywords
  '((sequence "TODO(t)" "STARTED(s!)" "WAITING(w@/!)" "APPT(a)" "PROJ(p)" 
-             "DELEGATED(g@/!)" "|" "DONE(d!)" "ADMIN(z)" "CANCELED(c@)")))
+             "DELEGATED(g@/!)" "|" "DONE(d!)" "ADMIN(z)" "CANCELED(c@)" "ARCHIVE(r)")))
 
 ;; change colors
 (setq org-todo-keyword-faces
