@@ -100,7 +100,7 @@
 (add-hook 'org-agenda-mode-hook '(lambda () (hl-line-mode 1 )))
 
 ;; display priorities
-(setq org-agenda-fontify-priorities 
+(setq org-agenda-fontify-priorities
    (quote ((65 (:foreground "Red")) (66 (:foreground "Blue")) (67 (:foreground "Darkgreen")))))
 
 ;; mark weekend
@@ -116,7 +116,7 @@
 ;; own agenda views
 (setq org-agenda-custom-commands
   (quote (
-   ("s" "someday" tags "someday" ((org-agenda-filter-preset 
+   ("s" "someday" tags "someday" ((org-agenda-filter-preset
            '("+someday"))(org-agenda-todo-ignore-with-date nil)))
    ("z" "admin" todo "ADMIN")
    ("f" "flagged with agenda"
@@ -127,7 +127,7 @@
 ;; -------------------- org todos
 ;; set keywords
 (setq org-todo-keywords
- '((sequence "TODO(t)" "STARTED(s!)" "WAITING(w@/!)" "APPT(a)" "PROJ(p)" 
+ '((sequence "TODO(t)" "STARTED(s!)" "WAITING(w@/!)" "APPT(a)" "PROJ(p)"
              "DELEGATED(g@/!)" "|" "DONE(d!)" "ADMIN(z)" "CANCELED(c@)" "ARCHIVE(r)")))
 
 ;; change colors
