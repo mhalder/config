@@ -61,3 +61,5 @@ bindkey '^[[5~' history-beginning-search-backward  ## Page Up
 bindkey '^[[6~' history-beginning-search-forward   ## Page Down
 
 zstyle ':completion:*' special-dirs true
+
+TERM=xterm-256color
