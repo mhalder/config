@@ -30,24 +30,6 @@
     (global-set-key "\C-cm" 'org-mac-message-insert-selected)))
 
 ;; -------------------- plugins
-;; evil
-(add-to-list 'load-path "~/src/evil")
-(require 'evil)
-(evil-mode 1)
-
-;; map vim move keys for evil org-mode
-(mapcar (lambda (state)
-  (evil-declare-key state org-mode-map
-    (kbd "M-l") 'org-metaright
-    (kbd "M-h") 'org-metaleft
-    (kbd "M-k") 'org-metaup
-    (kbd "M-j") 'org-metadown
-    (kbd "M-L") 'org-shiftmetaright
-    (kbd "M-H") 'org-shiftmetaleft
-    (kbd "M-K") 'org-shiftmetaup
-    (kbd "M-J") 'org-shiftmetadown))
-  '(normal insert))
-
 ;; undo tree
 (add-to-list 'load-path "~/src/undo-tree")
 (require 'undo-tree)
@@ -72,6 +54,24 @@
    (sh . t)
    (python . t)
    ))
+
+;; evil
+(add-to-list 'load-path "~/src/evil")
+(require 'evil)
+(evil-mode 1)
+
+;; map vim move keys for evil org-mode
+(mapcar (lambda (state)
+  (evil-declare-key state org-mode-map
+    (kbd "M-l") 'org-metaright
+    (kbd "M-h") 'org-metaleft
+    (kbd "M-k") 'org-metaup
+    (kbd "M-j") 'org-metadown
+    (kbd "M-L") 'org-shiftmetaright
+    (kbd "M-H") 'org-shiftmetaleft
+    (kbd "M-K") 'org-shiftmetaup
+    (kbd "M-J") 'org-shiftmetadown))
+  '(normal insert))
 
 ;; -------------------- org general setup
 ;; open .org and .org_archive files with org-mode
