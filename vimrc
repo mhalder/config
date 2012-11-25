@@ -45,6 +45,7 @@ Bundle 'nvie/vim-flake8.git'
 Bundle 'kien/ctrlp.vim.git'
 Bundle 'Rip-Rip/clang_complete.git'
 Bundle 'SirVer/ultisnips.git'
+Bundle 'fholgado/minibufexpl.vim.git'
 
 " set filetype and syntax stuff to on
 filetype on
@@ -64,10 +65,6 @@ let mapleader=","
 " fswitch
 au! BufEnter *.cpp let b:fswitchdst = 'hpp' | let b:fswitchlocs = 'rel:include'
 au! BufEnter *.hpp let b:fswitchdst = 'cpp' | let b:fswitchlocs = 'rel:..'
-
-" minibufeplorer does not work with fugitive, souce on demand
-noremap <silent> <leader>sm :source $HOME/config/vim/source/minibufexpl.vim<CR>
-noremap <silent> <leader>em :MiniBufExplorer<CR>
 
 " ctrl-p config
 map <leader>cp :CtrlP<CR>
