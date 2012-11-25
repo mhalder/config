@@ -95,14 +95,10 @@ set pumheight=15
 let g:SuperTabDefaultCompletionType = "context"
 "
 " TaskList
-map <unique> <leader>tl <Plug>TaskList
-
-" omnicompletion for cpp
-au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
-noremap <silent> <leader>ct :silent :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+map <unique> <leader>ta <Plug>TaskList
 
 " tagbar
-noremap <silent> <leader>yy :TagbarToggle<CR>
+noremap <silent> <leader>tg :TagbarToggle<CR>
 
 " minibufexplorer
 noremap <silent> <leader>mb :MiniBufExplorer<CR>
@@ -295,11 +291,12 @@ nmap <silent> <leader>s :set spell!<CR>
 set spellsuggest=5
 set spelllang=en
 
-" map ESC to jj, quit to leader-jj, save to leader-jk, save quit to leader-jl
+" map ESC to jj, quit to jj, save to jk, save quit to jl, destroy to jö
 imap jj <Esc>
 map <leader>jj :q<CR>
 map <leader>jk :w<CR>
 map <leader>jl :wq<CR>
+map <leader>jö :qall!<CR>
 
 " enable context search
 map <leader>hh <ESC>:exec "help ".expand("<cWORD>")<CR>
@@ -451,9 +448,6 @@ map <leader>gf :Gitv!<CR>
 map <leader>dp :diffput<CR>
 map <leader>dg :diffget<CR>
 map <leader>du :diffupdate<CR>
-
-" mappings for xp template
-let g:xptemplate_key = '<C-Tab>'
 
 " mappings pep8
 noremap <buffer> <leader>pe :call Flake8()<CR>
