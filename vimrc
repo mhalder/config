@@ -95,7 +95,7 @@ set pumheight=15
 let g:SuperTabDefaultCompletionType = "context"
 "
 " TaskList
-map <unique> <leader>ta <Plug>TaskList
+map <unique> <leader>tt <Plug>TaskList
 
 " tagbar
 noremap <silent> <leader>tg :TagbarToggle<CR>
