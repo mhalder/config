@@ -33,6 +33,7 @@ alias ev='gvim --remote-silent ~/bin/vim/vim-commands.txt'
 alias gv='gvim --remote-silent'
 alias gw='gvim -f'
 alias gvs='gvim --remote-silent .git/index'
+alias vs='vim .git/index'
 
 alias c='clear'
 alias cl='clear; l'
