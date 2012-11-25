@@ -200,4 +200,4 @@
 (setq org-global-properties (quote (("Effort_ALL" . "0:10 0:30 1:00 2:00 3:00 4:00 5:00 6:00 8:00"))))
 
 ;; -------------------- set startup file
-(find-file "~/org/start.org")
+(find-file "~/org/gtd.org")
