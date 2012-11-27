@@ -56,6 +56,9 @@ syntax on
 " set colorscheme
 colorscheme xoria256
 
+" get rid of swapfiles
+set noswapfile
+
 " source abbreviations
 :so $HOME/config/vim/abbrev.vim
 
