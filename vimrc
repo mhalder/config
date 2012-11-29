@@ -46,6 +46,7 @@ Bundle 'kien/ctrlp.vim.git'
 Bundle 'Rip-Rip/clang_complete.git'
 Bundle 'SirVer/ultisnips.git'
 Bundle 'fholgado/minibufexpl.vim.git'
+Bundle 'scrooloose/syntastic.git'
 
 " set filetype and syntax stuff to on
 filetype on
