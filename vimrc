@@ -281,7 +281,7 @@ set linebreak
 set fillchars=""
 
 " Add ignorance of whitespace to diff
-set diffopt+=iwhite
+" set diffopt+=iwhite
 
 " enable search highlighting and incremental search, toggle with leader-th
 set hlsearch
