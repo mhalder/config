@@ -4,9 +4,9 @@
 echo creating src and clone all repos
 mkdir ~/src
 cd ~/src
-git clone git://gitorious.org/evil/evil.git
+git clone https://git.gitorious.org/evil/evil.git
 git clone https://github.com/robbyrussell/oh-my-zsh.git
-git clone git://orgmode.org/org-mode.git
+git clone http://repo.or.cz/r/org-mode.git
 git clone https://github.com/bbatsov/prelude.git
 git clone http://www.dr-qubit.org/git/undo-tree.git
 
