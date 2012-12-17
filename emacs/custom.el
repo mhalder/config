@@ -73,6 +73,9 @@
     (kbd "M-J") 'org-shiftmetadown))
   '(normal insert))
 
+;; disable flyspell mode by default
+(setq prelude-flyspell nil)
+
 ;; -------------------- org general setup
 ;; open .org and .org_archive files with org-mode
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\)$" . org-mode))
