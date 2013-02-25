@@ -1,3 +1,5 @@
+*.tmp
+cscope.out
 org-clock-save.el
 .org-id-locations
 .DS_Store
