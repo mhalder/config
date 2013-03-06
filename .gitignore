@@ -4,6 +4,7 @@ bin/ctags
 bin/pyclewn
 bin/gvim
 bin/tmux
+bin/mnt_shares
 vim/bundle
 vim/.netrwhist
 .DS_Store
