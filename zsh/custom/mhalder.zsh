@@ -64,6 +64,7 @@ alias glo='git pull origin master'
 alias gp='git push'
 alias gpo='git push origin master'
 alias g='git status'
+alias gk='git --no-pager log --pretty=oneline --all --decorate -30 --graph --abbrev-commit'
 
 # push and pop directories on directory stack
 alias pu='pushd'
