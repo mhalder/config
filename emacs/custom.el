@@ -60,6 +60,9 @@
 (require 'evil)
 (evil-mode 1)
 
+;; taskjuggler
+(require 'ox-taskjuggler)
+
 ;; map vim move keys for evil org-mode
 (mapcar (lambda (state)
   (evil-declare-key state org-mode-map
