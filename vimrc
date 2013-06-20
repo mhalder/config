@@ -156,7 +156,8 @@ set nobackup
 set wrapscan
 
 " use par as external formatter
-set formatprg=par\ -w80req
+set formatprg=par
+" set formatprg=par\ -w80req
 
 " set the forward slash to be the slash of note. Backslashes suck
 set shellslash
@@ -465,6 +466,9 @@ map <leader>du :diffupdate<CR>
 " mappings pep8
 noremap <buffer> <leader>pe :call Flake8()<CR>
 noremap! <buffer> <leader>pe <Esc>:call Flake8()<CR>
+
+" cool mapping for . in visual mode
+vnoremap . :norm<CR>
 
 " show syntax highlighting groups for word under cursor
 nmap <C-S-P> :call <SID>SynStack()<CR>
