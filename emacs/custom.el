@@ -190,7 +190,7 @@
 (setq org-capture-templates
  '(("t" "task" entry (file+headline "~/org/gtd.org" "inbox")
       "* TODO %?")
-   ("z" "admin entry" entry (file+headline "~/org/gtd.org" "Inbox")
+   ("z" "admin entry" entry (file+headline "~/org/gtd.org" "inbox")
       "* ADMIN %? \n  %i" :clock-in t :clock-resume t)
    ("j" "journal" entry (file+datetree "~/org/journal.org")
       "* %? ")))
@@ -202,5 +202,9 @@
 ;; setup default estimates
 (setq org-global-properties (quote (("Effort_ALL" . "0:10 0:30 1:00 2:00 3:00 4:00 5:00 6:00 8:00"))))
 
+(set-face-attribute 'default nil :height 100)
+(set-face-attribute 'org-hide nil :height 100)
+(set-face-attribute 'org-level-1 nil :height 100)
+(set-face-attribute 'org-level-2 nil :height 100)
+(set-face-attribute 'org-column nil :height 100)
 ;; -------------------- set startup file
-(find-file "~/org/gtd.org")
