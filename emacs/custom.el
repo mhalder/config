@@ -40,7 +40,7 @@
 (require 'org-velocity)
 (global-set-key (kbd "C-c v") 'org-velocity-read)
 (setq org-velocity-always-use-bucket t)
-(setq org-velocity-bucket "~/org/gtd.org")
+(setq org-velocity-bucket "~/Google Drive/Org/gtd/gtd.org")
 (setq org-velocity-search-method (quote any))
 
 ;; babel
@@ -100,7 +100,7 @@
 ;; -------------------- org agenda
 ;; set agenda file
 (setq org-agenda-files (quote
- ("~/org/gtd.org")))
+ ("~/Google Drive/Org/gtd/gtd.org")))
 
 ;; highlight current time in agenda
 (add-hook 'org-agenda-mode-hook '(lambda () (hl-line-mode 1 )))
@@ -188,26 +188,25 @@
 
 ;; -------------------- org capture
 ;; setup org-capture
-(setq org-default-notes-file (concat org-directory "~/org/gtd.org"))
+(setq org-default-notes-file (concat org-directory "~/Google Drive/Org/gtd/gtd.org"))
 (define-key global-map "\C-cc" 'org-capture)
 (setq org-capture-templates
- '(("t" "task" entry (file+headline "~/org/gtd.org" "inbox")
+ '(("t" "task" entry (file+headline "~/Google Drive/Org/gtd/gtd.org" "inbox")
       "* TODO %?")
-   ("z" "admin entry" entry (file+headline "~/org/gtd.org" "inbox")
+   ("z" "admin entry" entry (file+headline "~/Google Drive/Org/gtd/gtd.org" "inbox")
       "* ADMIN %? \n  %i" :clock-in t :clock-resume t)
-   ("j" "journal" entry (file+datetree "~/org/journal.org")
+   ("j" "journal" entry (file+datetree "~/Google Drive/Org/gtd/journal.org")
       "* %? ")))
 
 ;; -------------------- org column view
 ;; setup default format
-(setq org-columns-default-format "%80ITEM(Task) %10Effort(Effort){:} %10CLOCKSUM")
+(setq org-columns-default-format "%70ITEM(Task) %10Effort(Effort){:} %10CLOCKSUM")
 
 ;; setup default estimates
-(setq org-global-properties (quote (("Effort_ALL" . "0:10 0:30 1:00 2:00 3:00 4:00 5:00 6:00 8:00"))))
+(setq org-global-properties (quote (("Effort_ALL" . "0:30 1:00 2:00 4:00 8:00"))))
 
 (set-face-attribute 'default nil :height 100)
 (set-face-attribute 'org-hide nil :height 100)
 (set-face-attribute 'org-level-1 nil :height 100)
 (set-face-attribute 'org-level-2 nil :height 100)
 (set-face-attribute 'org-column nil :height 100)
-;; -------------------- set startup file
