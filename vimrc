@@ -346,9 +346,6 @@ nmap <silent> <leader>ea :tabedit $HOME/config/vim/abbrev.vim<CR>
 vmap > >gv
 vmap < <gv
 
-" start scrolling before last line
-set scrolloff=3
-
 " search the current file for the word under the cursor and display matches
 nmap <silent> <leader>gw :vimgrep /<C-r><C-w>/ %<CR>:ccl<CR>:cwin<CR><C-W>J:nohls<CR>
 
