@@ -13,9 +13,6 @@ git clone http://www.dr-qubit.org/git/undo-tree.git
 # creating links
 echo creating links
 
-# bash
-ln -sf ~/config/bashrc ~/.bashrc 
-
 # git
 ln -sf ~/config/git/gitconfig ~/.gitconfig 
 ln -sf ~/config/git/gitignore ~/.gitignore 
@@ -46,19 +43,8 @@ ln -sf ~/config/emacs/custom.el ~/src/prelude/personal/custom.el
 rm -f ~/.emacs.d
 ln -sf ~/src/prelude ~/.emacs.d
 
-# oh-my-zsh
-echo switch to custom branch in oh-my-zsh
-cd ~/src/oh-my-zsh
-git checkout -b custom
-
+## oh-my-zsh
 echo creating oh-my-zsh links
 ln -sf ~/src/oh-my-zsh ~/.oh-my-zsh
 ln -sf ~/config/zsh/custom/mhalder.zsh ~/src/oh-my-zsh/custom/mhalder.zsh
-ln -sf ~/config/zsh/custom/plugins ~/src/oh-my-zsh/custom/plugins
 ln -sf ~/config/zsh/themes/mhalder.zsh-theme ~/src/oh-my-zsh/themes/mhalder.zsh-theme
-rm ~/src/oh-my-zsh/plugins/virtualenvwrapper/virtualenvwrapper.plugin.zsh
-ln -sf ~/config/zsh/plugins/virtualenvwrapper/virtualenvwrapper.plugin.zsh ~/src/oh-my-zsh/plugins/virtualenvwrapper/virtualenvwrapper.plugin.zsh
-cd ~/src/oh-my-zsh
-git add themes/mhalder.zsh-theme
-echo committing
-git commit --all -m 'customization'
