@@ -22,13 +22,6 @@
     (setenv "PATH" (concat "/opt/local/sbin:/opt/local/bin:" (getenv "PATH")))
     (setq exec-path (append '("/opt/local/sbin") '("/opt/local/bin") exec-path))))
 
-;; mac mail mode
-(if macosx-p
-  (progn
-    (require 'org-mac-message)
-    (setq org-mac-mail-account "Emenda")
-    (global-set-key "\C-cm" 'org-mac-message-insert-selected)))
-
 ;; -------------------- plugins
 ;; undo tree
 (add-to-list 'load-path "~/src/undo-tree")
