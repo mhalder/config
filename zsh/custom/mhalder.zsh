@@ -12,7 +12,7 @@ if [ $OS = 'Darwin' ]; then
     alias la='ls -G -l -A'   # long, almost all. color
     alias l.='ls -d .[^.]*'
 
-    export PATH=/opt/local/bin:/opt/local/sbin:~/bin:/opt/local/Library/Frameworks/Python.framework/Versions/Current/bin:$PATH
+    export PATH=~/bin:/opt/local/bin:/opt/local/sbin:$PATH
     export VIM_APP_DIR=/Applications/MacVim
 
     export LANG=en
