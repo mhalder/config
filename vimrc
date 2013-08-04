@@ -23,30 +23,24 @@ Bundle 'tpope/vim-speeddating.git'
 
 " my vim-scripts bundles
 Bundle 'vim-scripts/bufexplorer.zip.git'
-Bundle 'vim-scripts/tComment.git'
 Bundle 'vim-scripts/TaskList.vim.git'
 
-" my derekwyatt bundles
-Bundle 'derekwyatt/vim-fswitch.git'
-Bundle 'derekwyatt/vim-protodef.git'
+" my python bundles
+Bundle 'fs111/pydoc.vim.git'
+Bundle 'nvie/vim-flake8.git'
 
 " my misc bundles
 Bundle 'scrooloose/nerdtree.git'
 Bundle 'sjl/gundo.vim.git'
-Bundle 'godlygeek/tabular.git'
-Bundle 'jceb/vim-orgmode.git'
-Bundle 'tsaleh/vim-matchit.git'
-Bundle 'mileszs/ack.vim.git'
 Bundle 'majutsushi/tagbar.git'
-Bundle 'ervandew/supertab.git'
-Bundle 'gregsexton/gitv.git'
-Bundle 'fs111/pydoc.vim.git'
-Bundle 'nvie/vim-flake8.git'
 Bundle 'kien/ctrlp.vim.git'
-Bundle 'Rip-Rip/clang_complete.git'
-Bundle 'SirVer/ultisnips.git'
-Bundle 'fholgado/minibufexpl.vim.git'
 Bundle 'scrooloose/syntastic.git'
+Bundle 'Valloric/YouCompleteMe.git'
+Bundle 'mileszs/ack.vim.git'
+Bundle 'SirVer/ultisnips.git'
+Bundle 'gregsexton/gitv.git'
+Bundle 'godlygeek/tabular.git'
+Bundle 'tsaleh/vim-matchit.git'
 
 " set filetype and syntax stuff to on
 filetype on
