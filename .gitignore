@@ -1,5 +1,6 @@
 *.swp
 *~
+bin/mvim
 bin/ctags
 bin/pyclewn
 bin/gvim
