@@ -60,6 +60,12 @@ set noswapfile
 " set leader to , instead of \
 let mapleader=","
 
+" ultisnips
+let g:UltiSnipsUsePythonVersion = 2
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
 " ctrl-p config
 map <leader>cp :CtrlP<CR>
 set wildignore+=*/tmp/,*.so,*.swp,*.zip,*.pyc,*.o,*~,*.obj
