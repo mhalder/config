@@ -60,10 +60,6 @@ set noswapfile
 " set leader to , instead of \
 let mapleader=","
 
-" fswitch
-au! BufEnter *.cpp let b:fswitchdst = 'hpp' | let b:fswitchlocs = 'rel:include'
-au! BufEnter *.hpp let b:fswitchdst = 'cpp' | let b:fswitchlocs = 'rel:..'
-
 " ctrl-p config
 map <leader>cp :CtrlP<CR>
 set wildignore+=*/tmp/,*.so,*.swp,*.zip,*.pyc,*.o,*~,*.obj
@@ -83,23 +79,11 @@ let g:ctrlp_user_command = {
 :autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in setf cmake
 :autocmd BufRead,BufNewFile *.ctest,*.ctest.in setf cmake
 
-" clang_completion
-let g:clang_complete_auto = 0
-let g:clang_complete_copen = 1
-set completeopt=menuone,menu,longest
-set pumheight=15
-
-" SuperTab
-let g:SuperTabDefaultCompletionType = "context"
-"
 " TaskList
 map <leader>tt <Plug>TaskList
 
 " tagbar
 noremap <silent> <leader>tg :TagbarToggle<CR>
-
-" minibufexplorer
-noremap <silent> <leader>mb :MiniBufExplorer<CR>
 
 " indentation and desktop config
 set cindent
