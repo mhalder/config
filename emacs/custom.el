@@ -7,6 +7,9 @@
 ;; enable server mode for shell client
 (server-start)
 
+;; load latest org
+(add-to-list 'load-path "~/src/org-mode/lisp")
+
 ;; -------------------- mac stuff
 ;; use cmd as meta on mac
 (if macosx-p
