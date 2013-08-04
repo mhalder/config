@@ -41,6 +41,7 @@ Bundle 'SirVer/ultisnips.git'
 Bundle 'gregsexton/gitv.git'
 Bundle 'godlygeek/tabular.git'
 Bundle 'tsaleh/vim-matchit.git'
+Bundle 'ervandew/supertab.git'
 
 " set filetype and syntax stuff to on
 filetype on
@@ -62,9 +63,13 @@ let mapleader=","
 
 " ultisnips
 let g:UltiSnipsUsePythonVersion = 2
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+" youcompleteme
+let g:ycm_key_list_select_completion = ["<C-TAB>", "<Down>"] 
+let g:ycm_key_list_previous_completion = ["<C-S-TAB>", "<Up>"] 
+
+" supertab
+let g:SuperTabDefaultCompletionType = "context"
 
 " ctrl-p config
 map <leader>cp :CtrlP<CR>
