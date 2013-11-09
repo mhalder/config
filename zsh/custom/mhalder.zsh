@@ -27,6 +27,8 @@ else
     export PATH=~/bin:$PATH
 fi
 
+export PATH=~/src/llvm-build/Debug+Asserts/bin:$PATH
+
 alias ea='gvim -f ~/bin/dotfiles/bash/aliases && reload' # edit aliases
 alias ee='gvim --remote-silent ~/bin/dotfiles/bash/env'
 alias ev='gvim --remote-silent ~/bin/vim/vim-commands.txt'
@@ -83,3 +85,5 @@ alias afind='ack-grep -il'
 alias ffind='find . -name'
 
 unsetopt correct_all
+
+export LC_CTYPE=en_US.UTF-8

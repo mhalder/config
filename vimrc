@@ -42,6 +42,7 @@ Bundle 'gregsexton/gitv.git'
 Bundle 'godlygeek/tabular.git'
 Bundle 'tsaleh/vim-matchit.git'
 Bundle 'ervandew/supertab.git'
+Bundle 'kana/vim-operator-user'
 
 " set filetype and syntax stuff to on
 filetype on
@@ -63,6 +64,10 @@ let mapleader=","
 
 " ultisnips
 let g:UltiSnipsUsePythonVersion = 2
+
+" clang
+map <C-K> :pyf ~/src/llvm/tools/clang/tools/clang-format/clang-format.py<CR>
+imap <C-K> <ESC>:pyf ~/src/llvm/tools/clang/tools/clang-format/clang-format.py<CR>i
 
 " youcompleteme
 let g:ycm_key_list_select_completion = ["<C-TAB>", "<Down>"] 
