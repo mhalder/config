@@ -9,7 +9,7 @@ ZSH_THEME="mhalder"
 
 # set env for zle
 export EDITOR=vim
-export VISUAL='gvim -f'
+export VISUAL='vim -f'
 
 # set locale to english because of git
 export LC_ALL=en_US.UTF-8
@@ -19,7 +19,30 @@ setopt nobeep
 
 # take extension and completion to its limit
 setopt extendedglob
-setopt globcomplete
+
+# fix 'git diff HEAD^' without escaping
+unsetopt nomatch
+
+# and a bunch of other stuff
+setopt alwayslastprompt
+setopt no_alwaystoend
+setopt autolist
+setopt automenu
+setopt autonamedirs
+setopt autoparamkeys
+setopt autoparamslash
+setopt autoremoveslash
+setopt no_bashautolist
+setopt completealiases
+setopt completeinword
+setopt hashlistall
+setopt no_listambiguous
+setopt no_listbeep
+setopt listpacked
+setopt listrowsfirst
+setopt listtypes
+setopt no_menucomplete
+setopt no_recexact
 
 # use jj instead of esc in vi-mode
 bindkey -M viins 'jj' vi-cmd-mode
