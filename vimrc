@@ -111,7 +111,7 @@ map <leader>tt <Plug>TaskList
 noremap <silent> <leader>tg :TagbarToggle<CR>
 
 " indentation and desktop config
-set cindent
+" set cindent
 set smartindent
 set autoindent
 set ruler
@@ -269,7 +269,7 @@ set showfulltag
 
 " set the textwidth to be 80 chars and wrap during text entry
 set textwidth=80
-" set formatoptions+=at
+set formatoptions+=a
 " set wrapmargin=5 no effect when textwidth != 0
 
 " enable wrapping
