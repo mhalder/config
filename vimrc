@@ -95,6 +95,10 @@ let g:ctrlp_user_command = {
 :autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in setf cmake
 :autocmd BufRead,BufNewFile *.ctest,*.ctest.in setf cmake
 
+" some languages are picky about tab format
+:autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab
+:autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
 " TaskList
 map <leader>tt <Plug>TaskList
 
