@@ -290,12 +290,12 @@ nmap <silent> <leader>s :set spell!<CR>
 set spellsuggest=5
 set spelllang=en
 
-" map ESC to jj, quit to jj, save to jk, save quit to jl, destroy to jö
+" map ESC to jj, quit to jj, save to jk, save quit to jl, destroy to j;
 imap jj <Esc>
 map <leader>jj :q<CR>
 map <leader>jk :w<CR>
 map <leader>jl :wq<CR>
-map <leader>jö :qall!<CR>
+map <leader>j; :qall!<CR>
 
 " enable context search
 map <leader>hh <ESC>:exec "help ".expand("<cWORD>")<CR>
