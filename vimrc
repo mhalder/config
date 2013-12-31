@@ -82,13 +82,13 @@ set wildignore+=*/tmp/,*.so,*.swp,*.zip,*.pyc,*.o,*~,*.obj
 let g:ctrlp_working_path_mode = 2
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 let g:ctrlp_user_command = {
-    \ 'types': {
-        \ 1: ['.git/', 'cd %s && git ls-files'],
-        \ 2: ['.hg/', 'hg --cwd %s locate -I .'],
-        \ 3: ['.svn/', 'cd %s && svn -R list'],
-        \ },
-    \ 'fallback': 'find %s -type f'
-    \ }
+      \ 'types': {
+      \ 1: ['.git/', 'cd %s && git ls-files'],
+      \ 2: ['.hg/', 'hg --cwd %s locate -I .'],
+      \ 3: ['.svn/', 'cd %s && svn -R list'],
+      \ },
+      \ 'fallback': 'find %s -type f'
+      \ }
 
 " cmake
 :autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in runtime! indent/cmake.vim 
@@ -134,9 +134,9 @@ set ch=2
 
 " show special characters, invert with leader-le, spaces with leader-sp and leader-su
 if has("win32")
-    set listchars=tab:\>\.,eol:$
+  set listchars=tab:\>\.,eol:$
 else
-    set listchars=tab:▸\ ,eol:¬
+  set listchars=tab:▸\ ,eol:¬
 endif
 set nolist
 nmap <silent> <leader>le :set list!<CR>
@@ -249,7 +249,7 @@ set wildmenu
 set wildignore+=*.o,*.obj,*.pyc,*.DS_STORE,*.db,*.swc
 set wildmode=longest:full
 if has("mac")
-    set wildignorecase
+  set wildignorecase
 endif
 
 " always open the quickfix window when running make, grep, grepadd and vimgrep
@@ -390,19 +390,19 @@ nmap <C-Space>d :scs find d <C-R>=expand("<cword>")<CR><CR>
 
 " ctrl-space-space for vertical split
 nmap <C-Space><C-Space>s
-    \:vert scs find s <C-R>=expand("<cword>")<CR><CR>
+      \:vert scs find s <C-R>=expand("<cword>")<CR><CR>
 nmap <C-Space><C-Space>g
-    \:vert scs find g <C-R>=expand("<cword>")<CR><CR>
+      \:vert scs find g <C-R>=expand("<cword>")<CR><CR>
 nmap <C-Space><C-Space>c
-    \:vert scs find c <C-R>=expand("<cword>")<CR><CR>
+      \:vert scs find c <C-R>=expand("<cword>")<CR><CR>
 nmap <C-Space><C-Space>t
-    \:vert scs find t <C-R>=expand("<cword>")<CR><CR>
+      \:vert scs find t <C-R>=expand("<cword>")<CR><CR>
 nmap <C-Space><C-Space>e
-    \:vert scs find e <C-R>=expand("<cword>")<CR><CR>
+      \:vert scs find e <C-R>=expand("<cword>")<CR><CR>
 nmap <C-Space><C-Space>i
-    \:vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+      \:vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 nmap <C-Space><C-Space>d
-    \:vert scs find d <C-R>=expand("<cword>")<CR><CR>
+      \:vert scs find d <C-R>=expand("<cword>")<CR><CR>
 
 " ctrl-space-space for vertical split
 nmap <leader>css :vert scs find s <C-R>=expand("<cword>")<CR><CR>
@@ -417,15 +417,15 @@ nmap <leader>csd :vert sts find d <C-R>=expand("<cword>")<CR><CR>
 nnoremap <silent> <leader>sw :call Preserve("%s/\\s\\+$//e")<CR>
 nnoremap <silent> <leader>ff :call Preserve("normal gg=G")<CR>
 function! Preserve(command)
-    " preparation: save last search, and cursor position.
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    " Do the business:
-    execute a:command
-    " clean up: restore previous search history, and cursor position
-    let @/=_s
-    call cursor(l, c)
+  " preparation: save last search, and cursor position.
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  " Do the business:
+  execute a:command
+  " clean up: restore previous search history, and cursor position
+  let @/=_s
+  call cursor(l, c)
 endfunction
 
 " enable fast opening of files relative to current
@@ -464,10 +464,10 @@ vnoremap . :norm<CR>
 " show syntax highlighting groups for word under cursor
 nmap <C-S-P> :call <SID>SynStack()<CR>
 function! <SID>SynStack()
-    if !exists("*synstack")
-        return
-    endif
-    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
 " neat function to replace a string in all occurences in all files
@@ -483,9 +483,11 @@ endfunction
 
 " browse back with .. in git blobs or trees, jump to commit with C
 autocmd User fugitive
-  \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
-  \   nnoremap <buffer> .. :edit %:h<CR> |
-  \ endif
+      \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
+      \   nnoremap <buffer> .. :edit %:h<CR> |
+      \ endif
 
 " auto delete fugitive buffers on close
 autocmd BufReadPost fugitive://* set bufhidden=delete
+
+" vim: set ts=2 sts=2 sw=2 expandtab:
