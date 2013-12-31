@@ -334,13 +334,13 @@ noremap <silent> <C-F12> :resize -10<CR>
 " same for buffers
 noremap <silent> <leader>db :bd<CR>
 
-nmap <silent> <leader>ev :tabedit $HOME/config/vimrc<CR>
+nmap <silent> <leader>ev :tabe $HOME/config/vimrc<CR>
 nmap <silent> <leader>sv :so $HOME/config/vimrc<CR>
-nmap <silent> <leader>eg :tabedit $HOME/config/gvimrc<CR>
+nmap <silent> <leader>eg :tabe $HOME/config/gvimrc<CR>
 nmap <silent> <leader>sg :so $HOME/config/gvimrc<CR>
-nmap <silent> <leader>vh :tabedit $HOME/config/vim/vimhelp.org<CR>
-nmap <silent> <leader>gh :tabedit $HOME/config/git/githelp.org<CR>
-nmap <silent> <leader>ea :tabedit $HOME/config/vim/abbrev.vim<CR>
+nmap <silent> <leader>vh :tabe $HOME/config/vim/vimhelp.org<CR>
+nmap <silent> <leader>gh :tabe $HOME/config/git/githelp.org<CR>
+nmap <silent> <leader>ea :tabe $HOME/config/vim/abbrev.vim<CR>
 
 " use reselect visual when indenting in visual mode
 vmap > >gv
@@ -365,8 +365,7 @@ vmap <leader>bd ]egv
 
 " make tab moving easier
 nmap <leader>tn :tabnew<CR>
-nmap <leader>te :tabedit<CR>
-nmap <leader>tf :tabnext<CR>
+nmap <leader>tf :tabn<CR>
 nmap <leader>tb :tabp<CR>
 nmap <leader>tc :tabc<CR>
 nmap <leader>on :only<CR>
