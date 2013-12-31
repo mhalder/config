@@ -90,14 +90,19 @@ let g:ctrlp_user_command = {
       \ 'fallback': 'find %s -type f'
       \ }
 
-" cmake
-:autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in runtime! indent/cmake.vim
-:autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in setf cmake
-:autocmd BufRead,BufNewFile *.ctest,*.ctest.in setf cmake
+if has("autocmd")
+  " cmake
+  :autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in runtime! indent/cmake.vim
+  :autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in setf cmake
+  :autocmd BufRead,BufNewFile *.ctest,*.ctest.in setf cmake
 
-" some languages are picky about tab format
-:autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab
-:autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+  " some languages are picky about tab format
+  :autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab
+  :autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+  " always open the quickfix window when running make, grep, grepadd and vimgrep
+  " autocmd QuickfixCmdPost make,grep,grepadd,vimgrep :botright cwindow
+endif
 
 " TaskList
 map <leader>tt <Plug>TaskList
@@ -255,9 +260,6 @@ set wildmode=longest:full
 if has("mac")
   set wildignorecase
 endif
-
-" always open the quickfix window when running make, grep, grepadd and vimgrep
-" autocmd QuickfixCmdPost make,grep,grepadd,vimgrep :botright cwindow
 
 " same as default except that I remove the 'u' option
 set complete=.,w,b,t
@@ -486,12 +488,14 @@ function! QuickfixFilenames()
 endfunction
 
 " browse back with .. in git blobs or trees, jump to commit with C
-autocmd User fugitive
-      \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
-      \   nnoremap <buffer> .. :edit %:h<CR> |
-      \ endif
+if has("autocmd")
+  autocmd User fugitive
+        \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
+        \   nnoremap <buffer> .. :edit %:h<CR> |
+        \ endif
 
-" auto delete fugitive buffers on close
-autocmd BufReadPost fugitive://* set bufhidden=delete
+  " auto delete fugitive buffers on close
+  autocmd BufReadPost fugitive://* set bufhidden=delete
+endif
 
 " vim: set ts=2 sts=2 sw=2 expandtab:
