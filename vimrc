@@ -267,9 +267,9 @@ set complete=.,w,b,t
 " when completing by tag, show the whole tag, not just the function name
 set showfulltag
 
-" set the textwidth to be 80 chars and wrap during text entry
-set textwidth=80
-set formatoptions+=a
+" set the textwidth to be 72 chars and wrap during text entry
+set textwidth=72
+" set formatoptions+=a
 " set wrapmargin=5 no effect when textwidth != 0
 
 " enable wrapping
