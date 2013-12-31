@@ -70,8 +70,8 @@ map <C-K> :pyf ~/src/llvm/tools/clang/tools/clang-format/clang-format.py<CR>
 imap <C-K> <ESC>:pyf ~/src/llvm/tools/clang/tools/clang-format/clang-format.py<CR>i
 
 " youcompleteme
-let g:ycm_key_list_select_completion = ["<C-TAB>", "<Down>"] 
-let g:ycm_key_list_previous_completion = ["<C-S-TAB>", "<Up>"] 
+let g:ycm_key_list_select_completion = ["<C-TAB>", "<Down>"]
+let g:ycm_key_list_previous_completion = ["<C-S-TAB>", "<Up>"]
 
 " supertab
 let g:SuperTabDefaultCompletionType = "context"
@@ -91,7 +91,7 @@ let g:ctrlp_user_command = {
       \ }
 
 " cmake
-:autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in runtime! indent/cmake.vim 
+:autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in runtime! indent/cmake.vim
 :autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in setf cmake
 :autocmd BufRead,BufNewFile *.ctest,*.ctest.in setf cmake
 
@@ -359,7 +359,7 @@ vmap <leader>bd ]egv
 
 " make tab moving easier
 nmap <leader>tn :tabnew<CR>
-nmap <leader>te :tabedit 
+nmap <leader>te :tabedit<CR>
 nmap <leader>tf :tabnext<CR>
 nmap <leader>tb :tabp<CR>
 nmap <leader>tc :tabc<CR>
