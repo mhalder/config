@@ -253,7 +253,7 @@ if has("mac")
 endif
 
 " always open the quickfix window when running make, grep, grepadd and vimgrep
-autocmd QuickfixCmdPost make,grep,grepadd,vimgrep :botright cwindow
+" autocmd QuickfixCmdPost make,grep,grepadd,vimgrep :botright cwindow
 
 " same as default except that I remove the 'u' option
 set complete=.,w,b,t
