@@ -20,6 +20,7 @@ Bundle 'tpope/vim-repeat.git'
 Bundle 'tpope/vim-surround.git'
 Bundle 'tpope/vim-commentary.git'
 Bundle 'tpope/vim-speeddating.git'
+Bundle 'tpope/vim-abolish.git'
 
 " my vim-scripts bundles
 Bundle 'vim-scripts/bufexplorer.zip.git'
@@ -43,6 +44,7 @@ Bundle 'godlygeek/tabular.git'
 Bundle 'tsaleh/vim-matchit.git'
 Bundle 'ervandew/supertab.git'
 Bundle 'kana/vim-operator-user'
+Bundle 'nelstrom/vim-visual-star-search'
 
 " set filetype and syntax stuff to on
 filetype on
