@@ -2,16 +2,16 @@
 	name = Martin Halder
 	email = martin.halder@gmail.com
 [diff]
-	tool = gvim -f
+	tool = vim -f
 [merge]
-	tool = gvim -f
+	tool = vim -f
 [color]
 	ui = auto
 	diff = auto
 	status = auto
 	branch = auto
 [core]
-	editor = gvim -f
+	editor = vim -f
 	trustExitCode = true
 	excludesfile = ~/.gitignore
 [sendemail]

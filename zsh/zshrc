@@ -44,8 +44,8 @@ setopt listtypes
 setopt no_menucomplete
 setopt no_recexact
 
-# use jj instead of esc in vi-mode
-bindkey -M viins 'jj' vi-cmd-mode
+# use vv instead of esc in vi-mode
+bindkey -M viins 'vv' vi-cmd-mode
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
