@@ -298,8 +298,8 @@ nmap <silent> <leader>s :set spell!<CR>
 set spellsuggest=5
 set spelllang=en
 
-" map ESC to jj, quit to jj, save to jk, save quit to jl, destroy to j;
-imap jj <Esc>
+" map ESC to vv and some other useful shortcuts
+imap vv <Esc>
 map <leader>jj :q<CR>
 map <leader>jk :w<CR>
 map <leader>jl :wq<CR>
@@ -498,5 +498,8 @@ if has("autocmd")
   " auto delete fugitive buffers on close
   autocmd BufReadPost fugitive://* set bufhidden=delete
 endif
+
+" run any shell command and get result in new windows, eg :R ls -ld ~
+:command! -nargs=* -complete=shellcmd R new | setlocal buftype=nofile bufhidden=hide noswapfile | r !<args>
 
 " vim: set ts=2 sts=2 sw=2 expandtab:

@@ -35,8 +35,12 @@
 
 (require 'key-chord)
 
-(key-chord-define-global "jj" 'evil-normal-state)
-(key-chord-define-global "ww" 'ace-jump-word-mode)
+(key-chord-define-global "vv" 'evil-normal-state)
+(key-chord-define-global "jk" 'save-buffer)
+(key-chord-define-global "jl" 'save-buffers-kill-terminal)
+(key-chord-define-global "j;" 'kill-emacs)
+
+(key-chord-define-global "qq" 'ace-jump-word-mode)
 (key-chord-define-global "ee" 'ace-jump-line-mode)
 (key-chord-define-global "rr" 'ace-jump-char-mode)
 (key-chord-define-global "JJ" 'prelude-switch-to-previous-buffer)
