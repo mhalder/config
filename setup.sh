@@ -9,6 +9,7 @@ git clone https://github.com/robbyrussell/oh-my-zsh.git
 git clone http://repo.or.cz/r/org-mode.git
 git clone https://github.com/bbatsov/prelude.git
 git clone http://www.dr-qubit.org/git/undo-tree.git
+git clone https://github.com/emacs-helm/helm.git
 
 # creating links
 echo creating links
