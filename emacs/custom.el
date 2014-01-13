@@ -93,7 +93,7 @@
 (global-set-key "\C-cb" 'org-iswitchb)
 
 ;; define default drawers
-(setq org-drawers (quote ("PROPERTIES" "CLOCKTABLE" "LOGBOOK" "CLOCK")))
+(setq org-drawers (quote ("properties" "clocktable" "logbook" "clock")))
 
 ;; hide leading stars
 (setq org-hide-leading-stars 'hidestars)
@@ -128,7 +128,7 @@
   (quote (
    ("s" "someday" tags "someday" ((org-agenda-filter-preset
            '("+someday"))(org-agenda-todo-ignore-with-date nil)))
-   ("z" "admin" todo "ADMIN")
+   ("z" "admin" todo "admin")
    ("f" "flagged with agenda"
        ((tags "admin")
         (tags "flagged")
@@ -137,20 +137,20 @@
 ;; -------------------- org todos
 ;; set keywords
 (setq org-todo-keywords
- '((sequence "TODO(t)" "STARTED(s!)" "WAITING(w@/!)" "APPT(a)" "PROJ(p)"
-             "DELEGATED(g@/!)" "|" "DONE(d!)" "ADMIN(z)" "CANCELED(c@)" "ARCHIVE(r)")))
+ '((sequence "todo(t)" "started(s!)" "waiting(w@/!)" "appt(a)" "proj(p)"
+             "delegated(g@/!)" "|" "done(d!)" "admin(z)" "canceled(c@)" "archive(r)")))
 
 ;; change colors
 (setq org-todo-keyword-faces
-      '(("TODO"  . (:foreground "#b70101" :weight bold))
-        ("STARTED"  . (:foreground "#b70101" :weight bold))
-        ("APPT"  . (:foreground "sienna" :weight bold))
-        ("PROJ"  . (:foreground "blue" :weight bold))
-        ("ADMIN"  . (:foreground "orange" :weight bold))
-        ("WAITING"  . (:foreground "orange" :weight bold))
-        ("DONE"  . (:foreground "forestgreen" :weight bold))
-        ("DELEGATED"  . (:foreground "forestgreen" :weight bold))
-        ("CANCELED"  . shadow)))
+      '(("todo"  . (:foreground "#b70101" :weight bold))
+        ("started"  . (:foreground "#b70101" :weight bold))
+        ("appt"  . (:foreground "sienna" :weight bold))
+        ("proj"  . (:foreground "blue" :weight bold))
+        ("admin"  . (:foreground "orange" :weight bold))
+        ("waiting"  . (:foreground "orange" :weight bold))
+        ("done"  . (:foreground "forestgreen" :weight bold))
+        ("delegated"  . (:foreground "forestgreen" :weight bold))
+        ("canceled"  . shadow)))
 
 ;; fast todos selection
 (setq org-use-fast-todo-selection t)
@@ -173,7 +173,7 @@
 
 ;; -------------------- org timer
 ;; save clock in drawer
-(setq org-clock-into-drawer "CLOCK")
+(setq org-clock-into-drawer "clock")
 
 ;; sesume clocking tasks when emacs is restarted
 (org-clock-persistence-insinuate)
@@ -208,13 +208,7 @@
 
 ;; -------------------- org column view
 ;; setup default format
-(setq org-columns-default-format "%70ITEM(Task) %10Effort(Effort){:} %10CLOCKSUM")
+(setq org-columns-default-format "%70item(task) %10effort(effort){:} %10clocksum")
 
 ;; setup default estimates
-(setq org-global-properties (quote (("Effort_ALL" . "0:30 1:00 2:00 4:00 8:00"))))
-
-(set-face-attribute 'default nil :height 100)
-(set-face-attribute 'org-hide nil :height 100)
-(set-face-attribute 'org-level-1 nil :height 100)
-(set-face-attribute 'org-level-2 nil :height 100)
-(set-face-attribute 'org-column nil :height 100)
+(setq org-global-properties (quote (("effort_all" . "0:30 1:00 2:00 4:00 8:00"))))
