@@ -40,6 +40,7 @@ ln -sf ~/config/tmux.conf ~/.tmux.conf
 
 # prelude
 ln -sf ~/config/emacs/custom.el ~/src/prelude/personal/custom.el 
+ln -sf ~/config/emacs/modules/prelude-key-chord.el ~/src/prelude/modules/prelude-key-chord.el
 rm -f ~/.emacs.d
 ln -sf ~/src/prelude ~/.emacs.d
 

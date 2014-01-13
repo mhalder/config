@@ -10,6 +10,10 @@
 ;; load latest org
 (add-to-list 'load-path "~/src/org-mode/lisp")
 
+;; add helm
+(add-to-list 'load-path "~/src/helm")
+(require 'helm-config)
+
 ;; -------------------- mac stuff
 ;; use cmd as meta on mac
 (if macosx-p
@@ -36,8 +40,11 @@
 (require 'org-velocity)
 (global-set-key (kbd "C-c v") 'org-velocity-read)
 (setq org-velocity-always-use-bucket t)
-(setq org-velocity-bucket "~/Google Drive/Org/gtd/gtd.org")
+(setq org-velocity-bucket "~/drive/org/gtd/gtd.org")
 (setq org-velocity-search-method (quote any))
+
+;; velocity
+(require 'ox-confluence)
 
 ;; babel
 (setq org-confirm-babel-evaluate nil)
@@ -74,6 +81,7 @@
 
 ;; disable flyspell mode by default
 (setq prelude-flyspell nil)
+(setq whitespace-line-column 200)
 
 ;; -------------------- org general setup
 ;; open .org and .org_archive files with org-mode
@@ -96,7 +104,7 @@
 ;; -------------------- org agenda
 ;; set agenda file
 (setq org-agenda-files (quote
- ("~/Google Drive/Org/gtd/gtd.org")))
+ ("~/drive/org/gtd/gtd.org")))
 
 ;; highlight current time in agenda
 (add-hook 'org-agenda-mode-hook '(lambda () (hl-line-mode 1 )))
@@ -184,15 +192,19 @@
 
 ;; -------------------- org capture
 ;; setup org-capture
-(setq org-default-notes-file (concat org-directory "~/Google Drive/Org/gtd/gtd.org"))
+(setq org-default-notes-file (concat org-directory "~/drive/org/gtd/gtd.org"))
 (define-key global-map "\C-cc" 'org-capture)
 (setq org-capture-templates
- '(("t" "task" entry (file+headline "~/Google Drive/Org/gtd/gtd.org" "inbox")
-      "* TODO %?")
-   ("z" "admin entry" entry (file+headline "~/Google Drive/Org/gtd/gtd.org" "inbox")
-      "* ADMIN %? \n  %i" :clock-in t :clock-resume t)
-   ("j" "journal" entry (file+datetree "~/Google Drive/Org/gtd/journal.org")
-      "* %? ")))
+ '(("t" "task" entry (file+headline "~/drive/org/gtd/gtd.org" "inbox")
+      "* todo %?")
+   ("c" "task with context" entry (file+headline "~/drive/org/gtd/gtd.org" "inbox")
+      "* todo %?\n  %i\n  %a")
+   ("i" "immediate admin task" entry (file+headline "~/drive/org/gtd/gtd.org" "inbox")
+          "* admin %?" :clock-in t :clock-keep t)
+   ("z" "admin task" entry (file+headline "~/drive/org/gtd/gtd.org" "inbox")
+      "* admin %?\n  %i\n  %a" :clock-in t :clock-resume t)
+   ("j" "journal" entry (file+datetree "~/drive/org/gtd/journal.org")
+      "* %?\nentered on %U\n  %i\n  %a")))
 
 ;; -------------------- org column view
 ;; setup default format
