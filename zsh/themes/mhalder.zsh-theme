@@ -25,8 +25,8 @@ if [[ $TERM = *256color* || $TERM = *rxvt* ]]; then
     orange="%F{166}"
     purple="%F{135}"
     hotpink="%F{161}"
-    lightblue="$fg_bold[blue]"
-    lightred="$fg_bold[red]"
+    lightblue="%F{033}"
+    lightred="%F{196}"
     limegreen="%F{118}"
 else
     turquoise="$fg[cyan]"
@@ -100,5 +100,5 @@ function steeef_precmd {
 add-zsh-hook precmd steeef_precmd
 
 PROMPT=$'
-%{$limegreen%}%~%{$reset_color%} %{$fg[blue]%}%n@%m%{$reset_color%} $vcs_info_msg_0_
+%{$limegreen%}%~%{$reset_color%} %{$lightblue%}%n@%m%{$reset_color%} $vcs_info_msg_0_
 $(virtualenv_info)%(?//%{$lightred%}[%?]%{$reset_color%} )$ '
