@@ -40,7 +40,7 @@
 (require 'org-velocity)
 (global-set-key (kbd "C-c v") 'org-velocity-read)
 (setq org-velocity-always-use-bucket t)
-(setq org-velocity-bucket "~/drive/org/gtd/gtd.org")
+(setq org-velocity-bucket "~/src/org/global.org")
 (setq org-velocity-search-method (quote any))
 
 ;; velocity
@@ -104,7 +104,13 @@
 ;; -------------------- org agenda
 ;; set agenda file
 (setq org-agenda-files (quote
- ("~/drive/org/gtd/gtd.org")))
+ ("~/src/org/global.org"
+  "~/src/org/emenda.org"
+  "~/src/org/customers.org"
+  "~/src/org/private.org"
+  "~/src/org/knowhow.org"
+  )))
+
 
 ;; highlight current time in agenda
 (add-hook 'org-agenda-mode-hook '(lambda () (hl-line-mode 1 )))
@@ -192,18 +198,18 @@
 
 ;; -------------------- org capture
 ;; setup org-capture
-(setq org-default-notes-file (concat org-directory "~/drive/org/gtd/gtd.org"))
+(setq org-default-notes-file (concat org-directory "~/src/org/global.org"))
 (define-key global-map "\C-cc" 'org-capture)
 (setq org-capture-templates
- '(("t" "task" entry (file+headline "~/drive/org/gtd/gtd.org" "inbox")
+ '(("t" "task" entry (file+headline "~/src/org/global.org" "inbox")
       "* todo %?")
-   ("c" "task with context" entry (file+headline "~/drive/org/gtd/gtd.org" "inbox")
+   ("c" "task with context" entry (file+headline "~/src/org/global.org" "inbox")
       "* todo %?\n  %i\n  %a")
-   ("i" "immediate admin task" entry (file+headline "~/drive/org/gtd/gtd.org" "inbox")
+   ("i" "immediate admin task" entry (file+headline "~/src/org/global.org" "inbox")
           "* admin %?" :clock-in t :clock-keep t)
-   ("z" "admin task" entry (file+headline "~/drive/org/gtd/gtd.org" "inbox")
+   ("z" "admin task" entry (file+headline "~/src/org/global.org" "inbox")
       "* admin %?\n  %i\n  %a" :clock-in t :clock-resume t)
-   ("j" "journal" entry (file+datetree "~/drive/org/gtd/journal.org")
+   ("j" "journal" entry (file+datetree "~/src/org/global.org")
       "* %?\nentered on %U\n  %i\n  %a")))
 
 ;; -------------------- org column view
