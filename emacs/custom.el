@@ -107,6 +107,7 @@
  ("~/src/org/global.org"
   "~/src/org/emenda.org"
   "~/src/org/customers.org"
+  "~/src/org/tracking.org"
   "~/src/org/private.org"
   "~/src/org/knowhow.org"
   )))
