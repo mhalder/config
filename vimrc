@@ -502,4 +502,9 @@ endif
 " run any shell command and get result in new windows, eg :R ls -ld ~
 :command! -nargs=* -complete=shellcmd R new | setlocal buftype=nofile bufhidden=hide noswapfile | r !<args>
 
+" disable background color erase (bce) so that color schemes render properly
+if &term =~ '256color'
+  set t_ut=
+endif
+
 " vim: set ts=2 sts=2 sw=2 expandtab:
