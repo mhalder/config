@@ -375,25 +375,25 @@ nmap <leader>on :only<CR>
 " visually select the text that was last edited/pasted
 nmap gV `[v`]
 
-" cscope mapping for ctrl-_
-nmap <C-_>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-nmap <C-_>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-nmap <C-_>c :cs find c <C-R>=expand("<cword>")<CR><CR>
-nmap <C-_>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-nmap <C-_>e :cs find e <C-R>=expand("<cword>")<CR><CR>
-nmap <C-_>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
-nmap <C-_>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+" cscope mapping
+nmap <leader>css :cs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <leader>csg :cs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <leader>csc :cs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <leader>cst :cs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <leader>cse :cs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <leader>csf :cs find f <C-R>=expand("<cword>")<CR><CR>
+nmap <leader>csi :cs find i ^<C-R>=expand("<cfile>")<CR><CR>
+nmap <leader>csd :cs find d <C-R>=expand("<cword>")<CR><CR>
 
-" ctrl-space for horizontal split
-nmap <C-Space>s :scs find s <C-R>=expand("<cword>")<CR><CR>
-nmap <C-Space>g :scs find g <C-R>=expand("<cword>")<CR><CR>
-nmap <C-Space>c :scs find c <C-R>=expand("<cword>")<CR><CR>
-nmap <C-Space>t :scs find t <C-R>=expand("<cword>")<CR><CR>
-nmap <C-Space>e :scs find e <C-R>=expand("<cword>")<CR><CR>
-nmap <C-Space>f :scs find f <C-R>=expand("<cfile>")<CR><CR>
-nmap <C-Space>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-nmap <C-Space>d :scs find d <C-R>=expand("<cword>")<CR><CR>
+" cscope for horizontal split
+nmap <leader>chs :scs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <leader>chg :scs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <leader>chc :scs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <leader>cht :scs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <leader>che :scs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <leader>chf :scs find f <C-R>=expand("<cword>")<CR><CR>
+nmap <leader>chi :scs find i ^<C-R>=expand("<cfile>")<CR><CR>
+nmap <leader>chd :scs find d <C-R>=expand("<cword>")<CR><CR>
 
 " ctrl-space-space for vertical split
 nmap <C-Space><C-Space>s
