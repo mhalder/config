@@ -395,31 +395,6 @@ nmap <leader>chf :scs find f <C-R>=expand("<cword>")<CR><CR>
 nmap <leader>chi :scs find i ^<C-R>=expand("<cfile>")<CR><CR>
 nmap <leader>chd :scs find d <C-R>=expand("<cword>")<CR><CR>
 
-" ctrl-space-space for vertical split
-nmap <C-Space><C-Space>s
-      \:vert scs find s <C-R>=expand("<cword>")<CR><CR>
-nmap <C-Space><C-Space>g
-      \:vert scs find g <C-R>=expand("<cword>")<CR><CR>
-nmap <C-Space><C-Space>c
-      \:vert scs find c <C-R>=expand("<cword>")<CR><CR>
-nmap <C-Space><C-Space>t
-      \:vert scs find t <C-R>=expand("<cword>")<CR><CR>
-nmap <C-Space><C-Space>e
-      \:vert scs find e <C-R>=expand("<cword>")<CR><CR>
-nmap <C-Space><C-Space>i
-      \:vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-nmap <C-Space><C-Space>d
-      \:vert scs find d <C-R>=expand("<cword>")<CR><CR>
-
-" ctrl-space-space for vertical split
-nmap <leader>css :vert scs find s <C-R>=expand("<cword>")<CR><CR>
-nmap <leader>csg :vert scs find g <C-R>=expand("<cword>")<CR><CR>
-nmap <leader>csc :vert scs find c <C-R>=expand("<cword>")<CR><CR>
-nmap <leader>cst :vert sts find t <C-R>=expand("<cword>")<CR><CR>
-nmap <leader>cse :vert sts find e <C-R>=expand("<cword>")<CR><CR>
-nmap <leader>csi :vert sts find i <C-R>=expand("<cword>")<CR><CR>
-nmap <leader>csd :vert sts find d <C-R>=expand("<cword>")<CR><CR>
-
 " strip trailing whitespaces with leader-sw and format file with leader-ff
 nnoremap <silent> <leader>sw :call Preserve("%s/\\s\\+$//e")<CR>
 nnoremap <silent> <leader>ff :call Preserve("normal gg=G")<CR>
