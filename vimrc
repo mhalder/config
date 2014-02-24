@@ -440,6 +440,12 @@ map <leader>du :diffupdate<CR>
 noremap <buffer> <leader>pe :call Flake8()<CR>
 noremap! <buffer> <leader>pe <Esc>:call Flake8()<CR>
 
+" mappings pyclewn
+noremap <leader>de :Pyclewn pdb<CR>
+noremap <leader>dt :Cdetach<CR>
+noremap <leader>dm :Cmapkeys<CR>
+noremap <leader>du :Cunmapkeys<CR>
+
 " cool mapping for . in visual mode
 vnoremap . :norm<CR>
 
