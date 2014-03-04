@@ -55,6 +55,7 @@ alias tm='top -o vsize' # memory
 alias ungit="find . -name '.git' -exec rm -rf {} \;"
 alias gb='git branch'
 alias gba='git branch -a'
+alias gbd='git branch -d'
 alias gc='git commit -v'
 alias gca='git commit -v -a'
 
