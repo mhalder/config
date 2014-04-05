@@ -27,7 +27,7 @@ else
     export PATH=~/bin:$PATH
 fi
 
-export PATH=~/src/llvm-build/Debug+Asserts/bin:$PATH
+export PATH=~/google-cloud-sdk/bin:~/src/llvm-build/Debug+Asserts/bin:$PATH
 
 alias ea='gvim -f ~/bin/dotfiles/bash/aliases && reload' # edit aliases
 alias ee='gvim --remote-silent ~/bin/dotfiles/bash/env'
@@ -88,5 +88,10 @@ alias afind='ack-grep -il'
 alias ffind='find . -name'
 
 unsetopt correct_all
+
+# gcloud completion
+if [ -f ~/google-cloud-sdk/completion.zsh.inc ]; then
+    source ~/google-cloud-sdk/completion.zsh.inc
+fi
 
 export LC_CTYPE=en_US.UTF-8
