@@ -41,10 +41,10 @@ Bundle 'mileszs/ack.vim.git'
 Bundle 'SirVer/ultisnips.git'
 Bundle 'gregsexton/gitv.git'
 Bundle 'godlygeek/tabular.git'
-Bundle 'tsaleh/vim-matchit.git'
-Bundle 'ervandew/supertab.git'
 Bundle 'kana/vim-operator-user'
 Bundle 'nelstrom/vim-visual-star-search'
+Bundle 'jalcine/cmake.vim'
+Bundle 'derekwyatt/vim-fswitch'
 
 " set filetype and syntax stuff to on
 filetype on
@@ -74,9 +74,6 @@ imap <C-K> <ESC>:pyf ~/src/llvm/tools/clang/tools/clang-format/clang-format.py<C
 " youcompleteme
 let g:ycm_key_list_select_completion = ["<C-TAB>", "<Down>"]
 let g:ycm_key_list_previous_completion = ["<C-S-TAB>", "<Up>"]
-
-" supertab
-let g:SuperTabDefaultCompletionType = "context"
 
 " ctrl-p config
 map <leader>cp :CtrlP<CR>

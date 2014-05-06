@@ -24,7 +24,7 @@ else
 
     alias py='pyclewn --editor=/usr/bin/gvim'
 
-    export PATH=~/bin:$PATH
+    export PATH=/usr/lib/ccache:~/bin:$PATH
 fi
 
 export PATH=~/google-cloud-sdk/bin:~/src/llvm-build/Debug+Asserts/bin:$PATH
