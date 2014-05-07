@@ -43,7 +43,6 @@ Bundle 'gregsexton/gitv.git'
 Bundle 'godlygeek/tabular.git'
 Bundle 'kana/vim-operator-user'
 Bundle 'nelstrom/vim-visual-star-search'
-Bundle 'jalcine/cmake.vim'
 Bundle 'derekwyatt/vim-fswitch'
 
 " set filetype and syntax stuff to on
@@ -74,6 +73,9 @@ imap <C-K> <ESC>:pyf ~/src/llvm/tools/clang/tools/clang-format/clang-format.py<C
 " youcompleteme
 let g:ycm_key_list_select_completion = ["<C-TAB>", "<Down>"]
 let g:ycm_key_list_previous_completion = ["<C-S-TAB>", "<Up>"]
+nmap <leader>ydc :YcmCompleter GoToDeclaration<CR>
+nmap <leader>yde :YcmCompleter GoToDefinition<CR>
+nmap <leader>yg :YcmCompleter GoTo<CR>
 
 " ctrl-p config
 map <leader>cp :CtrlP<CR>
