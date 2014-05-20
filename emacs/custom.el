@@ -152,16 +152,16 @@
       '(("todo"  . (:foreground "red" :weight bold))
         ("started"  . (:foreground "#b70101" :weight bold))
         ("appt"  . (:foreground "sienna" :weight bold))
-        ("proj"  . (:foreground "royal blue" :weight bold))
+        ("proj"  . (:foreground "blue" :weight bold))
         ("admin"  . (:foreground "orange" :weight bold))
         ("waiting"  . (:foreground "orange" :weight bold))
         ("done"  . (:foreground "forestgreen" :weight bold))
         ("delegated"  . (:foreground "forestgreen" :weight bold))
         ("canceled"  . shadow)))
 
-(setq org-priority-faces '((?A . (:foreground "red" :weight bold))
+(setq org-priority-faces '((?A . (:foreground "red3" :weight bold))
                            (?B . (:foreground "royal blue"))
-                           (?C . (:foreground "green"))))
+                           (?C . (:foreground "green4"))))
 
 ;; fast todos selection
 (setq org-use-fast-todo-selection t)
