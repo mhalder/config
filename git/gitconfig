@@ -66,3 +66,7 @@
 	trustExitCode = true
 [push]
 	default = tracking
+[svn]
+    addAuthorFrom = true
+    useLogAuthor = true
+    rmdir = true
