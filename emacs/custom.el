@@ -149,15 +149,19 @@
 
 ;; change colors
 (setq org-todo-keyword-faces
-      '(("todo"  . (:foreground "#b70101" :weight bold))
+      '(("todo"  . (:foreground "red" :weight bold))
         ("started"  . (:foreground "#b70101" :weight bold))
         ("appt"  . (:foreground "sienna" :weight bold))
-        ("proj"  . (:foreground "blue" :weight bold))
+        ("proj"  . (:foreground "royal blue" :weight bold))
         ("admin"  . (:foreground "orange" :weight bold))
         ("waiting"  . (:foreground "orange" :weight bold))
         ("done"  . (:foreground "forestgreen" :weight bold))
         ("delegated"  . (:foreground "forestgreen" :weight bold))
         ("canceled"  . shadow)))
+
+(setq org-priority-faces '((?A . (:foreground "red" :weight bold))
+                           (?B . (:foreground "royal blue"))
+                           (?C . (:foreground "green"))))
 
 ;; fast todos selection
 (setq org-use-fast-todo-selection t)
