@@ -41,12 +41,13 @@
 (key-chord-define-global "j;" 'kill-emacs)
 
 (key-chord-define-global "qq" 'ace-jump-word-mode)
-(key-chord-define-global "ee" 'ace-jump-line-mode)
-(key-chord-define-global "rr" 'ace-jump-char-mode)
+(key-chord-define-global "QQ" 'ace-jump-line-mode)
+(key-chord-define-global "ww" 'ace-jump-char-mode)
 (key-chord-define-global "JJ" 'prelude-switch-to-previous-buffer)
 (key-chord-define-global "uu" 'undo-tree-visualize)
 (key-chord-define-global "xx" 'execute-extended-command)
 (key-chord-define-global ";;" 'browse-kill-ring)
+(key-chord-define-global "zz" 'org-cycle)
 
 (key-chord-mode +1)
 
