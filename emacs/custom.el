@@ -9,6 +9,23 @@
 
 ;; load latest org
 (add-to-list 'load-path "~/src/org-mode/lisp")
+(add-to-list 'load-path "~/src/org-mode/contrib/lisp")
+
+(setq org-publish-project-alist
+      '(("orgfiles"
+         :base-directory "~/src/org/"
+         :base-extension "org"
+         :publishing-directory "/var/www/org"
+         :headline-levels 3
+         :section-numbers t
+         :html-head "<link rel=\"stylesheet\"
+                     href=\"style/stylesheet.css\" type=\"text/css\"/>"
+         :html-preamble t
+         :with-toc t
+         :publishing-function org-html-publish-to-html
+        )
+       )
+)
 
 ;; add helm
 (add-to-list 'load-path "~/src/helm")
@@ -200,6 +217,9 @@
 
 ;; disable auto clock resolution
 (setq org-clock-auto-clock-resolution nil)
+
+;; persist clock
+(setq org-publish-use-timestamps-flag nil)
 
 ;; -------------------- org capture
 ;; setup org-capture
