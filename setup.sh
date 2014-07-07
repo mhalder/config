@@ -39,6 +39,9 @@ fi
 # tmux
 ln -sf ~/config/tmux.conf ~/.tmux.conf 
 
+# tmux
+ln -sf ~/config/i3 ~/.i3
+
 # prelude
 ln -sf ~/config/emacs/prelude-modules.el ~/src/prelude/prelude-modules.el
 ln -sf ~/config/emacs/custom.el ~/src/prelude/personal/custom.el 
