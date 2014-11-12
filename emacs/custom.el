@@ -7,6 +7,9 @@
 ;; enable server mode for shell client
 (server-start)
 
+;; disable menu
+(menu-bar-mode -1)
+
 ;; load latest org
 (add-to-list 'load-path "~/src/org-mode/lisp")
 (add-to-list 'load-path "~/src/org-mode/contrib/lisp")
