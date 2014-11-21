@@ -13,37 +13,39 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " my tpope bundles
-Bundle 'tpope/vim-fugitive.git'
-Bundle 'tpope/vim-git.git'
-Bundle 'tpope/vim-unimpaired.git'
-Bundle 'tpope/vim-repeat.git'
-Bundle 'tpope/vim-surround.git'
-Bundle 'tpope/vim-commentary.git'
-Bundle 'tpope/vim-speeddating.git'
-Bundle 'tpope/vim-abolish.git'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-git'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-speeddating'
+Bundle 'tpope/vim-abolish'
 
 " my vim-scripts bundles
-Bundle 'vim-scripts/bufexplorer.zip.git'
-Bundle 'vim-scripts/TaskList.vim.git'
+Bundle 'vim-scripts/bufexplorer.zip'
+Bundle 'vim-scripts/TaskList.vim'
 
 " my python bundles
-Bundle 'fs111/pydoc.vim.git'
-Bundle 'nvie/vim-flake8.git'
+Bundle 'fs111/pydoc.vim'
+Bundle 'nvie/vim-flake8'
 
 " my misc bundles
-Bundle 'scrooloose/nerdtree.git'
-Bundle 'sjl/gundo.vim.git'
-Bundle 'majutsushi/tagbar.git'
-Bundle 'kien/ctrlp.vim.git'
-Bundle 'scrooloose/syntastic.git'
-Bundle 'Valloric/YouCompleteMe.git'
-Bundle 'mileszs/ack.vim.git'
-Bundle 'SirVer/ultisnips.git'
-Bundle 'gregsexton/gitv.git'
-Bundle 'godlygeek/tabular.git'
+Bundle 'scrooloose/nerdtree'
+Bundle 'sjl/gundo.vim'
+Bundle 'majutsushi/tagbar'
+Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/syntastic'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'mileszs/ack.vim'
+Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
+Bundle 'gregsexton/gitv'
+Bundle 'godlygeek/tabular'
 Bundle 'kana/vim-operator-user'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'derekwyatt/vim-fswitch'
+Bundle 'ervandew/supertab'
 
 " set filetype and syntax stuff to on
 filetype on
@@ -71,11 +73,19 @@ map <C-K> :pyf ~/src/llvm/tools/clang/tools/clang-format/clang-format.py<CR>
 imap <C-K> <ESC>:pyf ~/src/llvm/tools/clang/tools/clang-format/clang-format.py<CR>i
 
 " youcompleteme
-let g:ycm_key_list_select_completion = ["<C-TAB>", "<Down>"]
-let g:ycm_key_list_previous_completion = ["<C-S-TAB>", "<Up>"]
+let g:ycm_key_list_select_completion = ["<C-n>", "<Down>"]
+let g:ycm_key_list_previous_completion = ["<C-p>", "<Up>"]
 nmap <leader>ydc :YcmCompleter GoToDeclaration<CR>
 nmap <leader>yde :YcmCompleter GoToDefinition<CR>
 nmap <leader>yg :YcmCompleter GoTo<CR>
+
+" supertab
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" youcompleteme and supertab
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 " ctrl-p config
 map <leader>cp :CtrlP<CR>
