@@ -55,16 +55,14 @@
 (require 'undo-tree)
 (global-undo-tree-mode)
 
-;; velocity
-(add-to-list 'load-path "~/src/org-mode/contrib/lisp" t)
-(require 'org-velocity)
-(global-set-key (kbd "C-c v") 'org-velocity-read)
-(setq org-velocity-always-use-bucket t)
-(setq org-velocity-bucket "~/src/org/global.org")
-(setq org-velocity-search-method (quote any))
-
-;; velocity
-(require 'ox-confluence)
+;; deft
+(add-to-list 'load-path "~/src/deft" t)
+(require 'deft)
+(setq deft-extension "org")
+(setq deft-directory "~/src/org")
+(setq deft-text-mode 'org-mode)
+(setq deft-use-filename-as-title t)
+(global-set-key (kbd "C-c v") 'deft)
 
 ;; babel
 (setq org-confirm-babel-evaluate nil)
