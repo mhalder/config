@@ -40,7 +40,7 @@ fi
 # tmux
 ln -sf ~/config/tmux.conf ~/.tmux.conf 
 
-# tmux
+# i3
 ln -sf ~/config/i3 ~/.i3
 
 # prelude
