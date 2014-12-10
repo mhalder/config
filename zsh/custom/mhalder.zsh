@@ -70,6 +70,7 @@ alias g='git status'
 alias gk='git --no-pager log --pretty=oneline --all --decorate -30 --graph --abbrev-commit'
 alias gkb='git --no-pager log --pretty=oneline --decorate -30 --graph --abbrev-commit'
 alias gkn='git log --pretty=oneline --all --decorate --graph --abbrev-commit'
+alias glg='git lg'
 
 # push and pop directories on directory stack
 alias pu='pushd'

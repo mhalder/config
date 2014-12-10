@@ -58,6 +58,7 @@
     ra = !git r --all
     l = !pretty-git-log
     la = !git l --all
+	lg = log --graph --pretty=format:'%C(magenta)%h%Creset%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%ae>%Creset' --abbrev-commit --date=relative
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
