@@ -1,6 +1,6 @@
 [user]
-	name = Martin Halder
-	email = martin.halder@gmail.com
+	name = Dirk Honisch
+	email = dirk.honisch@emenda.ch
 [diff]
 	tool = vim -f
 [merge]
