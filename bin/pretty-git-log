@@ -1,3 +1,0 @@
-#!/bin/bash
-
-source ~/.githelpers && pretty_git_log

@@ -1,3 +1,0 @@
-#!/bin/bash
-
-source ~/.githelpers && show_git_head

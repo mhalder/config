@@ -1,9 +1,0 @@
-*.tmp
-cscope.out
-org-clock-save.el
-.org-id-locations
-.DS_Store
-*.pyc
-.ycm_extra_conf.py
-.project
-.cproject
